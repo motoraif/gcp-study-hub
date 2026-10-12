@@ -1,7 +1,7 @@
 /* GCP Study Hub - Shared Navbar + Footer */
 (function(){
   try {
-    if (localStorage.getItem('theme') === 'light') document.documentElement.setAttribute('data-theme', 'light');
+    if (localStorage.getItem('theme') === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
   } catch(e) {}
 
   const segs=location.pathname.split('/').filter(Boolean);
@@ -9,7 +9,7 @@
   const root=inDocs?'../':'./';
 
   const nav=`<nav class="navbar"><div class="container navbar-inner">
-  <a class="navbar-brand" href="${root}index.html">&#9729;&#65039; GCP Study Hub</a>
+  <a class="navbar-brand" href="${root}index.html"><span class="g-blue">G</span><span class="g-red">C</span><span class="g-yellow">P</span>&nbsp;<span style="color:var(--text)">Study Hub</span></a>
   <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
     <span></span><span></span><span></span>
   </button>
@@ -130,16 +130,16 @@
     const themeBtn=document.getElementById('theme-toggle');
     function setThemeIcon(){
       if(!themeBtn) return;
-      const light=document.documentElement.getAttribute('data-theme')==='light';
-      themeBtn.innerHTML=light?'&#9728;&#65039;':'&#127769;';
-      themeBtn.setAttribute('title', light?'Switch to dark theme':'Switch to light theme');
+      const dark=document.documentElement.getAttribute('data-theme')==='dark';
+      themeBtn.innerHTML=dark?'&#9728;&#65039;':'&#127769;'; // sun when dark (to go light), moon when light
+      themeBtn.setAttribute('title', dark?'Switch to light theme':'Switch to dark theme');
     }
     setThemeIcon();
     if(themeBtn){
       themeBtn.addEventListener('click',()=>{
-        const light=document.documentElement.getAttribute('data-theme')==='light';
-        if(light){ document.documentElement.removeAttribute('data-theme'); try{localStorage.setItem('theme','dark');}catch(e){} }
-        else { document.documentElement.setAttribute('data-theme','light'); try{localStorage.setItem('theme','light');}catch(e){} }
+        const dark=document.documentElement.getAttribute('data-theme')==='dark';
+        if(dark){ document.documentElement.removeAttribute('data-theme'); try{localStorage.setItem('theme','light');}catch(e){} }
+        else { document.documentElement.setAttribute('data-theme','dark'); try{localStorage.setItem('theme','dark');}catch(e){} }
         setThemeIcon();
       });
     }
