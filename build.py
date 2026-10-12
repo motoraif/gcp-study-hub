@@ -72,7 +72,7 @@ HEAD = lambda t,d: f"""<!DOCTYPE html>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#x2601;</text></svg>">
   <link rel="manifest" href="../manifest.webmanifest">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../assets/css/style.css">
   <script src="../assets/js/components.js"></script>
   <script src="../assets/js/search.js" defer></script>
@@ -88,7 +88,7 @@ HEAD_ROOT = lambda t,d: f"""<!DOCTYPE html>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#x2601;</text></svg>">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
   <script src="assets/js/components.js"></script>
   <script src="assets/js/search.js" defer></script>
@@ -206,7 +206,7 @@ print("Building GCP Study Hub pages...")
 index_html = HEAD_ROOT("GCP Study Hub - Ultimate Google Cloud Certification Study Platform","Free, community-driven study hub for all Google Cloud (GCP) certifications - guides, labs, practice questions, and foundations.") + f"""
 <section class="hero"><div class="container">
   <div class="hero-eyebrow">&#128640; Open Source &middot; Community Driven &middot; Always Free</div>
-  <h1>The Ultimate Google Cloud<br>Certification Study Hub</h1>
+  <h1>The Ultimate <span class="accent-blue">G</span><span class="accent-red">o</span><span class="accent-yellow">o</span><span class="accent-blue">g</span><span class="accent-green">l</span><span class="accent-red">e</span> Cloud<br>Certification Study Hub</h1>
   <p class="subtitle">Everything you need to pass every Google Cloud certification - official Skills Boost paths, hands-on labs, practice questions, and Linux &amp; networking foundations. All free, all in one place.</p>
   <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
     <a href="docs/cloud-digital-leader.html" class="btn btn-primary">&#127891; Start Learning</a>
