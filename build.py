@@ -351,6 +351,7 @@ def cert_page(slug, level_cls, level_txt, icon, title, desc, badges,
               extra_badge=""):
     """Assemble a full certification guide page and write it to docs/<slug>.html."""
     header = phdr(level_cls, level_txt, icon, title, desc, badges, extra_badge)
+    foot = (MERMAID_LOADER + FOOT) if 'class="mermaid"' in body_html else FOOT
     html = (HEAD(title, desc) + crumb(title.split(" - ")[0]) + header
             + quiz_cta(exam_args["code"])
             + wrap(toc, exam(exam_args["cn"], exam_args["cu"], exam_args["egu"],
@@ -359,7 +360,7 @@ def cert_page(slug, level_cls, level_txt, icon, title, desc, badges,
                              exam_args.get("validity", "3 years"))
                    + body_html
                    + chk(checklist_items, next_file, next_label))
-            + FOOT)
+            + foot)
     write(f"{DOCS}/{slug}.html", html)
 
 
@@ -621,6 +622,17 @@ cert_page(
   <tr><td>Global web app with low latency</td><td>Global external HTTP(S) LB + Cloud CDN</td></tr>
   <tr><td>Decoupling / async</td><td>Pub/Sub, Cloud Tasks</td></tr>
 </tbody></table></div>
+""" + mermaid_block("""flowchart LR
+  U[Users] --> CDN[Cloud CDN]
+  CDN --> LB[Global External Application LB]
+  LB --> AR[Cloud Armor WAF and DDoS]
+  AR --> GKE[GKE Regional Cluster]
+  GKE --> SP[(Spanner multi-region)]
+  GKE --> PS[Pub/Sub]
+  PS --> DF[Dataflow]
+  DF --> BQ[(BigQuery)]
+  GKE --> MS[(Memorystore cache)]""",
+  "Reference architecture: a globally available, low-latency web application on Google Cloud.") + """
 </section>
 
 <section id="security"><h2>Security &amp; Compliance</h2>
@@ -1112,6 +1124,16 @@ cert_page(
   <li><strong>Dataproc</strong> - managed Spark/Hadoop; ephemeral clusters, autoscaling.</li>
   <li><strong>Data Fusion</strong> - visual ETL; <strong>Datastream</strong> - CDC.</li>
 </ul>
+""" + mermaid_block("""flowchart LR
+  SRC[Sources: apps, IoT, logs] --> PS[Pub/Sub]
+  PS --> DF[Dataflow streaming]
+  SRC --> GCS[(Cloud Storage data lake)]
+  GCS --> DFB[Dataflow batch]
+  DF --> BQ[(BigQuery)]
+  DFB --> BQ
+  BQ --> LK[Looker / Looker Studio]
+  BQ --> ML[BigQuery ML / Vertex AI]""",
+  "A typical streaming + batch data pipeline landing in BigQuery for analytics and ML.") + """
 </section>
 <section id="bigquery"><h2>BigQuery</h2>
 <ul>

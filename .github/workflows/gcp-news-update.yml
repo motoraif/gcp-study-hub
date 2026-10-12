@@ -62,8 +62,17 @@ jobs:
                   except Exception:
                       date = 'Unknown'
                   desc = re.sub(r'<[^>]+>', '', entry.get('summary', '')).strip()[:300]
+                  title = entry.get('title', '').strip()
+                  # The consolidated release-notes feed titles entries by date; promote the
+                  # first meaningful summary line (usually the product name) to the title.
+                  months = ('January','February','March','April','May','June','July',
+                            'August','September','October','November','December')
+                  looks_like_date = (',' in title and any(m in title for m in months))
+                  if looks_like_date or not title:
+                      first = next((ln.strip() for ln in desc.splitlines() if ln.strip()), title)
+                      title = first[:90]
                   item = {
-                      "title": entry.get('title', ''),
+                      "title": title,
                       "link": entry.get('link', '#'),
                       "date": date,
                       "summary": desc,
