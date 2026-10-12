@@ -69,7 +69,7 @@ HEAD = lambda t,d: f"""<!DOCTYPE html>
   <title>{_full_title(t)}</title>
   <meta name="description" content="{d}">
 {seo_tags(t, d, "../")}
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#x2601;</text></svg>">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'><circle cx='14' cy='20' r='6' fill='%234285F4'/><circle cx='26' cy='14' r='6' fill='%23EA4335'/><circle cx='34' cy='24' r='6' fill='%23FBBC04'/><circle cx='22' cy='30' r='6' fill='%2334A853'/></svg>">
   <link rel="manifest" href="../manifest.webmanifest">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -85,7 +85,7 @@ HEAD_ROOT = lambda t,d: f"""<!DOCTYPE html>
   <title>{_full_title(t)}</title>
   <meta name="description" content="{d}">
 {seo_tags(t, d, "")}
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#x2601;</text></svg>">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'><circle cx='14' cy='20' r='6' fill='%234285F4'/><circle cx='26' cy='14' r='6' fill='%23EA4335'/><circle cx='34' cy='24' r='6' fill='%23FBBC04'/><circle cx='22' cy='30' r='6' fill='%2334A853'/></svg>">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -222,7 +222,7 @@ index_html = HEAD_ROOT("GCP Study Hub - Ultimate Google Cloud Certification Stud
   </div>
 </div></section>
 
-<section style="background:var(--bg-card);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:1.5rem 0">
+<section class="path-strip" style="padding:1.5rem 0">
 <div class="container"><div style="display:flex;align-items:center;gap:1rem;flex-wrap:wrap;justify-content:center">
   <span style="color:var(--text-muted);font-size:0.88rem;font-weight:600">RECOMMENDED PATH:</span>
   <a href="docs/foundations-linux.html" class="badge badge-teal" style="text-decoration:none">1. Linux</a><span style="color:var(--text-muted)">&rarr;</span>
