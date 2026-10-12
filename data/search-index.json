@@ -1,0 +1,329 @@
+{
+ "generated": true,
+ "count": 29,
+ "docs": [
+  {
+   "url": "index.html",
+   "title": "GCP Study Hub - Ultimate Google Cloud Certification Study Platform",
+   "desc": "Free, community-driven study hub for all Google Cloud (GCP) certifications - guides, labs, practice questions, and foundations.",
+   "headings": [
+    "\ud83d\ude80 Interactive Study Tools",
+    "\ud83e\udc73 Foundations First",
+    "\u2601\ufe0f Google Cloud Certifications",
+    "\u2728 Why GCP Study Hub?",
+    "\ud83d\udcf0 Latest Google Cloud News",
+    "\ud83d\udd17 Top Study Resources",
+    "Help Make This the #1 Google Cloud Study Resource"
+   ]
+  },
+  {
+   "url": "docs/cloud-digital-leader.html",
+   "title": "Cloud Digital Leader",
+   "desc": "The entry-level Google Cloud certification. Cloud concepts, Google Cloud products and services, digital transformation, and modernizing infrastructure, data, and operations. No technical background required.",
+   "headings": [
+    "Exam Overview",
+    "Digital Transformation",
+    "Data & AI/ML",
+    "Infrastructure & Modernization",
+    "Security & Operations",
+    "Products You Must Recognize",
+    "\ud83d\udccb Study Checklist"
+   ]
+  },
+  {
+   "url": "docs/associate-cloud-engineer.html",
+   "title": "Associate Cloud Engineer",
+   "desc": "Deploy applications, monitor operations, and manage enterprise solutions on Google Cloud. The most popular hands-on GCP cert. Heavy on gcloud, the Console, IAM, networking, and compute.",
+   "headings": [
+    "Exam Overview",
+    "Resource Hierarchy",
+    "Identity & Access Management (IAM)",
+    "Compute",
+    "VPC Networking",
+    "Storage & Databases",
+    "gcloud & Tooling",
+    "\ud83d\udccb Study Checklist"
+   ]
+  },
+  {
+   "url": "docs/professional-cloud-architect.html",
+   "title": "Professional Cloud Architect",
+   "desc": "Design, develop, and manage robust, secure, scalable, and dynamic solutions on Google Cloud. The most valued GCP certification. Features case studies and solution-design scenarios.",
+   "headings": [
+    "Exam Overview",
+    "Case Studies",
+    "Solution Design",
+    "Security & Compliance",
+    "Reliability & SRE",
+    "Migration",
+    "Cost Optimization",
+    "\ud83d\udccb Study Checklist"
+   ]
+  },
+  {
+   "url": "docs/associate-data-practitioner.html",
+   "title": "Associate Data Practitioner",
+   "desc": "Demonstrate foundational data skills on Google Cloud: data ingestion, storage, transformation, analysis, and visualization using managed services like BigQuery, Dataflow, and Looker.",
+   "headings": [
+    "Exam Overview",
+    "Ingestion & Storage",
+    "Transformation",
+    "Analysis & BI",
+    "Governance",
+    "\ud83d\udccb Study Checklist"
+   ]
+  },
+  {
+   "url": "docs/associate-workspace-administrator.html",
+   "title": "Associate Google Workspace Administrator",
+   "desc": "Manage Google Workspace for an organization: provisioning users and groups, configuring services, securing data, and troubleshooting from the Admin console.",
+   "headings": [
+    "Exam Overview",
+    "Users, Groups & Organizational Units",
+    "Services",
+    "Security",
+    "Monitoring, Reporting & Troubleshooting",
+    "\ud83d\udccb Study Checklist"
+   ]
+  },
+  {
+   "url": "docs/professional-cloud-developer.html",
+   "title": "Professional Cloud Developer",
+   "desc": "Build scalable and highly available applications using Google-recommended practices and tools. Focus on serverless, containers, APIs, data, and application observability.",
+   "headings": [
+    "Exam Overview",
+    "Compute Targets",
+    "Data & Caching",
+    "APIs & Messaging",
+    "Build & Deploy",
+    "Observability",
+    "\ud83d\udccb Study Checklist"
+   ]
+  },
+  {
+   "url": "docs/professional-cloud-devops-engineer.html",
+   "title": "Professional Cloud DevOps Engineer",
+   "desc": "Implement SRE practices and CI/CD on Google Cloud: build pipelines, define SLOs and error budgets, manage services, and optimize for reliability and velocity.",
+   "headings": [
+    "Exam Overview",
+    "SRE Principles",
+    "CI/CD Pipelines",
+    "Monitoring",
+    "Incident Management",
+    "\ud83d\udccb Study Checklist"
+   ]
+  },
+  {
+   "url": "docs/professional-cloud-security-engineer.html",
+   "title": "Professional Cloud Security Engineer",
+   "desc": "Design and implement secure workloads and infrastructure on Google Cloud: identity and access, network security, data protection, and compliance.",
+   "headings": [
+    "Exam Overview",
+    "Identity & Access",
+    "Network Security",
+    "Data Protection",
+    "Security Operations",
+    "\ud83d\udccb Study Checklist"
+   ]
+  },
+  {
+   "url": "docs/professional-cloud-network-engineer.html",
+   "title": "Professional Cloud Network Engineer",
+   "desc": "Design, implement, and manage Google Cloud network architectures: VPC design, hybrid connectivity, network services, and security.",
+   "headings": [
+    "Exam Overview",
+    "VPC Design",
+    "Load Balancing",
+    "Hybrid Connectivity",
+    "Network Services",
+    "\ud83d\udccb Study Checklist"
+   ]
+  },
+  {
+   "url": "docs/professional-cloud-database-engineer.html",
+   "title": "Professional Cloud Database Engineer",
+   "desc": "Design, manage, and migrate scalable database solutions on Google Cloud. Covers Cloud SQL, AlloyDB, Spanner, Bigtable, Firestore, and migrations.",
+   "headings": [
+    "Exam Overview",
+    "Choosing a Database",
+    "HA & Scaling",
+    "Migration",
+    "Security",
+    "\ud83d\udccb Study Checklist"
+   ]
+  },
+  {
+   "url": "docs/professional-data-engineer.html",
+   "title": "Professional Data Engineer",
+   "desc": "Design and build data processing systems and operationalize ML models on Google Cloud. Heavy on BigQuery, Dataflow, Dataproc, Pub/Sub, and data governance.",
+   "headings": [
+    "Exam Overview",
+    "Storage Choices",
+    "Pipelines",
+    "BigQuery",
+    "ML & Analytics",
+    "Orchestration & Governance",
+    "\ud83d\udccb Study Checklist"
+   ]
+  },
+  {
+   "url": "docs/professional-machine-learning-engineer.html",
+   "title": "Professional Machine Learning Engineer",
+   "desc": "Design, build, and productionize ML models on Google Cloud using Vertex AI and Google-recommended MLOps practices.",
+   "headings": [
+    "Exam Overview",
+    "Vertex AI",
+    "Data & Features",
+    "Training & Tuning",
+    "Serving",
+    "MLOps",
+    "\ud83d\udccb Study Checklist"
+   ]
+  },
+  {
+   "url": "docs/service-compute-engine.html",
+   "title": "Compute Engine - Service Deep Dive",
+   "desc": "Compute Engine deep dive: machine types, Spot VMs, MIGs, images, disks, and networking.",
+   "headings": [
+    "What it is",
+    "Machine families",
+    "Cost savers",
+    "Scaling & HA",
+    "\ud83c\udfaf Exam Tips"
+   ]
+  },
+  {
+   "url": "docs/service-cloud-storage.html",
+   "title": "Cloud Storage - Service Deep Dive",
+   "desc": "Cloud Storage deep dive: storage classes, lifecycle, security, and signed URLs.",
+   "headings": [
+    "What it is",
+    "Storage classes",
+    "Lifecycle & security",
+    "\ud83c\udfaf Exam Tips"
+   ]
+  },
+  {
+   "url": "docs/service-bigquery.html",
+   "title": "BigQuery - Service Deep Dive",
+   "desc": "BigQuery deep dive: architecture, partitioning, clustering, pricing, and security.",
+   "headings": [
+    "What it is",
+    "Performance",
+    "Pricing",
+    "Security",
+    "\ud83c\udfaf Exam Tips"
+   ]
+  },
+  {
+   "url": "docs/service-gke.html",
+   "title": "Google Kubernetes Engine - Service Deep Dive",
+   "desc": "GKE deep dive: Autopilot vs Standard, node pools, networking, and security.",
+   "headings": [
+    "What it is",
+    "Key concepts",
+    "Security & networking",
+    "\ud83c\udfaf Exam Tips"
+   ]
+  },
+  {
+   "url": "docs/service-iam.html",
+   "title": "Cloud IAM - Service Deep Dive",
+   "desc": "Cloud IAM deep dive: members, roles, policies, service accounts, and best practices.",
+   "headings": [
+    "Core model",
+    "Roles",
+    "Service accounts",
+    "\ud83c\udfaf Exam Tips"
+   ]
+  },
+  {
+   "url": "docs/services.html",
+   "title": "Service Deep Dives",
+   "desc": "In-depth guides to the core Google Cloud services that appear across every certification exam.",
+   "headings": []
+  },
+  {
+   "url": "docs/foundations-linux.html",
+   "title": "Linux Fundamentals",
+   "desc": "Linux fundamentals for cloud engineers: filesystem, permissions, processes, networking, and shell scripting.",
+   "headings": [
+    "Filesystem & Navigation",
+    "Permissions",
+    "Processes & Services",
+    "Networking",
+    "Shell Scripting",
+    "\ud83d\udccb Study Checklist"
+   ]
+  },
+  {
+   "url": "docs/foundations-networking.html",
+   "title": "Networking Fundamentals",
+   "desc": "Networking fundamentals for cloud: OSI model, TCP/IP, DNS, CIDR, subnetting, routing, and firewalls.",
+   "headings": [
+    "OSI & TCP/IP",
+    "IP Addressing & CIDR",
+    "DNS",
+    "Routing & NAT",
+    "Firewalls & Load Balancing",
+    "\ud83d\udccb Study Checklist"
+   ]
+  },
+  {
+   "url": "docs/quiz.html",
+   "title": "Practice Quiz",
+   "desc": "Free Google Cloud certification practice quiz with instant scoring, domain breakdowns, and explanations.",
+   "headings": []
+  },
+  {
+   "url": "docs/flashcards.html",
+   "title": "Flashcards",
+   "desc": "Spaced-repetition flashcards for Google Cloud certifications, powered by the SM-2 algorithm. Free and private.",
+   "headings": []
+  },
+  {
+   "url": "docs/dashboard.html",
+   "title": "My Progress",
+   "desc": "Track your Google Cloud certification study progress: quiz readiness and checklist completion, saved privately in your browser.",
+   "headings": []
+  },
+  {
+   "url": "docs/cheatsheets.html",
+   "title": "Confusing Pairs Cheat Sheet",
+   "desc": "Side-by-side comparisons of look-alike Google Cloud services that commonly appear on certification exams.",
+   "headings": []
+  },
+  {
+   "url": "docs/labs.html",
+   "title": "Labs & Practice",
+   "desc": "Free and low-cost hands-on labs and practice resources for Google Cloud certifications.",
+   "headings": [
+    "Suggested Practice Projects"
+   ]
+  },
+  {
+   "url": "docs/resources.html",
+   "title": "Resources",
+   "desc": "Curated free and paid study resources for Google Cloud certifications: official learning, courses, and practice.",
+   "headings": [
+    "Official",
+    "Courses & Practice",
+    "Recommended Path"
+   ]
+  },
+  {
+   "url": "docs/news.html",
+   "title": "Google Cloud News",
+   "desc": "The latest Google Cloud release notes and announcements, updated automatically every week.",
+   "headings": []
+  },
+  {
+   "url": "docs/affiliate-disclosure.html",
+   "title": "Affiliate Disclosure",
+   "desc": "Affiliate and transparency disclosure for GCP Study Hub.",
+   "headings": [
+    "Our commitment"
+   ]
+  }
+ ]
+}

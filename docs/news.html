@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Google Cloud News - GCP Study Hub</title>
+  <meta name="description" content="The latest Google Cloud release notes and announcements, updated automatically every week.">
+  <meta name="robots" content="index,follow">
+  <meta name="author" content="GCP Study Hub">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="GCP Study Hub">
+  <meta property="og:title" content="Google Cloud News - GCP Study Hub">
+  <meta property="og:description" content="The latest Google Cloud release notes and announcements, updated automatically every week.">
+  <meta property="og:image" content="https://toraif.com/gcp-study-hub/assets/og-image.svg">
+  <meta property="og:url" content="https://toraif.com/gcp-study-hub/docs/news.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Google Cloud News - GCP Study Hub">
+  <meta name="twitter:description" content="The latest Google Cloud release notes and announcements, updated automatically every week.">
+  <meta name="twitter:image" content="https://toraif.com/gcp-study-hub/assets/og-image.svg">
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://toraif.com/gcp-study-hub/#website","name":"GCP Study Hub","url":"https://toraif.com/gcp-study-hub/","description":"Free, open-source study platform for every Google Cloud certification.","inLanguage":"en","publisher":{"@id":"https://toraif.com/gcp-study-hub/#org"}},{"@type":"EducationalOrganization","@id":"https://toraif.com/gcp-study-hub/#org","name":"GCP Study Hub","url":"https://toraif.com/gcp-study-hub/","description":"Free, community-driven study resources for Google Cloud certifications."}]}</script>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#x2601;</text></svg>">
+  <link rel="canonical" href="https://toraif.com/gcp-study-hub/docs/news.html">
+  <link rel="manifest" href="../manifest.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <script src="../assets/js/components.js"></script>
+  <script src="../assets/js/search.js" defer></script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://toraif.com/gcp-study-hub/"}, {"@type": "ListItem", "position": 2, "name": "Google Cloud News", "item": "https://toraif.com/gcp-study-hub/docs/news.html"}]}</script>
+</head><body><div class="container" style="padding-top:2rem;"><div class="breadcrumb"><a href="../index.html">Home</a> / <span>Certifications</span> / <span>News</span></div></div><div class="page-header"><div class="container"><span class="badge badge-blue">Auto-Updated</span><h1 style="margin-top:0.75rem;">&#128240; Latest Google Cloud News</h1><p>Fresh from the official Google Cloud release notes feed. This page is refreshed automatically every week by GitHub Actions.</p><div class="flex-wrap mt-1"></div></div></div><div class="container section">
+    <div id="news-list" class="grid-2"><div class="card"><p style="color:var(--text-muted)">Loading Google Cloud news&hellip;</p></div></div>
+    <p id="news-updated" style="color:var(--text-muted);font-size:0.85rem;margin-top:1.5rem"></p>
+    </div>
+    <script>
+    (function(){
+      var el=document.getElementById("news-list"),up=document.getElementById("news-updated");
+      function esc(s){return String(s==null?"":s).replace(/[&<>\"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c];});}
+      fetch("../data/gcp-news.json",{cache:"no-cache"})
+        .then(function(r){if(!r.ok)throw 0;return r.json();})
+        .then(function(data){
+          var items=(data&&data.items)||[];
+          if(!items.length){el.innerHTML='<div class="card"><p style="color:var(--text-muted)">No news items yet.</p></div>';return;}
+          el.innerHTML=items.slice(0,60).map(function(it){
+            return '<a href="'+esc(it.link||"#")+'" target="_blank" rel="noopener" class="card" style="text-decoration:none;color:var(--text);display:block">'+
+              '<div class="flex-wrap" style="margin-bottom:0.5rem"><span class="badge badge-blue">'+esc(it.date||"")+'</span></div>'+
+              '<h3 style="font-size:1rem;margin:0 0 0.4rem">'+esc(it.title||"")+'</h3>'+
+              '<p style="color:var(--text-muted);font-size:0.85rem;margin:0">'+esc((it.summary||"").slice(0,180))+'</p></a>';
+          }).join("");
+          if(up&&data.updated)up.textContent="Last updated: "+data.updated;
+        })
+        .catch(function(){el.innerHTML='<div class="card"><p style="color:var(--text-muted)">Could not load news right now. Please try again later.</p></div>';});
+    })();
+    </script><script src="../assets/js/main.js"></script></body></html>

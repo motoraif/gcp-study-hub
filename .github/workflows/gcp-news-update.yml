@@ -1,0 +1,108 @@
+name: Weekly Google Cloud News Update
+
+on:
+  schedule:
+    - cron: '0 8 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fetch-gcp-news:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - run: pip install feedparser python-dateutil
+
+      - name: Fetch Google Cloud release notes
+        id: fetch
+        run: |
+          python3 << 'PYEOF'
+          import feedparser, json, os, re
+          from datetime import datetime, timezone
+          from dateutil import parser as dp
+
+          PATH = 'data/gcp-news.json'
+
+          # Google Cloud publishes a consolidated release-notes RSS feed.
+          FEEDS = [
+              "https://cloud.google.com/feeds/gcp-release-notes.xml",
+          ]
+
+          existing = {"items": []}
+          if os.path.exists(PATH):
+              try:
+                  with open(PATH) as f:
+                      existing = json.load(f)
+              except Exception:
+                  existing = {"items": []}
+
+          def key(it):
+              return (it.get('link') or '').strip() or (it.get('title', '') + it.get('date', ''))
+
+          # Drop the initial seed items (they link to generic release-notes pages)
+          # once real feed data starts flowing.
+          archive = {key(it): it for it in existing.get('items', [])
+                     if 'Seed item' not in it.get('summary', '')}
+
+          new_count = 0
+          for url in FEEDS:
+              feed = feedparser.parse(url)
+              for entry in feed.entries:
+                  try:
+                      date = dp.parse(entry.get('published', '') or entry.get('updated', '')).strftime('%Y-%m-%d')
+                  except Exception:
+                      date = 'Unknown'
+                  desc = re.sub(r'<[^>]+>', '', entry.get('summary', '')).strip()[:300]
+                  item = {
+                      "title": entry.get('title', ''),
+                      "link": entry.get('link', '#'),
+                      "date": date,
+                      "summary": desc,
+                  }
+                  k = key(item)
+                  if k not in archive:
+                      archive[k] = item
+                      new_count += 1
+
+          items = sorted(archive.values(), key=lambda x: x.get('date', '0000-00-00'), reverse=True)
+
+          os.makedirs('data', exist_ok=True)
+          out = {
+              "updated": datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC'),
+              "note": "Cumulative Google Cloud news archive. Auto-appended weekly by GitHub Actions. Do not edit manually.",
+              "count": len(items),
+              "items": items,
+          }
+          with open(PATH, 'w') as f:
+              json.dump(out, f, indent=2)
+          print(f"Added {new_count} new item(s); archive now has {len(items)} total")
+
+          gh_out = os.environ.get('GITHUB_OUTPUT')
+          if gh_out:
+              with open(gh_out, 'a') as f:
+                  f.write(f"new_count={new_count}\n")
+          PYEOF
+
+      - name: Commit directly to main if changed
+        if: steps.fetch.outputs.new_count != '0'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          if git diff --quiet data/gcp-news.json; then
+            echo "No changes to commit"
+          else
+            git add data/gcp-news.json
+            git commit -m "chore: update Google Cloud news feed $(date +%Y-%m-%d)"
+            git pull --rebase origin main
+            git push origin HEAD:main
+            echo "Pushed Google Cloud news update directly to main"
+          fi

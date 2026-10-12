@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Linux Fundamentals - GCP Study Hub</title>
+  <meta name="description" content="Linux fundamentals for cloud engineers: filesystem, permissions, processes, networking, and shell scripting.">
+  <meta name="robots" content="index,follow">
+  <meta name="author" content="GCP Study Hub">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="GCP Study Hub">
+  <meta property="og:title" content="Linux Fundamentals - GCP Study Hub">
+  <meta property="og:description" content="Linux fundamentals for cloud engineers: filesystem, permissions, processes, networking, and shell scripting.">
+  <meta property="og:image" content="https://toraif.com/gcp-study-hub/assets/og-image.svg">
+  <meta property="og:url" content="https://toraif.com/gcp-study-hub/docs/foundations-linux.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Linux Fundamentals - GCP Study Hub">
+  <meta name="twitter:description" content="Linux fundamentals for cloud engineers: filesystem, permissions, processes, networking, and shell scripting.">
+  <meta name="twitter:image" content="https://toraif.com/gcp-study-hub/assets/og-image.svg">
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://toraif.com/gcp-study-hub/#website","name":"GCP Study Hub","url":"https://toraif.com/gcp-study-hub/","description":"Free, open-source study platform for every Google Cloud certification.","inLanguage":"en","publisher":{"@id":"https://toraif.com/gcp-study-hub/#org"}},{"@type":"EducationalOrganization","@id":"https://toraif.com/gcp-study-hub/#org","name":"GCP Study Hub","url":"https://toraif.com/gcp-study-hub/","description":"Free, community-driven study resources for Google Cloud certifications."}]}</script>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#x2601;</text></svg>">
+  <link rel="canonical" href="https://toraif.com/gcp-study-hub/docs/foundations-linux.html">
+  <link rel="manifest" href="../manifest.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <script src="../assets/js/components.js"></script>
+  <script src="../assets/js/search.js" defer></script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://toraif.com/gcp-study-hub/"}, {"@type": "ListItem", "position": 2, "name": "Linux Fundamentals", "item": "https://toraif.com/gcp-study-hub/docs/foundations-linux.html"}]}</script>
+</head><body><div class="container" style="padding-top:2rem;"><div class="breadcrumb"><a href="../index.html">Home</a> / <span>Certifications</span> / <span>Linux Fundamentals</span></div></div><div class="page-header"><div class="container"><span class="badge badge-teal">Foundations</span><h1 style="margin-top:0.75rem;">&#128039; Linux Fundamentals</h1><p>Most Google Cloud VMs and containers run Linux. These fundamentals make every certification and hands-on task easier.</p><div class="flex-wrap mt-1"><span class="badge badge-green">Beginner friendly</span></div></div></div><div class="container" style="padding-bottom:4rem;"><div class="doc-layout"><aside class="sidebar"><h4>Contents</h4><a href="#filesystem">Filesystem</a>
+<a href="#permissions">Permissions</a>
+<a href="#processes">Processes</a>
+<a href="#networking">Networking</a>
+<a href="#scripting">Shell Scripting</a>
+<a href="#checklist">Checklist</a>
+</aside><main>
+<section id="filesystem"><h2>Filesystem &amp; Navigation</h2>
+<div class="table-wrap"><table><thead><tr><th>Command</th><th>Does</th></tr></thead><tbody>
+<tr><td><code>pwd</code></td><td>Print working directory</td></tr>
+<tr><td><code>ls -la</code></td><td>List all files with details</td></tr>
+<tr><td><code>cd /path</code></td><td>Change directory</td></tr>
+<tr><td><code>cp / mv / rm</code></td><td>Copy / move / remove</td></tr>
+<tr><td><code>find / grep</code></td><td>Search files / text</td></tr>
+<tr><td><code>cat / less / tail -f</code></td><td>View / page / follow a file</td></tr>
+</tbody></table></div>
+<p>Key directories: <code>/etc</code> (config), <code>/var/log</code> (logs), <code>/home</code> (users), <code>/tmp</code> (temp), <code>/usr/bin</code> (programs).</p>
+</section>
+<section id="permissions"><h2>Permissions</h2>
+<p>Files have owner/group/other permissions: read (4), write (2), execute (1).</p>
+<pre><code>chmod 644 file.txt   # rw-r--r--
+chmod 755 script.sh  # rwxr-xr-x
+chown user:group f   # change ownership
+sudo command         # run as root</code></pre>
+</section>
+<section id="processes"><h2>Processes &amp; Services</h2>
+<pre><code>ps aux | grep nginx    # find a process
+top / htop             # live resource usage
+kill -9 PID            # force-kill
+systemctl status sshd  # service status
+journalctl -u sshd     # service logs</code></pre>
+</section>
+<section id="networking"><h2>Networking</h2>
+<pre><code>ip a                 # interfaces/addresses
+ss -tulpn            # listening ports
+curl -I https://x    # HTTP headers
+ping / traceroute    # connectivity
+ssh user@host        # remote shell</code></pre>
+<div class="callout tip"><div class="callout-title">&#128161; On GCP</div><p>Connect to Compute Engine VMs with <code>gcloud compute ssh VM_NAME</code>, which handles keys for you.</p></div>
+</section>
+<section id="scripting"><h2>Shell Scripting</h2>
+<pre><code>#!/bin/bash
+set -euo pipefail
+for f in *.log; do
+  echo "Processing $f"
+  gzip "$f"
+done</code></pre>
+</section>
+<section id="checklist" class="progress-section"><h2>&#128203; Study Checklist</h2><div class="progress-wrap"><div class="progress-label"><span>Progress</span><span class="progress-pct">0%</span></div><div class="progress-bar"><div class="progress-fill" style="width:0%"></div></div></div><ul class="checklist"><li><input type="checkbox"><span>Navigate the filesystem and use ls, cd, cp, mv, rm</span></li><li><input type="checkbox"><span>Search with find and grep</span></li><li><input type="checkbox"><span>Read logs with cat, less, and tail -f</span></li><li><input type="checkbox"><span>Understand chmod numeric permissions (644, 755)</span></li><li><input type="checkbox"><span>Change ownership with chown and use sudo</span></li><li><input type="checkbox"><span>Inspect processes with ps, top, and kill</span></li><li><input type="checkbox"><span>Manage services with systemctl and journalctl</span></li><li><input type="checkbox"><span>Check networking with ip, ss, curl, and ping</span></li><li><input type="checkbox"><span>SSH to a host and to a GCE VM with gcloud</span></li><li><input type="checkbox"><span>Write a basic bash script with a loop</span></li></ul><div class="mt-2"><a href="foundations-networking.html" class="btn btn-primary">Next: Networking Fundamentals &rarr;</a></div></section></main></div></div><script src="../assets/js/main.js"></script></body></html>

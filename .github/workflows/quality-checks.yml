@@ -1,0 +1,44 @@
+name: Quality Checks
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build-and-validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Build site
+        run: python3 build.py
+
+      - name: Verify generated pages are committed
+        run: |
+          if ! git diff --quiet; then
+            echo "::error::Generated files are out of date. Run 'python3 build.py' and commit the result."
+            git --no-pager diff --stat
+            exit 1
+          fi
+
+      - name: Validate HTML
+        run: |
+          npm install -g html-validate
+          html-validate "index.html" "docs/*.html" "404.html" || true
+
+  link-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check links
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: --no-progress --exclude-mail './**/*.html'
+          fail: false

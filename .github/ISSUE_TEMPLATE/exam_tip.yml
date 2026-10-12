@@ -1,0 +1,31 @@
+name: 💡 Exam Tip
+description: Share a tip that helped you pass a Google Cloud exam
+title: "[Tip]: "
+labels: ["exam-tip"]
+body:
+  - type: dropdown
+    id: cert
+    attributes:
+      label: Which exam?
+      options:
+        - Cloud Digital Leader (CDL)
+        - Associate Cloud Engineer (ACE)
+        - Associate Data Practitioner (ADP)
+        - Workspace Administrator (GWA)
+        - Professional Cloud Architect (PCA)
+        - Professional Cloud Developer (PCD)
+        - Professional Cloud DevOps Engineer (PCDOE)
+        - Professional Cloud Security Engineer (PCSE)
+        - Professional Cloud Network Engineer (PCNE)
+        - Professional Cloud Database Engineer (PCDE)
+        - Professional Data Engineer (PDE)
+        - Professional Machine Learning Engineer (PMLE)
+    validations:
+      required: true
+  - type: textarea
+    id: tip
+    attributes:
+      label: Your tip
+      description: What topics were heavily tested? What would you tell your past self? (Do not post real exam questions.)
+    validations:
+      required: true

@@ -1,0 +1,32 @@
+name: 📚 Content Request
+description: Suggest new content, a topic, or a resource to add
+title: "[Content]: "
+labels: ["content"]
+body:
+  - type: dropdown
+    id: cert
+    attributes:
+      label: Related certification
+      options:
+        - Cloud Digital Leader (CDL)
+        - Associate Cloud Engineer (ACE)
+        - Associate Data Practitioner (ADP)
+        - Workspace Administrator (GWA)
+        - Professional Cloud Architect (PCA)
+        - Professional Cloud Developer (PCD)
+        - Professional Cloud DevOps Engineer (PCDOE)
+        - Professional Cloud Security Engineer (PCSE)
+        - Professional Cloud Network Engineer (PCNE)
+        - Professional Cloud Database Engineer (PCDE)
+        - Professional Data Engineer (PDE)
+        - Professional Machine Learning Engineer (PMLE)
+        - Foundations / General
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: What should we add?
+      description: Describe the topic, resource, or improvement.
+    validations:
+      required: true

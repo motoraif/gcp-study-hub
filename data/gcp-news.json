@@ -1,0 +1,43 @@
+{
+  "updated": "2026-10-12 00:00 UTC",
+  "note": "Cumulative Google Cloud news archive. Auto-appended weekly by GitHub Actions from the Google Cloud release notes feed. Do not edit manually.",
+  "count": 6,
+  "items": [
+    {
+      "title": "Vertex AI adds new Gemini model tuning options",
+      "link": "https://cloud.google.com/vertex-ai/docs/release-notes",
+      "date": "2026-10-10",
+      "summary": "Vertex AI now offers additional supervised fine-tuning options for Gemini models, giving ML engineers more control over adapting foundation models to domain-specific tasks. Seed item - will be replaced by live release-notes data on the first scheduled run."
+    },
+    {
+      "title": "BigQuery introduces new storage pricing editions",
+      "link": "https://cloud.google.com/bigquery/docs/release-notes",
+      "date": "2026-10-09",
+      "summary": "BigQuery editions provide more flexible capacity-based compute pricing with autoscaling slot reservations. Seed item - will be replaced by live release-notes data on the first scheduled run."
+    },
+    {
+      "title": "GKE Autopilot adds support for additional accelerator types",
+      "link": "https://cloud.google.com/kubernetes-engine/docs/release-notes",
+      "date": "2026-10-08",
+      "summary": "Google Kubernetes Engine Autopilot now supports more GPU accelerator configurations for ML inference workloads. Seed item - will be replaced by live release-notes data on the first scheduled run."
+    },
+    {
+      "title": "Cloud Run now supports larger instance memory limits",
+      "link": "https://cloud.google.com/run/docs/release-notes",
+      "date": "2026-10-07",
+      "summary": "Cloud Run services can now be configured with higher memory limits, supporting more demanding stateless container workloads. Seed item - will be replaced by live release-notes data on the first scheduled run."
+    },
+    {
+      "title": "Spanner adds improved multi-region configurations",
+      "link": "https://cloud.google.com/spanner/docs/release-notes",
+      "date": "2026-10-06",
+      "summary": "Cloud Spanner expands multi-region configuration options for globally distributed, strongly consistent databases. Seed item - will be replaced by live release-notes data on the first scheduled run."
+    },
+    {
+      "title": "Security Command Center enhances posture management",
+      "link": "https://cloud.google.com/security-command-center/docs/release-notes",
+      "date": "2026-10-05",
+      "summary": "Security Command Center adds new posture management and threat detection capabilities for enterprise security teams. Seed item - will be replaced by live release-notes data on the first scheduled run."
+    }
+  ]
+}
