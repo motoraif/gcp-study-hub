@@ -68,6 +68,15 @@
   <li><strong>Dataproc</strong> - managed Spark/Hadoop; ephemeral clusters, autoscaling.</li>
   <li><strong>Data Fusion</strong> - visual ETL; <strong>Datastream</strong> - CDC.</li>
 </ul>
+<figure class="diagram"><pre class="mermaid">flowchart LR
+  SRC[Sources: apps, IoT, logs] --> PS[Pub/Sub]
+  PS --> DF[Dataflow streaming]
+  SRC --> GCS[(Cloud Storage data lake)]
+  GCS --> DFB[Dataflow batch]
+  DF --> BQ[(BigQuery)]
+  DFB --> BQ
+  BQ --> LK[Looker / Looker Studio]
+  BQ --> ML[BigQuery ML / Vertex AI]</pre><figcaption class="diagram-caption">A typical streaming + batch data pipeline landing in BigQuery for analytics and ML.</figcaption></figure>
 </section>
 <section id="bigquery"><h2>BigQuery</h2>
 <ul>
@@ -83,4 +92,9 @@
 <section id="ops"><h2>Orchestration &amp; Governance</h2>
 <p><strong>Cloud Composer</strong> (managed Airflow) and Dataflow templates for automation. <strong>Dataplex</strong> for governance, <strong>Data Catalog</strong> for metadata, and DLP for sensitive data.</p>
 </section>
-<section id="checklist" class="progress-section"><h2>&#128203; Study Checklist</h2><div class="progress-wrap"><div class="progress-label"><span>Progress</span><span class="progress-pct">0%</span></div><div class="progress-bar"><div class="progress-fill" style="width:0%"></div></div></div><ul class="checklist"><li><input type="checkbox"><span>Choose storage for warehouse, NoSQL, OLTP, and lake needs</span></li><li><input type="checkbox"><span>Design streaming pipelines with Pub/Sub and Dataflow</span></li><li><input type="checkbox"><span>Apply windowing, watermarks, and handle late data</span></li><li><input type="checkbox"><span>Run Dataproc with ephemeral, autoscaling clusters</span></li><li><input type="checkbox"><span>Optimize BigQuery with partitioning and clustering</span></li><li><input type="checkbox"><span>Choose BigQuery pricing models and reservations</span></li><li><input type="checkbox"><span>Secure BigQuery with authorized views and row/column security</span></li><li><input type="checkbox"><span>Use BigQuery ML and Vertex AI appropriately</span></li><li><input type="checkbox"><span>Orchestrate with Cloud Composer (Airflow)</span></li><li><input type="checkbox"><span>Govern data with Dataplex, Data Catalog, and DLP</span></li></ul><div class="mt-2"><a href="professional-machine-learning-engineer.html" class="btn btn-primary">Next: Professional Machine Learning Engineer &rarr;</a></div></section></main></div></div><script src="../assets/js/main.js"></script></body></html>
+<section id="checklist" class="progress-section"><h2>&#128203; Study Checklist</h2><div class="progress-wrap"><div class="progress-label"><span>Progress</span><span class="progress-pct">0%</span></div><div class="progress-bar"><div class="progress-fill" style="width:0%"></div></div></div><ul class="checklist"><li><input type="checkbox"><span>Choose storage for warehouse, NoSQL, OLTP, and lake needs</span></li><li><input type="checkbox"><span>Design streaming pipelines with Pub/Sub and Dataflow</span></li><li><input type="checkbox"><span>Apply windowing, watermarks, and handle late data</span></li><li><input type="checkbox"><span>Run Dataproc with ephemeral, autoscaling clusters</span></li><li><input type="checkbox"><span>Optimize BigQuery with partitioning and clustering</span></li><li><input type="checkbox"><span>Choose BigQuery pricing models and reservations</span></li><li><input type="checkbox"><span>Secure BigQuery with authorized views and row/column security</span></li><li><input type="checkbox"><span>Use BigQuery ML and Vertex AI appropriately</span></li><li><input type="checkbox"><span>Orchestrate with Cloud Composer (Airflow)</span></li><li><input type="checkbox"><span>Govern data with Dataplex, Data Catalog, and DLP</span></li></ul><div class="mt-2"><a href="professional-machine-learning-engineer.html" class="btn btn-primary">Next: Professional Machine Learning Engineer &rarr;</a></div></section></main></div></div>
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+  var light = document.documentElement.getAttribute('data-theme') === 'light';
+  mermaid.initialize({ startOnLoad: true, theme: light ? 'default' : 'dark', securityLevel: 'strict' });
+</script><script src="../assets/js/main.js"></script></body></html>

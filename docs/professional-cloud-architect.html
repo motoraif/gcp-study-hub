@@ -73,6 +73,16 @@
   <tr><td>Global web app with low latency</td><td>Global external HTTP(S) LB + Cloud CDN</td></tr>
   <tr><td>Decoupling / async</td><td>Pub/Sub, Cloud Tasks</td></tr>
 </tbody></table></div>
+<figure class="diagram"><pre class="mermaid">flowchart LR
+  U[Users] --> CDN[Cloud CDN]
+  CDN --> LB[Global External Application LB]
+  LB --> AR[Cloud Armor WAF and DDoS]
+  AR --> GKE[GKE Regional Cluster]
+  GKE --> SP[(Spanner multi-region)]
+  GKE --> PS[Pub/Sub]
+  PS --> DF[Dataflow]
+  DF --> BQ[(BigQuery)]
+  GKE --> MS[(Memorystore cache)]</pre><figcaption class="diagram-caption">Reference architecture: a globally available, low-latency web application on Google Cloud.</figcaption></figure>
 </section>
 
 <section id="security"><h2>Security &amp; Compliance</h2>
@@ -117,4 +127,9 @@
   <li>BigQuery: partitioning, clustering, and slot reservations.</li>
 </ul>
 </section>
-<section id="checklist" class="progress-section"><h2>&#128203; Study Checklist</h2><div class="progress-wrap"><div class="progress-label"><span>Progress</span><span class="progress-pct">0%</span></div><div class="progress-bar"><div class="progress-fill" style="width:0%"></div></div></div><ul class="checklist"><li><input type="checkbox"><span>Read and map all four official case studies to GCP services</span></li><li><input type="checkbox"><span>Translate business/technical requirements into architecture</span></li><li><input type="checkbox"><span>Choose compute (GKE, Cloud Run, GCE, App Engine) per scenario</span></li><li><input type="checkbox"><span>Design global data layers (Spanner, BigQuery, Bigtable, Firestore)</span></li><li><input type="checkbox"><span>Apply least-privilege IAM, org policies, and VPC Service Controls</span></li><li><input type="checkbox"><span>Use Cloud KMS with CMEK/CSEK and Secret Manager</span></li><li><input type="checkbox"><span>Define SLIs, SLOs, SLAs, and error budgets</span></li><li><input type="checkbox"><span>Design multi-zone/multi-region HA and DR (RPO/RTO)</span></li><li><input type="checkbox"><span>Plan migrations using the 5 Rs and the right transfer tools</span></li><li><input type="checkbox"><span>Optimize cost (CUDs, Spot, sustained use, right-sizing)</span></li><li><input type="checkbox"><span>Design hybrid/multicloud connectivity (Interconnect, VPN, GKE Enterprise)</span></li><li><input type="checkbox"><span>Apply the Google Cloud Architecture Framework pillars</span></li></ul><div class="mt-2"><a href="professional-cloud-developer.html" class="btn btn-primary">Next: Professional Cloud Developer &rarr;</a></div></section></main></div></div><script src="../assets/js/main.js"></script></body></html>
+<section id="checklist" class="progress-section"><h2>&#128203; Study Checklist</h2><div class="progress-wrap"><div class="progress-label"><span>Progress</span><span class="progress-pct">0%</span></div><div class="progress-bar"><div class="progress-fill" style="width:0%"></div></div></div><ul class="checklist"><li><input type="checkbox"><span>Read and map all four official case studies to GCP services</span></li><li><input type="checkbox"><span>Translate business/technical requirements into architecture</span></li><li><input type="checkbox"><span>Choose compute (GKE, Cloud Run, GCE, App Engine) per scenario</span></li><li><input type="checkbox"><span>Design global data layers (Spanner, BigQuery, Bigtable, Firestore)</span></li><li><input type="checkbox"><span>Apply least-privilege IAM, org policies, and VPC Service Controls</span></li><li><input type="checkbox"><span>Use Cloud KMS with CMEK/CSEK and Secret Manager</span></li><li><input type="checkbox"><span>Define SLIs, SLOs, SLAs, and error budgets</span></li><li><input type="checkbox"><span>Design multi-zone/multi-region HA and DR (RPO/RTO)</span></li><li><input type="checkbox"><span>Plan migrations using the 5 Rs and the right transfer tools</span></li><li><input type="checkbox"><span>Optimize cost (CUDs, Spot, sustained use, right-sizing)</span></li><li><input type="checkbox"><span>Design hybrid/multicloud connectivity (Interconnect, VPN, GKE Enterprise)</span></li><li><input type="checkbox"><span>Apply the Google Cloud Architecture Framework pillars</span></li></ul><div class="mt-2"><a href="professional-cloud-developer.html" class="btn btn-primary">Next: Professional Cloud Developer &rarr;</a></div></section></main></div></div>
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+  var light = document.documentElement.getAttribute('data-theme') === 'light';
+  mermaid.initialize({ startOnLoad: true, theme: light ? 'default' : 'dark', securityLevel: 'strict' });
+</script><script src="../assets/js/main.js"></script></body></html>

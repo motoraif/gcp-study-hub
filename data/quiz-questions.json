@@ -4,6 +4,285 @@
   "note": "Community question bank for GCP Study Hub. Each question: id, cert, domain, question, options[], answer (index into options), explanation. Contributions welcome via PR.",
   "questions": [
     {
+      "id": "cdl-006",
+      "cert": "CDL",
+      "domain": "Infrastructure and application modernization",
+      "question": "A company wants to migrate VMs to Google Cloud with minimal changes to the application. Which approach is this?",
+      "options": ["Refactor", "Rehost (lift and shift)", "Rebuild", "Retire"],
+      "answer": 1,
+      "explanation": "Rehosting (lift and shift) moves workloads to the cloud with minimal changes, typically onto Compute Engine VMs."
+    },
+    {
+      "id": "cdl-007",
+      "cert": "CDL",
+      "domain": "Google Cloud security and operations",
+      "question": "Which Google Cloud concept describes Google actively partnering with customers to improve their security posture, going beyond shared responsibility?",
+      "options": ["Zero trust", "Shared fate", "Defense in depth", "Least privilege"],
+      "answer": 1,
+      "explanation": "Shared fate means Google takes an active role in helping customers be secure, offering secure defaults, blueprints, and guidance, rather than just drawing a responsibility line."
+    },
+    {
+      "id": "cdl-008",
+      "cert": "CDL",
+      "domain": "Innovating with data and Google Cloud",
+      "question": "A retailer wants to add image-based product search without training a model. Which option is fastest?",
+      "options": ["Train a custom model in Vertex AI", "Use the pre-trained Cloud Vision API", "Build a model in BigQuery ML", "Deploy TensorFlow on GKE"],
+      "answer": 1,
+      "explanation": "Pre-trained AI APIs like Cloud Vision provide ready-made capabilities (label/object detection) with no model training required."
+    },
+    {
+      "id": "cdl-009",
+      "cert": "CDL",
+      "domain": "Introduction to digital transformation with Google Cloud",
+      "question": "Which fully managed productivity suite is an example of SaaS from Google?",
+      "options": ["Compute Engine", "Google Workspace", "GKE", "Cloud Run"],
+      "answer": 1,
+      "explanation": "Google Workspace is Software as a Service - a fully managed application that users simply consume."
+    },
+    {
+      "id": "ace-007",
+      "cert": "ACE",
+      "domain": "Deploying and implementing a cloud solution",
+      "question": "Which command deploys a container image to Cloud Run?",
+      "options": ["gcloud run deploy", "gcloud compute run", "kubectl apply", "gcloud functions deploy"],
+      "answer": 0,
+      "explanation": "gcloud run deploy deploys a container image as a Cloud Run service. kubectl is for Kubernetes; gcloud functions deploy is for Cloud Functions."
+    },
+    {
+      "id": "ace-008",
+      "cert": "ACE",
+      "domain": "Configuring access and security",
+      "question": "You need to grant a group read-only access to all Cloud Storage buckets in a project. What is the best practice?",
+      "options": ["Grant each user the Owner basic role", "Grant the group the predefined roles/storage.objectViewer at the project level", "Share bucket ACLs with allUsers", "Download service account keys for each user"],
+      "answer": 1,
+      "explanation": "Granting a predefined, least-privilege role (storage.objectViewer) to a Google group at the project level is the recommended approach."
+    },
+    {
+      "id": "ace-009",
+      "cert": "ACE",
+      "domain": "Ensuring successful operation of a cloud solution",
+      "question": "Which tool lets you view, filter, and export logs from Google Cloud resources?",
+      "options": ["Cloud Monitoring", "Cloud Logging", "Cloud Trace", "Cloud Profiler"],
+      "answer": 1,
+      "explanation": "Cloud Logging stores, searches, and exports logs. Cloud Monitoring handles metrics and alerting; Trace and Profiler handle latency and performance."
+    },
+    {
+      "id": "ace-010",
+      "cert": "ACE",
+      "domain": "Planning and configuring a cloud solution",
+      "question": "You want to connect two VPC networks privately so resources can communicate using internal IPs. Routing does NOT need to be transitive. What should you use?",
+      "options": ["Cloud VPN", "VPC Network Peering", "Shared VPC", "Cloud Interconnect"],
+      "answer": 1,
+      "explanation": "VPC Network Peering connects two VPCs for private internal-IP communication. It is non-transitive, which matches the requirement."
+    },
+    {
+      "id": "ace-011",
+      "cert": "ACE",
+      "domain": "Setting up a cloud solution environment",
+      "question": "Where is billing linked in the Google Cloud resource hierarchy?",
+      "options": ["At the organization only", "At the project level", "At the folder level only", "At the individual resource level"],
+      "answer": 1,
+      "explanation": "A billing account is linked to projects. Each project is associated with exactly one billing account to pay for its resources."
+    },
+    {
+      "id": "pca-005",
+      "cert": "PCA",
+      "domain": "Managing and provisioning a solution infrastructure",
+      "question": "A workload needs a highly available control plane for Kubernetes across multiple zones. What should you provision?",
+      "options": ["A zonal GKE cluster", "A regional GKE cluster", "A single Compute Engine VM", "Cloud Run only"],
+      "answer": 1,
+      "explanation": "A regional GKE cluster replicates the control plane across multiple zones in a region, providing high availability."
+    },
+    {
+      "id": "pca-006",
+      "cert": "PCA",
+      "domain": "Analyzing and optimizing technical and business processes",
+      "question": "A business requires an RPO of near zero and an RTO of a few minutes for a critical database. Which strategy fits best?",
+      "options": ["Daily backups to Cloud Storage", "Backup and restore only", "A hot (active-active) multi-region deployment with synchronous replication", "Cold standby in a single zone"],
+      "answer": 2,
+      "explanation": "Near-zero RPO and minutes RTO require continuous replication and rapid failover - a hot/active or synchronously replicated multi-region setup (e.g., Spanner)."
+    },
+    {
+      "id": "pca-007",
+      "cert": "PCA",
+      "domain": "Designing and planning a cloud solution architecture",
+      "question": "TerramEarth ingests huge volumes of telemetry from connected vehicles for later analytics. Which ingestion-to-analytics pipeline is most appropriate?",
+      "options": ["Cloud SQL → App Engine", "Pub/Sub → Dataflow → BigQuery", "Firestore → Cloud Functions", "Bigtable → Cloud Run"],
+      "answer": 1,
+      "explanation": "High-volume streaming telemetry is ingested by Pub/Sub, processed by Dataflow, and landed in BigQuery for analytics - a canonical GCP pattern."
+    },
+    {
+      "id": "pcd-004",
+      "cert": "PCD",
+      "domain": "Building and testing applications",
+      "question": "Which service builds container images in a managed CI environment and stores them for deployment?",
+      "options": ["Cloud Build + Artifact Registry", "Cloud Scheduler + Firestore", "Cloud CDN + Cloud Storage", "Cloud DNS + Cloud NAT"],
+      "answer": 0,
+      "explanation": "Cloud Build runs the CI/build steps and Artifact Registry stores the resulting container images (and other artifacts)."
+    },
+    {
+      "id": "pcd-005",
+      "cert": "PCD",
+      "domain": "Designing highly scalable, available, reliable apps",
+      "question": "An app needs an in-memory cache to reduce database load for frequently read data. Which service fits?",
+      "options": ["Cloud SQL", "Memorystore", "BigQuery", "Cloud Storage"],
+      "answer": 1,
+      "explanation": "Memorystore provides managed Redis/Memcached for low-latency in-memory caching."
+    },
+    {
+      "id": "pcdoe-003",
+      "cert": "PCDOE",
+      "domain": "Optimizing service performance",
+      "question": "Which Google Cloud Observability tool continuously analyzes CPU and memory consumption of production code with minimal overhead?",
+      "options": ["Cloud Trace", "Cloud Profiler", "Cloud Logging", "Error Reporting"],
+      "answer": 1,
+      "explanation": "Cloud Profiler continuously profiles CPU and memory usage of production applications with low overhead. Cloud Trace handles latency/distributed tracing."
+    },
+    {
+      "id": "pcdoe-004",
+      "cert": "PCDOE",
+      "domain": "Managing service incidents",
+      "question": "After an outage, your team writes a document focused on causes and improvements without assigning individual blame. What is this called?",
+      "options": ["A root-cause denial", "A blameless postmortem", "An SLA report", "A change advisory board"],
+      "answer": 1,
+      "explanation": "A blameless postmortem analyzes what happened and how to improve systems and processes, without blaming individuals - a core SRE practice."
+    },
+    {
+      "id": "pcse-003",
+      "cert": "PCSE",
+      "domain": "Securing communications and boundary protection",
+      "question": "Which service protects web applications from DDoS attacks and common exploits at the edge, integrated with the global load balancer?",
+      "options": ["Cloud NAT", "Cloud Armor", "Cloud VPN", "Cloud Router"],
+      "answer": 1,
+      "explanation": "Cloud Armor provides WAF rules and DDoS protection at the edge, integrated with the global external Application Load Balancer."
+    },
+    {
+      "id": "pcse-004",
+      "cert": "PCSE",
+      "domain": "Managing operations",
+      "question": "You must centralize vulnerability findings, misconfigurations, and threat detections across your organization. Which service do you use?",
+      "options": ["Security Command Center", "Cloud DNS", "Artifact Registry", "Cloud Build"],
+      "answer": 0,
+      "explanation": "Security Command Center is the central security and risk management platform for posture, vulnerabilities, and threat findings across the organization."
+    },
+    {
+      "id": "pcne-003",
+      "cert": "PCNE",
+      "domain": "Configuring network services",
+      "question": "Which service provides managed DNS with public and private zones on Google Cloud?",
+      "options": ["Cloud CDN", "Cloud DNS", "Cloud NAT", "Cloud Armor"],
+      "answer": 1,
+      "explanation": "Cloud DNS is Google Cloud's scalable, managed authoritative DNS service, supporting both public and private zones."
+    },
+    {
+      "id": "pcne-004",
+      "cert": "PCNE",
+      "domain": "Implementing hybrid interconnectivity",
+      "question": "A company needs a dedicated 10 Gbps private physical connection to Google Cloud. Which product provides this?",
+      "options": ["HA VPN", "Dedicated Interconnect", "Cloud NAT", "VPC Peering"],
+      "answer": 1,
+      "explanation": "Dedicated Interconnect provides a direct physical connection (10 or 100 Gbps) between on-premises and Google's network. Partner Interconnect is used when a direct connection is not feasible."
+    },
+    {
+      "id": "pcde-003",
+      "cert": "PCDE",
+      "domain": "Deploying scalable and secure databases",
+      "question": "To connect securely to a Cloud SQL instance over a private, encrypted channel without managing SSL certs manually, you should use:",
+      "options": ["A public IP with no restrictions", "The Cloud SQL Auth Proxy", "A VPN gateway per client", "Direct root login over the internet"],
+      "answer": 1,
+      "explanation": "The Cloud SQL Auth Proxy provides secure, IAM-based connections to Cloud SQL without managing SSL certificates or allowlisting IPs."
+    },
+    {
+      "id": "pcde-004",
+      "cert": "PCDE",
+      "domain": "Designing scalable and highly available databases",
+      "question": "Which database offers horizontal scalability with strong consistency and a 99.999% availability SLA for global relational workloads?",
+      "options": ["Cloud SQL", "Spanner", "Firestore", "Memorystore"],
+      "answer": 1,
+      "explanation": "Spanner uniquely combines horizontal scalability, strong consistency, and up to 99.999% availability for global relational workloads."
+    },
+    {
+      "id": "pde-004",
+      "cert": "PDE",
+      "domain": "Storing the data",
+      "question": "You need sub-10ms lookups for a very large key-value/time-series dataset with high write throughput. Which service fits best?",
+      "options": ["BigQuery", "Bigtable", "Cloud SQL", "Cloud Storage"],
+      "answer": 1,
+      "explanation": "Bigtable delivers low-latency, high-throughput reads/writes for wide-column key/value and time-series data. BigQuery is for analytics, not low-latency lookups."
+    },
+    {
+      "id": "pde-005",
+      "cert": "PDE",
+      "domain": "Designing data processing systems",
+      "question": "A team wants to migrate existing on-prem Apache Spark jobs to Google Cloud with minimal changes. Which service is the best fit?",
+      "options": ["Dataflow", "Dataproc", "Cloud Functions", "App Engine"],
+      "answer": 1,
+      "explanation": "Dataproc runs managed Spark/Hadoop clusters, making it ideal for lifting-and-shifting existing Spark jobs. Dataflow would require rewriting to Apache Beam."
+    },
+    {
+      "id": "pde-006",
+      "cert": "PDE",
+      "domain": "Preparing and using data for analysis",
+      "question": "Which BigQuery techniques most directly reduce the amount of data scanned by date-filtered queries?",
+      "options": ["Views and UDFs", "Partitioning and clustering", "Streaming inserts", "Authorized views"],
+      "answer": 1,
+      "explanation": "Partitioning (e.g., by date) and clustering prune and co-locate data so queries scan less, reducing cost and improving performance."
+    },
+    {
+      "id": "pmle-004",
+      "cert": "PMLE",
+      "domain": "Scaling prototypes into ML models",
+      "question": "Which Vertex AI capability finds optimal hyperparameters automatically during training?",
+      "options": ["Vertex AI Vizier", "Vertex AI Feature Store", "Model Registry", "Model Monitoring"],
+      "answer": 0,
+      "explanation": "Vertex AI Vizier performs black-box optimization, including hyperparameter tuning, to improve model performance."
+    },
+    {
+      "id": "pmle-005",
+      "cert": "PMLE",
+      "domain": "Architecting low-code AI solutions",
+      "question": "A team with limited ML expertise wants to build a classification model from tabular data without writing training code. What should they use?",
+      "options": ["Custom training with containers", "AutoML on Vertex AI", "Dataproc with Spark MLlib", "A hand-coded TensorFlow loop"],
+      "answer": 1,
+      "explanation": "AutoML on Vertex AI builds high-quality models from data with minimal code, ideal for teams with limited ML expertise."
+    },
+    {
+      "id": "adp-003",
+      "cert": "ADP",
+      "domain": "Data pipeline orchestration",
+      "question": "Which managed service orchestrates complex, scheduled data workflows using Apache Airflow?",
+      "options": ["Cloud Composer", "Cloud CDN", "Memorystore", "Cloud Armor"],
+      "answer": 0,
+      "explanation": "Cloud Composer is managed Apache Airflow for authoring, scheduling, and monitoring data pipeline workflows."
+    },
+    {
+      "id": "adp-004",
+      "cert": "ADP",
+      "domain": "Data management",
+      "question": "Which service provides centralized data governance and cataloging across a data lake and warehouse on Google Cloud?",
+      "options": ["Dataplex", "Cloud DNS", "Cloud Run", "Cloud NAT"],
+      "answer": 0,
+      "explanation": "Dataplex provides unified data governance, cataloging, and management across distributed data on Google Cloud."
+    },
+    {
+      "id": "gwa-003",
+      "cert": "GWA",
+      "domain": "Monitoring, reporting, and troubleshooting",
+      "question": "Which email authentication records help prevent spoofing and improve deliverability for a Workspace domain?",
+      "options": ["A and AAAA records", "SPF, DKIM, and DMARC", "CNAME and NS records", "MX and TXT only"],
+      "answer": 1,
+      "explanation": "SPF, DKIM, and DMARC are the email authentication standards that reduce spoofing and improve deliverability."
+    },
+    {
+      "id": "gwa-004",
+      "cert": "GWA",
+      "domain": "Securing Workspace",
+      "question": "Which Workspace tool is used for legal holds, retention, and eDiscovery of user data?",
+      "options": ["Google Vault", "Admin SDK", "Context-Aware Access", "Cloud Identity"],
+      "answer": 0,
+      "explanation": "Google Vault manages retention, legal holds, and eDiscovery for Workspace data such as Gmail and Drive."
+    },
+    {
       "id": "cdl-001",
       "cert": "CDL",
       "domain": "Infrastructure and application modernization",

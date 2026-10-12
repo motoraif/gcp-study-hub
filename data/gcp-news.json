@@ -1,43 +1,187 @@
 {
-  "updated": "2026-10-12 00:00 UTC",
-  "note": "Cumulative Google Cloud news archive. Auto-appended weekly by GitHub Actions from the Google Cloud release notes feed. Do not edit manually.",
-  "count": 6,
+  "updated": "2026-10-12 12:06 UTC",
+  "note": "Cumulative Google Cloud news archive. Auto-appended weekly by GitHub Actions. Do not edit manually.",
+  "count": 30,
   "items": [
     {
-      "title": "Vertex AI adds new Gemini model tuning options",
-      "link": "https://cloud.google.com/vertex-ai/docs/release-notes",
+      "title": "Cloud SQL for MySQL",
+      "link": "https://docs.cloud.google.com/release-notes#October_10_2026",
       "date": "2026-10-10",
-      "summary": "Vertex AI now offers additional supervised fine-tuning options for Gemini models, giving ML engineers more control over adapting foundation models to domain-specific tasks. Seed item - will be replaced by live release-notes data on the first scheduled run."
+      "summary": "Cloud SQL for MySQL\nChange\nMySQL 8.0.46 is now the\ndefault minor version\nfor Cloud SQL for MySQL 8.0.\nFor more information about minor version support in Cloud SQL for MySQL,\nsee MySQL 8.0."
     },
     {
-      "title": "BigQuery introduces new storage pricing editions",
-      "link": "https://cloud.google.com/bigquery/docs/release-notes",
+      "title": "BigQuery",
+      "link": "https://docs.cloud.google.com/release-notes#October_09_2026",
       "date": "2026-10-09",
-      "summary": "BigQuery editions provide more flexible capacity-based compute pricing with autoscaling slot reservations. Seed item - will be replaced by live release-notes data on the first scheduled run."
+      "summary": "BigQuery\nFeature\nThe BigQuery Data Engineering Agent\nis now available in the asia-northeast1 (Tokyo) regional endpoint and supports\nthe gemini-3.5-flash model. For more information, see\nWhere Gemini in BigQuery processes your data.\nThis feature is\nGenerally Available\n(GA).\nCloud SQL for MySQL\nFeatur"
     },
     {
-      "title": "GKE Autopilot adds support for additional accelerator types",
-      "link": "https://cloud.google.com/kubernetes-engine/docs/release-notes",
+      "title": "Cloud SQL for MySQL",
+      "link": "https://docs.cloud.google.com/release-notes#October_08_2026",
       "date": "2026-10-08",
-      "summary": "Google Kubernetes Engine Autopilot now supports more GPU accelerator configurations for ML inference workloads. Seed item - will be replaced by live release-notes data on the first scheduled run."
+      "summary": "Cloud SQL for MySQL\nFeature\nCloud SQL for MySQL now supports the\ninnodb_cloudsql_managed_buffer_pool_tuneup_pct database flag.\nManaged buffer pool automatically adjusts the InnoDB buffer pool size to reduce\nout-of-memory events. When instance memory usage remains at or below 70% for 10\nminutes or lo"
     },
     {
-      "title": "Cloud Run now supports larger instance memory limits",
-      "link": "https://cloud.google.com/run/docs/release-notes",
+      "title": "Anti Money Laundering AI",
+      "link": "https://docs.cloud.google.com/release-notes#October_07_2026",
       "date": "2026-10-07",
-      "summary": "Cloud Run services can now be configured with higher memory limits, supporting more demanding stateless container workloads. Seed item - will be replaced by live release-notes data on the first scheduled run."
+      "summary": "Anti Money Laundering AI\nAnnouncement\nNew minor engine version released for the commercial line of business within the v004.005 version line (aml-commercial.default.v004.005.202609-000). This version extends support for the major engine version and includes no significant changes compared to the pre"
     },
     {
-      "title": "Spanner adds improved multi-region configurations",
-      "link": "https://cloud.google.com/spanner/docs/release-notes",
+      "title": "AI Hypercomputer",
+      "link": "https://docs.cloud.google.com/release-notes#October_06_2026",
       "date": "2026-10-06",
-      "summary": "Cloud Spanner expands multi-region configuration options for globally distributed, strongly consistent databases. Seed item - will be replaced by live release-notes data on the first scheduled run."
+      "summary": "AI Hypercomputer\nFeature\nGenerally available: When you reserve compute resources for creating GPU\ninstances through your account team, you can include a Hyperdisk\npool in the same request or in a subsequent request. This option helps ensure\nthat your artificial intelligence (AI) and machine learning"
     },
     {
-      "title": "Security Command Center enhances posture management",
-      "link": "https://cloud.google.com/security-command-center/docs/release-notes",
+      "title": "Agent Platform Workbench",
+      "link": "https://docs.cloud.google.com/release-notes#October_05_2026",
       "date": "2026-10-05",
-      "summary": "Security Command Center adds new posture management and threat detection capabilities for enterprise security teams. Seed item - will be replaced by live release-notes data on the first scheduled run."
+      "summary": "Agent Platform Workbench\nChange\n20261004.00_p0 Release\nChange\nInstalled latest packages from upstream dependencies.\nChange\nThe BigQuery JupyterLab plugin is now enabled independently of the Dataproc plugin: it is enabled by default and can be turned off with the new disable-bigquery instance metadat"
+    },
+    {
+      "title": "Agent Platform Workbench",
+      "link": "https://docs.cloud.google.com/release-notes#October_04_2026",
+      "date": "2026-10-04",
+      "summary": "Agent Platform Workbench\nChange\n20261004-2230-rc0 Release\nChange\n20261004-2230-rc0 Release\nChange\nInstalled latest packages from upstream dependencies.\nChange\nInstalled latest packages from upstream dependencies.\nChange\nThe BigQuery JupyterLab plugin is now enabled independently of the Dataproc plug"
+    },
+    {
+      "title": "Google SecOps SOAR",
+      "link": "https://docs.cloud.google.com/release-notes#October_03_2026",
+      "date": "2026-10-03",
+      "summary": "Google SecOps SOAR\nAnnouncement\nRelease 6.3.101 is now\navailable for all regions.\nSensitive Data Protection\nChange\nA new version with an updated name dictionary is available for the PERSON_NAME infoType detector. You can try it out by setting InfoType.version to latest when including the PERSON_NAME"
+    },
+    {
+      "title": "Apigee X",
+      "link": "https://docs.cloud.google.com/release-notes#October_02_2026",
+      "date": "2026-10-02",
+      "summary": "Apigee X\nAnnouncement\nOn October 2, 2026, we released an updated version of Apigee (1-18-0-apigee-6).\nNote: Rollouts of this release began today and can take four or more business\ndays to complete across all Google Cloud zones. Your instances might not have\nthe features and fixes available until the"
+    },
+    {
+      "title": "BigQuery",
+      "link": "https://docs.cloud.google.com/release-notes#October_01_2026",
+      "date": "2026-10-01",
+      "summary": "BigQuery\nChange\nAn updated version of the\nSimba JDBC driver for BigQuery\nis now available.\nFeature\nChatting with graphs in\nconversational analytics\nis now\ngenerally available.\nYou can use a combination of multiple graphs, tables, views, and UDFs as data\nsources.\nFeature\nBigQuery pipelines provides s"
+    },
+    {
+      "title": "API Gateway",
+      "link": "https://docs.cloud.google.com/release-notes#September_30_2026",
+      "date": "2026-09-30",
+      "summary": "API Gateway\nFeature\nAuthenticate MCP tool discovery with an API key\nAPI key authentication is now supported for the Model Context Protocol (MCP) tools/list method. You can name an API key security scheme in tools-list.security, in addition to a JWT security scheme.\nFor more information, see Configur"
+    },
+    {
+      "title": "API Gateway",
+      "link": "https://docs.cloud.google.com/release-notes#September_29_2026",
+      "date": "2026-09-29",
+      "summary": "API Gateway\nFeature\nConfigure streaming for LLM responses and other traffic\nYou can now create API Gateway gateways that stream requests and responses instead of buffering them. This Public Preview feature supports incremental response delivery over HTTP/2 or HTTP/1.1 chunked transfer encoding, Serv"
+    },
+    {
+      "title": "Agent Platform Workbench",
+      "link": "https://docs.cloud.google.com/release-notes#September_28_2026",
+      "date": "2026-09-28",
+      "summary": "Agent Platform Workbench\nChange\n20260927.00_p0 Release\nChange\nInstalled latest packages from upstream dependencies.\nSecurity\nBulk security patch remediating Critical and High-severity CVEs in the Workbench custom container images.\nChange\n20260927.00_p0 Release\nChange\nInstalled latest packages from u"
+    },
+    {
+      "title": "Agent Platform Workbench",
+      "link": "https://docs.cloud.google.com/release-notes#September_27_2026",
+      "date": "2026-09-27",
+      "summary": "Agent Platform Workbench\nChange\n20260927-2130-rc0 Release\nChange\nInstalled latest packages from upstream dependencies.\nChange\nM151 Release\nChange\nInstalled latest packages from upstream dependencies.\nFeature\nJupyterLab now forwards client-side logs (console errors, uncaught exceptions, unhandled pro"
+    },
+    {
+      "title": "Backup and DR",
+      "link": "https://docs.cloud.google.com/release-notes#September_26_2026",
+      "date": "2026-09-26",
+      "summary": "Backup and DR\nSecurity\nNote: These fixes and updates are available starting with Backup and DR release 11.0.17.496. These fixes are not rolled out to the 11.0.16 release; we recommend upgrading the backup/recovery appliance to version 11.0.17 to receive these updates.\nSecurity Bulletin \u2013 Appliance:\n"
+    },
+    {
+      "title": "API Keys API",
+      "link": "https://docs.cloud.google.com/release-notes#September_25_2026",
+      "date": "2026-09-25",
+      "summary": "API Keys API\nFeature\nThe API Keys remote Model Context Protocol (MCP) server is available in\nPreview. You can\nconnect to the API Keys remote MCP server from AI applications to\ncreate, inspect, restrict, and manage the lifecycle of API keys in your\nGoogle Cloud projects.\nFor more information, see the"
+    },
+    {
+      "title": "Access Approval",
+      "link": "https://docs.cloud.google.com/release-notes#September_24_2026",
+      "date": "2026-09-24",
+      "summary": "Access Approval\nFeature\nFault Injection Testing is generally available\n(GA).\nAccess Transparency\nFeature\nFault Injection Testing is generally available\n(GA).\nApigee hybrid\nAnnouncement\nv1.15.8\nOn September 24, 2026 we released an updated version of the Apigee hybrid software, v1.15.8.\n\nFor informati"
+    },
+    {
+      "title": "Apigee API hub",
+      "link": "https://docs.cloud.google.com/release-notes#September_23_2026",
+      "date": "2026-09-23",
+      "summary": "Apigee API hub\nFeature\nPreview launch of AWS API Gateway and Azure API Management plugins\nAPI hub now includes two new built-in plugins for ingesting API metadata from third-party gateways: AWS API Gateway and Azure API Management. Both plugins are in Public Preview, extending API hub's multi-cloud "
+    },
+    {
+      "title": "Access Approval",
+      "link": "https://docs.cloud.google.com/release-notes#September_22_2026",
+      "date": "2026-09-22",
+      "summary": "Access Approval\nFeature\nDeveloper Connect is generally available\n(GA).\nAccess Transparency\nFeature\nDeveloper Connect is generally available\n(GA).\nBigQuery\nFeature\nYou can now publish a BigQuery data agent in\nGemini Enterprise\nby registering the agent with Agent Registry and importing it using\ndefaul"
+    },
+    {
+      "title": "Access Context Manager",
+      "link": "https://docs.cloud.google.com/release-notes#September_21_2026",
+      "date": "2026-09-21",
+      "summary": "Access Context Manager\nFeature\nAccess Context Manager supports extended session length for Workforce Identity\nFederation. This feature is in\nPreview for Looker\n(Google Cloud core) customers. For more information, see\nConfigure extended session length for Workforce Identity Federation.\nAgent Platform"
+    },
+    {
+      "title": "Agent Platform Workbench",
+      "link": "https://docs.cloud.google.com/release-notes#September_18_2026",
+      "date": "2026-09-18",
+      "summary": "Agent Platform Workbench\nChange\n20260918-2230-rc0 Release\nChange\n20260918-2230-rc0 Release\nChange\nInstalled latest packages from upstream dependencies.\nChange\nInstalled latest packages from upstream dependencies.\nFeature\nJupyterLab now forwards client-side logs (console errors, uncaught exceptions, "
+    },
+    {
+      "title": "Anti Money Laundering AI",
+      "link": "https://docs.cloud.google.com/release-notes#September_17_2026",
+      "date": "2026-09-17",
+      "summary": "Anti Money Laundering AI\nAnnouncement\nNew minor engine versions released for the retail line of business within the v004.005, v004.009, and v004.010 version lines (aml-retail.default.v004.005.202608-000, aml-retail.default.v004.009.202608-000, and aml-retail.default.v004.010.202608-000). These versi"
+    },
+    {
+      "title": "Backup and DR",
+      "link": "https://docs.cloud.google.com/release-notes#September_16_2026",
+      "date": "2026-09-16",
+      "summary": "Backup and DR\nFeature\nYou can now use auto-protection policies and resource labels to automatically protect Compute Engine instances and Persistent Disks at scale in Backup and DR. This feature allows you to automatically assign a backup plan to qualifying resources across projects based on user-def"
+    },
+    {
+      "title": "Artifact Registry",
+      "link": "https://docs.cloud.google.com/release-notes#September_15_2026",
+      "date": "2026-09-15",
+      "summary": "Artifact Registry\nFeature\nArtifact Registry support for managing Conda packages with Artifact Registry\nrepositories is in Preview.\nFor more information, see Get started with Conda packages.\nBatch\nIssue\nA workaround has been added for the known issue that\njobs might fail when specifying Compute Engin"
+    },
+    {
+      "title": "Agent Platform Workbench",
+      "link": "https://docs.cloud.google.com/release-notes#September_14_2026",
+      "date": "2026-09-14",
+      "summary": "Agent Platform Workbench\nChange\nM150 Release\nChange\nInstalled latest packages from upstream dependencies.\nApigee hybrid\nAnnouncement\nhybrid v1.17.0\nOn September 14, 2026 we released an updated version of the Apigee hybrid software, 1.17.0.\n\nFor information on upgrading, see Upgrading Apigee hybrid t"
+    },
+    {
+      "title": "Access Approval",
+      "link": "https://docs.cloud.google.com/release-notes#September_13_2026",
+      "date": "2026-09-13",
+      "summary": "Access Approval\nFeature\nApplication Design Center is generally available\n(GA).\nAccess Transparency\nFeature\nApplication Design Center is generally available\n(GA).\nAgent Platform Workbench\nChange\n20260911.00_p0 Release\nChange\n20260913.00_p0 Release\nChange\nInstalled latest packages from upstream depend"
+    },
+    {
+      "title": "API Gateway",
+      "link": "https://docs.cloud.google.com/release-notes#September_11_2026",
+      "date": "2026-09-11",
+      "summary": "API Gateway\nFeature\nEnable Model Context Protocol (MCP)\nYou can now configure API Gateway to act as a remote Model Context Protocol (MCP) server. This Public Preview feature allows you to expose your existing REST APIs to AI agents as tools, without requiring changes to your backend services. You ca"
+    },
+    {
+      "title": "Apigee X",
+      "link": "https://docs.cloud.google.com/release-notes#September_10_2026",
+      "date": "2026-09-10",
+      "summary": "Apigee X\nFixed\nAddendum to Apigee release notes dated August 27, 2026 (1-18-0-apigee-4).\n\n\n\nBug ID\nDescription\n\n\n\n\n502540992\nFixed an issue where the SemanticCacheLookup policy was incompatible with Vertex AI Vector Search Private Service Connect (PSC) endpoints.\n\n\n\nBigQuery\nFeature\nConversational a"
+    },
+    {
+      "title": "Agent Platform Workbench",
+      "link": "https://docs.cloud.google.com/release-notes#September_09_2026",
+      "date": "2026-09-09",
+      "summary": "Agent Platform Workbench\nFeature\nNew configuration options for scheduled notebook runs\nWhen you schedule a notebook run from an Agent Platform Workbench instance, you\ncan now configure the following:\n\nExecution identity. You can choose your own user account instead of a\nservice account. The notebook"
+    },
+    {
+      "title": "Agent Platform Workbench",
+      "link": "https://docs.cloud.google.com/release-notes#September_08_2026",
+      "date": "2026-09-08",
+      "summary": "Agent Platform Workbench\nFixed\nScheduled upgrade metadata is validated\nThe value of the notebook-upgrade-schedule metadata key is now validated when\nyou create or update an Agent Platform Workbench instance. The value must be a\nsingle-line unix-cron\nformat schedule. For more\ninformation, see Manage "
     }
   ]
 }
