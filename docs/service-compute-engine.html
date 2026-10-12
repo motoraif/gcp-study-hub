@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Compute Engine - Service Deep Dive - GCP Study Hub</title>
+  <meta name="description" content="Compute Engine deep dive: machine types, Spot VMs, MIGs, images, disks, and networking.">
+  <meta name="robots" content="index,follow">
+  <meta name="author" content="GCP Study Hub">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="GCP Study Hub">
+  <meta property="og:title" content="Compute Engine - Service Deep Dive - GCP Study Hub">
+  <meta property="og:description" content="Compute Engine deep dive: machine types, Spot VMs, MIGs, images, disks, and networking.">
+  <meta property="og:image" content="https://toraif.com/gcp-study-hub/assets/og-image.svg">
+  <meta property="og:url" content="https://toraif.com/gcp-study-hub/docs/service-compute-engine.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Compute Engine - Service Deep Dive - GCP Study Hub">
+  <meta name="twitter:description" content="Compute Engine deep dive: machine types, Spot VMs, MIGs, images, disks, and networking.">
+  <meta name="twitter:image" content="https://toraif.com/gcp-study-hub/assets/og-image.svg">
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://toraif.com/gcp-study-hub/#website","name":"GCP Study Hub","url":"https://toraif.com/gcp-study-hub/","description":"Free, open-source study platform for every Google Cloud certification.","inLanguage":"en","publisher":{"@id":"https://toraif.com/gcp-study-hub/#org"}},{"@type":"EducationalOrganization","@id":"https://toraif.com/gcp-study-hub/#org","name":"GCP Study Hub","url":"https://toraif.com/gcp-study-hub/","description":"Free, community-driven study resources for Google Cloud certifications."}]}</script>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#x2601;</text></svg>">
+  <link rel="canonical" href="https://toraif.com/gcp-study-hub/docs/service-compute-engine.html">
+  <link rel="manifest" href="../manifest.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <script src="../assets/js/components.js"></script>
+  <script src="../assets/js/search.js" defer></script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://toraif.com/gcp-study-hub/"}, {"@type": "ListItem", "position": 2, "name": "Compute Engine - Service Deep Dive", "item": "https://toraif.com/gcp-study-hub/docs/service-compute-engine.html"}]}</script>
+</head><body><div class="container" style="padding-top:2rem;"><div class="breadcrumb"><a href="../index.html">Home</a> / <span>Certifications</span> / <span>Compute Engine</span></div></div><div class="page-header"><div class="container"><span class="badge badge-blue">Service Deep Dive</span><h1 style="margin-top:0.75rem;">&#128421; Compute Engine</h1><p>Scalable, high-performance virtual machines on Google's infrastructure.</p><div class="flex-wrap mt-1"></div></div></div><div class="container" style="padding-top:1rem"><a href="associate-cloud-engineer.html" class="badge badge-blue" style="text-decoration:none;margin-right:0.4rem">ACE</a><a href="professional-cloud-architect.html" class="badge badge-blue" style="text-decoration:none;margin-right:0.4rem">PCA</a></div><div class="container" style="padding-bottom:4rem;"><div class="doc-layout"><aside class="sidebar"><h4>Contents</h4><a href="#s0">What it is</a>
+<a href="#s1">Machine families</a>
+<a href="#s2">Cost savers</a>
+<a href="#s3">Scaling &amp; HA</a>
+<a href="#exam-tips">Exam Tips</a>
+</aside><main><section id="s0"><h2>What it is</h2><p>Infrastructure-as-a-Service VMs. Full control of the OS. Billed per second with sustained and committed use discounts.</p></section>
+<section id="s1"><h2>Machine families</h2><div class='table-wrap'><table><thead><tr><th>Family</th><th>Use</th></tr></thead><tbody><tr><td>E2</td><td>Cost-optimized general purpose</td></tr><tr><td>N2/N2D/N4</td><td>Balanced general purpose</td></tr><tr><td>C3/C4</td><td>Compute-optimized</td></tr><tr><td>M3/M4</td><td>Memory-optimized (SAP, in-memory DB)</td></tr><tr><td>A3/G2</td><td>GPU/accelerator for ML</td></tr></tbody></table></div></section>
+<section id="s2"><h2>Cost savers</h2><ul><li><strong>Spot VMs</strong> - up to 60-91% off, preemptible.</li><li><strong>Committed use discounts</strong> - 1 or 3 year.</li><li><strong>Sustained use discounts</strong> - automatic.</li></ul></section>
+<section id="s3"><h2>Scaling &amp; HA</h2><p><strong>Managed Instance Groups (MIGs)</strong> provide autoscaling, autohealing, rolling updates, and multi-zone spread. Pair with a load balancer.</p></section>
+<section id="exam-tips"><h2>&#127919; Exam Tips</h2><div class="callout tip"><div class="callout-title">&#128161; Remember</div><ul><li>Spot VMs can be reclaimed with 30s notice - only for fault-tolerant work.</li><li>MIGs (not unmanaged groups) give autoscaling and autohealing.</li><li>Sustained use discounts apply automatically; CUDs require commitment.</li><li>Use instance templates to define MIG VM configuration.</li></ul></div></section></main></div></div><script src="../assets/js/main.js"></script></body></html>

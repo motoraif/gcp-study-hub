@@ -1,0 +1,331 @@
+{
+  "version": 1,
+  "updated": "2026-10-12",
+  "note": "Community question bank for GCP Study Hub. Each question: id, cert, domain, question, options[], answer (index into options), explanation. Contributions welcome via PR.",
+  "questions": [
+    {
+      "id": "cdl-001",
+      "cert": "CDL",
+      "domain": "Infrastructure and application modernization",
+      "question": "A company wants to run containerized microservices without managing the underlying node infrastructure. Which Google Cloud product best fits?",
+      "options": ["Compute Engine", "Cloud Run", "Cloud SQL", "Persistent Disk"],
+      "answer": 1,
+      "explanation": "Cloud Run runs stateless containers serverlessly, scaling to zero with no node management. Compute Engine would require managing VMs."
+    },
+    {
+      "id": "cdl-002",
+      "cert": "CDL",
+      "domain": "Innovating with data and Google Cloud",
+      "question": "Which service is a serverless data warehouse for running SQL analytics over very large datasets?",
+      "options": ["Bigtable", "BigQuery", "Firestore", "Cloud SQL"],
+      "answer": 1,
+      "explanation": "BigQuery is Google Cloud's serverless analytics data warehouse. Bigtable is operational NoSQL, Firestore is a document DB, and Cloud SQL is managed relational."
+    },
+    {
+      "id": "cdl-003",
+      "cert": "CDL",
+      "domain": "Google Cloud security and operations",
+      "question": "Under Google Cloud's shared responsibility model, who is responsible for configuring IAM policies and securing customer data?",
+      "options": ["Google", "The customer", "Neither party", "A third-party auditor"],
+      "answer": 1,
+      "explanation": "Google secures the underlying infrastructure (security OF the cloud); the customer is responsible for IAM configuration and their data (security IN the cloud)."
+    },
+    {
+      "id": "cdl-004",
+      "cert": "CDL",
+      "domain": "Introduction to digital transformation with Google Cloud",
+      "question": "Moving from buying servers upfront to paying only for cloud resources consumed is an example of shifting from:",
+      "options": ["OpEx to CapEx", "CapEx to OpEx", "Fixed to variable latency", "SaaS to IaaS"],
+      "answer": 1,
+      "explanation": "Cloud shifts spending from capital expenditure (buying hardware upfront) to operational expenditure (pay for what you use)."
+    },
+    {
+      "id": "cdl-005",
+      "cert": "CDL",
+      "domain": "Innovating with data and Google Cloud",
+      "question": "A team needs to ingest a high-volume real-time stream of events for later processing. Which service is designed for this?",
+      "options": ["Cloud SQL", "Pub/Sub", "Persistent Disk", "Cloud DNS"],
+      "answer": 1,
+      "explanation": "Pub/Sub is a scalable messaging service for ingesting and distributing real-time event streams."
+    },
+    {
+      "id": "ace-001",
+      "cert": "ACE",
+      "domain": "Configuring access and security",
+      "question": "An IAM policy granting Viewer is set at the folder level and Editor at the project level for the same user. What is the user's effective access on resources in that project?",
+      "options": ["Viewer only", "Editor only", "The union: Editor (which includes Viewer-level read)", "No access, due to conflict"],
+      "answer": 2,
+      "explanation": "IAM policies are inherited and additive. The effective policy is the union of all levels, so the user has Editor (which already includes read access)."
+    },
+    {
+      "id": "ace-002",
+      "cert": "ACE",
+      "domain": "Deploying and implementing a cloud solution",
+      "question": "Which resource provides autoscaling, autohealing, and rolling updates for a group of identical Compute Engine VMs?",
+      "options": ["Unmanaged instance group", "Managed instance group (MIG)", "Persistent Disk snapshot", "Instance template only"],
+      "answer": 1,
+      "explanation": "A Managed Instance Group uses an instance template and provides autoscaling, autohealing, and rolling updates. Unmanaged groups do not."
+    },
+    {
+      "id": "ace-003",
+      "cert": "ACE",
+      "domain": "Planning and configuring a cloud solution",
+      "question": "In Google Cloud networking, what is the scope of a VPC network and of a subnet?",
+      "options": ["VPC is zonal; subnet is regional", "VPC is global; subnet is regional", "VPC is regional; subnet is zonal", "Both are global"],
+      "answer": 1,
+      "explanation": "A VPC network is a global resource, while subnets are regional and span all zones in their region."
+    },
+    {
+      "id": "ace-004",
+      "cert": "ACE",
+      "domain": "Configuring access and security",
+      "question": "What is the recommended way to give a Compute Engine VM permission to call Google Cloud APIs?",
+      "options": ["Embed a user's password in the VM", "Download a service account JSON key onto the VM", "Attach a service account to the VM", "Use the project Owner's credentials"],
+      "answer": 2,
+      "explanation": "Attaching a service account to the VM is preferred. Downloading JSON keys is discouraged because keys are long-lived secrets that can leak."
+    },
+    {
+      "id": "ace-005",
+      "cert": "ACE",
+      "domain": "Ensuring successful operation of a cloud solution",
+      "question": "Which command sets the active project for subsequent gcloud commands?",
+      "options": ["gcloud project use", "gcloud config set project PROJECT_ID", "gcloud init project", "gcloud set active-project"],
+      "answer": 1,
+      "explanation": "gcloud config set project PROJECT_ID sets the active project in the current configuration."
+    },
+    {
+      "id": "ace-006",
+      "cert": "ACE",
+      "domain": "Planning and configuring a cloud solution",
+      "question": "A private VM with no external IP needs outbound internet access to download OS updates. What should you configure?",
+      "options": ["A second external IP", "Cloud NAT", "VPC Peering", "A Cloud Storage bucket"],
+      "answer": 1,
+      "explanation": "Cloud NAT provides outbound internet access for instances without external IP addresses, without exposing them to inbound connections."
+    },
+    {
+      "id": "pca-001",
+      "cert": "PCA",
+      "domain": "Designing and planning a cloud solution architecture",
+      "question": "An application requires a relational database that is globally distributed with strong consistency and 99.999% availability. Which service fits best?",
+      "options": ["Cloud SQL", "Spanner", "Bigtable", "Firestore"],
+      "answer": 1,
+      "explanation": "Spanner provides globally distributed, strongly consistent relational data with up to 99.999% availability in multi-region configurations. Cloud SQL is regional."
+    },
+    {
+      "id": "pca-002",
+      "cert": "PCA",
+      "domain": "Designing for security and compliance",
+      "question": "To prevent data exfiltration from BigQuery and Cloud Storage to resources outside a trusted boundary, you should implement:",
+      "options": ["Firewall rules", "VPC Service Controls", "Cloud Armor", "Basic IAM roles"],
+      "answer": 1,
+      "explanation": "VPC Service Controls create a security perimeter around managed services like BigQuery and Cloud Storage to mitigate data exfiltration."
+    },
+    {
+      "id": "pca-003",
+      "cert": "PCA",
+      "domain": "Ensuring solution and operations reliability",
+      "question": "In SRE terms, what does an error budget represent?",
+      "options": ["The money allocated to fixing bugs", "The allowed amount of unreliability, equal to 1 minus the SLO", "The number of engineers on call", "The SLA penalty amount"],
+      "answer": 1,
+      "explanation": "The error budget is the acceptable level of unreliability, calculated as 1 minus the SLO. It governs how much risk a team can take with releases."
+    },
+    {
+      "id": "pca-004",
+      "cert": "PCA",
+      "domain": "Analyzing and optimizing technical and business processes",
+      "question": "A steady, predictable batch workload runs 24/7 on Compute Engine. Which pricing approach minimizes cost while guaranteeing capacity?",
+      "options": ["Spot VMs", "On-demand only", "Committed use discounts", "Preemptible GPUs"],
+      "answer": 2,
+      "explanation": "Committed use discounts offer significant savings for steady, predictable workloads while guaranteeing capacity. Spot VMs are cheaper but can be preempted."
+    },
+    {
+      "id": "pcd-001",
+      "cert": "PCD",
+      "domain": "Integrating Google Cloud services",
+      "question": "To decouple a web frontend from backend processing with at-least-once delivery and fan-out to multiple subscribers, you should use:",
+      "options": ["Cloud Tasks", "Pub/Sub", "Memorystore", "Cloud SQL"],
+      "answer": 1,
+      "explanation": "Pub/Sub provides many-to-many, at-least-once messaging with fan-out to multiple subscribers. Cloud Tasks is for explicit, rate-limited task dispatch to a single worker."
+    },
+    {
+      "id": "pcd-002",
+      "cert": "PCD",
+      "domain": "Deploying applications",
+      "question": "You want to roll out a new Cloud Run revision to 10% of traffic before full release. What feature enables this?",
+      "options": ["Horizontal Pod Autoscaler", "Traffic splitting", "Binary Authorization", "Cloud NAT"],
+      "answer": 1,
+      "explanation": "Cloud Run supports traffic splitting across revisions, enabling canary deployments by sending a percentage of traffic to a new revision."
+    },
+    {
+      "id": "pcd-003",
+      "cert": "PCD",
+      "domain": "Managing deployed applications",
+      "question": "Which service should store database passwords and API keys for an application?",
+      "options": ["Environment variables in source code", "Secret Manager", "A public Cloud Storage bucket", "Cloud DNS TXT records"],
+      "answer": 1,
+      "explanation": "Secret Manager securely stores and version-controls secrets like passwords and API keys, with IAM-based access and audit logging."
+    },
+    {
+      "id": "pcdoe-001",
+      "cert": "PCDOE",
+      "domain": "Implementing service monitoring strategies",
+      "question": "Which pair correctly describes an SLI and an SLO?",
+      "options": ["SLI is a legal contract; SLO is a measurement", "SLI is a measured indicator; SLO is a target for that indicator", "They are identical", "SLO is a measured indicator; SLI is a penalty"],
+      "answer": 1,
+      "explanation": "An SLI (Service Level Indicator) is a measured value such as latency or error rate; an SLO (Service Level Objective) is the target for that SLI."
+    },
+    {
+      "id": "pcdoe-002",
+      "cert": "PCDOE",
+      "domain": "Building and implementing CI/CD pipelines",
+      "question": "Which Google Cloud service provides managed progressive delivery (e.g., canary) to GKE and Cloud Run?",
+      "options": ["Cloud Build", "Cloud Deploy", "Artifact Registry", "Cloud Scheduler"],
+      "answer": 1,
+      "explanation": "Cloud Deploy is a managed continuous delivery service that orchestrates progressive rollouts to targets like GKE and Cloud Run. Cloud Build handles the CI/build step."
+    },
+    {
+      "id": "pcse-001",
+      "cert": "PCSE",
+      "domain": "Configuring access",
+      "question": "What is the most secure way for an on-prem or external workload to authenticate to Google Cloud without long-lived keys?",
+      "options": ["Download a service account JSON key", "Workload Identity Federation", "Share the Owner's password", "Use allUsers IAM binding"],
+      "answer": 1,
+      "explanation": "Workload Identity Federation lets external identities impersonate service accounts using short-lived credentials, avoiding long-lived JSON keys."
+    },
+    {
+      "id": "pcse-002",
+      "cert": "PCSE",
+      "domain": "Ensuring data protection",
+      "question": "Which service discovers, classifies, and de-identifies sensitive data such as PII?",
+      "options": ["Cloud Armor", "Sensitive Data Protection (Cloud DLP)", "Cloud CDN", "Cloud Router"],
+      "answer": 1,
+      "explanation": "Sensitive Data Protection (formerly Cloud DLP) discovers, classifies, and de-identifies or tokenizes sensitive data like PII."
+    },
+    {
+      "id": "pcne-001",
+      "cert": "PCNE",
+      "domain": "Configuring network services",
+      "question": "You need a globally scoped Layer 7 load balancer with Cloud CDN for a web application. Which do you choose?",
+      "options": ["Internal passthrough Network LB", "Global external Application Load Balancer", "Regional external Network LB", "Cloud VPN"],
+      "answer": 1,
+      "explanation": "The global external Application Load Balancer operates at Layer 7, is global, and integrates with Cloud CDN - ideal for global web apps."
+    },
+    {
+      "id": "pcne-002",
+      "cert": "PCNE",
+      "domain": "Implementing hybrid interconnectivity",
+      "question": "Which option provides a highly available VPN connection to Google Cloud with a 99.99% SLA?",
+      "options": ["Classic VPN", "HA VPN", "VPC Peering", "Cloud NAT"],
+      "answer": 1,
+      "explanation": "HA VPN provides a 99.99% availability SLA using redundant tunnels and interfaces. Classic VPN offers a lower SLA."
+    },
+    {
+      "id": "pcde-001",
+      "cert": "PCDE",
+      "domain": "Designing scalable and highly available databases",
+      "question": "An IoT platform ingests millions of time-series writes per second with single-digit millisecond reads. Which database fits best?",
+      "options": ["Cloud SQL", "Bigtable", "BigQuery", "Firestore"],
+      "answer": 1,
+      "explanation": "Bigtable is a wide-column NoSQL database designed for very high throughput and low-latency reads/writes, ideal for time-series and IoT workloads."
+    },
+    {
+      "id": "pcde-002",
+      "cert": "PCDE",
+      "domain": "Migrating data solutions",
+      "question": "Which service performs minimal-downtime database migrations into Cloud SQL or AlloyDB with continuous replication?",
+      "options": ["Storage Transfer Service", "Database Migration Service", "Transfer Appliance", "Dataproc"],
+      "answer": 1,
+      "explanation": "Database Migration Service (DMS) performs homogeneous and heterogeneous database migrations with continuous replication for minimal downtime."
+    },
+    {
+      "id": "pde-001",
+      "cert": "PDE",
+      "domain": "Ingesting and processing the data",
+      "question": "Which service runs unified batch and streaming data pipelines serverlessly using Apache Beam?",
+      "options": ["Dataproc", "Dataflow", "Cloud SQL", "Looker"],
+      "answer": 1,
+      "explanation": "Dataflow is the serverless Apache Beam runner for unified batch and streaming pipelines. Dataproc runs managed Spark/Hadoop clusters."
+    },
+    {
+      "id": "pde-002",
+      "cert": "PDE",
+      "domain": "Preparing and using data for analysis",
+      "question": "To reduce the cost of on-demand BigQuery queries that filter by date, you should:",
+      "options": ["Store data as CSV in Cloud Storage", "Partition the table by date and cluster by common filter columns", "Use SELECT * on every query", "Disable caching"],
+      "answer": 1,
+      "explanation": "Partitioning by date and clustering by frequently filtered columns reduces the bytes scanned, directly lowering on-demand query cost."
+    },
+    {
+      "id": "pde-003",
+      "cert": "PDE",
+      "domain": "Maintaining and automating data workloads",
+      "question": "Which service provides managed Apache Airflow for orchestrating data pipelines?",
+      "options": ["Cloud Composer", "Cloud Scheduler", "Pub/Sub", "Dataprep"],
+      "answer": 0,
+      "explanation": "Cloud Composer is managed Apache Airflow, used to author, schedule, and monitor complex data pipeline workflows."
+    },
+    {
+      "id": "pmle-001",
+      "cert": "PMLE",
+      "domain": "Serving and scaling models",
+      "question": "An application needs low-latency, real-time predictions from a trained model. Which Vertex AI capability should you use?",
+      "options": ["Batch prediction", "Online prediction via an endpoint", "BigQuery export", "Cloud Scheduler"],
+      "answer": 1,
+      "explanation": "Vertex AI online prediction deploys a model to an endpoint for low-latency, real-time inference. Batch prediction is for large, non-interactive jobs."
+    },
+    {
+      "id": "pmle-002",
+      "cert": "PMLE",
+      "domain": "Automating and orchestrating ML pipelines",
+      "question": "Which Vertex AI feature helps detect training/serving skew and feature drift in production models?",
+      "options": ["Vertex AI Model Monitoring", "Cloud CDN", "Dataproc", "Cloud NAT"],
+      "answer": 0,
+      "explanation": "Vertex AI Model Monitoring tracks input feature distributions to detect training/serving skew and drift, alerting when models degrade."
+    },
+    {
+      "id": "pmle-003",
+      "cert": "PMLE",
+      "domain": "Collaborating to manage data and models",
+      "question": "What is the purpose of Vertex AI Feature Store?",
+      "options": ["To store container images", "To centrally manage and serve ML features for reuse and consistency", "To host static websites", "To manage DNS records"],
+      "answer": 1,
+      "explanation": "Vertex AI Feature Store centralizes feature management and serving, promoting reuse and reducing training/serving skew."
+    },
+    {
+      "id": "adp-001",
+      "cert": "ADP",
+      "domain": "Data analysis and presentation",
+      "question": "Which tool is best for building interactive dashboards on top of BigQuery for business users?",
+      "options": ["Cloud Shell", "Looker Studio", "Cloud NAT", "Artifact Registry"],
+      "answer": 1,
+      "explanation": "Looker Studio (and Looker) create interactive dashboards and reports, commonly connected to BigQuery for self-serve BI."
+    },
+    {
+      "id": "adp-002",
+      "cert": "ADP",
+      "domain": "Data preparation and ingestion",
+      "question": "A low-code, visual way to build ETL pipelines on Google Cloud is provided by:",
+      "options": ["Cloud Data Fusion", "Cloud DNS", "Cloud Armor", "Persistent Disk"],
+      "answer": 0,
+      "explanation": "Cloud Data Fusion is a fully managed, visual (low-code) data integration service for building ETL/ELT pipelines."
+    },
+    {
+      "id": "gwa-001",
+      "cert": "GWA",
+      "domain": "Securing Workspace",
+      "question": "Which Workspace feature enforces access decisions based on device and context (such as IP or device security status)?",
+      "options": ["Context-Aware Access", "Cloud NAT", "VPC Peering", "Cloud CDN"],
+      "answer": 0,
+      "explanation": "Context-Aware Access applies granular access controls to Workspace apps based on user identity, device posture, and context like IP location."
+    },
+    {
+      "id": "gwa-002",
+      "cert": "GWA",
+      "domain": "Managing user accounts, domains, and directory",
+      "question": "What is the primary purpose of Organizational Units (OUs) in Google Workspace?",
+      "options": ["To store files", "To apply settings and service policies hierarchically to groups of users", "To route email", "To manage DNS"],
+      "answer": 1,
+      "explanation": "OUs let administrators apply settings and control service access hierarchically to subsets of users within the organization."
+    }
+  ]
+}

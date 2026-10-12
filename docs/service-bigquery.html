@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>BigQuery - Service Deep Dive - GCP Study Hub</title>
+  <meta name="description" content="BigQuery deep dive: architecture, partitioning, clustering, pricing, and security.">
+  <meta name="robots" content="index,follow">
+  <meta name="author" content="GCP Study Hub">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="GCP Study Hub">
+  <meta property="og:title" content="BigQuery - Service Deep Dive - GCP Study Hub">
+  <meta property="og:description" content="BigQuery deep dive: architecture, partitioning, clustering, pricing, and security.">
+  <meta property="og:image" content="https://toraif.com/gcp-study-hub/assets/og-image.svg">
+  <meta property="og:url" content="https://toraif.com/gcp-study-hub/docs/service-bigquery.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="BigQuery - Service Deep Dive - GCP Study Hub">
+  <meta name="twitter:description" content="BigQuery deep dive: architecture, partitioning, clustering, pricing, and security.">
+  <meta name="twitter:image" content="https://toraif.com/gcp-study-hub/assets/og-image.svg">
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://toraif.com/gcp-study-hub/#website","name":"GCP Study Hub","url":"https://toraif.com/gcp-study-hub/","description":"Free, open-source study platform for every Google Cloud certification.","inLanguage":"en","publisher":{"@id":"https://toraif.com/gcp-study-hub/#org"}},{"@type":"EducationalOrganization","@id":"https://toraif.com/gcp-study-hub/#org","name":"GCP Study Hub","url":"https://toraif.com/gcp-study-hub/","description":"Free, community-driven study resources for Google Cloud certifications."}]}</script>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#x2601;</text></svg>">
+  <link rel="canonical" href="https://toraif.com/gcp-study-hub/docs/service-bigquery.html">
+  <link rel="manifest" href="../manifest.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <script src="../assets/js/components.js"></script>
+  <script src="../assets/js/search.js" defer></script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://toraif.com/gcp-study-hub/"}, {"@type": "ListItem", "position": 2, "name": "BigQuery - Service Deep Dive", "item": "https://toraif.com/gcp-study-hub/docs/service-bigquery.html"}]}</script>
+</head><body><div class="container" style="padding-top:2rem;"><div class="breadcrumb"><a href="../index.html">Home</a> / <span>Certifications</span> / <span>BigQuery</span></div></div><div class="page-header"><div class="container"><span class="badge badge-blue">Service Deep Dive</span><h1 style="margin-top:0.75rem;">&#128202; BigQuery</h1><p>Serverless, highly scalable data warehouse with built-in ML.</p><div class="flex-wrap mt-1"></div></div></div><div class="container" style="padding-top:1rem"><a href="professional-data-engineer.html" class="badge badge-blue" style="text-decoration:none;margin-right:0.4rem">PDE</a><a href="associate-data-practitioner.html" class="badge badge-blue" style="text-decoration:none;margin-right:0.4rem">ADP</a></div><div class="container" style="padding-bottom:4rem;"><div class="doc-layout"><aside class="sidebar"><h4>Contents</h4><a href="#s0">What it is</a>
+<a href="#s1">Performance</a>
+<a href="#s2">Pricing</a>
+<a href="#s3">Security</a>
+<a href="#exam-tips">Exam Tips</a>
+</aside><main><section id="s0"><h2>What it is</h2><p>Serverless analytics warehouse. Separates storage from compute. Standard SQL. Scales to petabytes with no infrastructure to manage.</p></section>
+<section id="s1"><h2>Performance</h2><ul><li><strong>Partitioning</strong> (by time/ingestion/integer) prunes scanned data.</li><li><strong>Clustering</strong> sorts data within partitions for faster filters.</li><li>Materialized views precompute results.</li></ul></section>
+<section id="s2"><h2>Pricing</h2><ul><li><strong>Storage</strong> - active vs long-term (auto-discounted).</li><li><strong>Compute</strong> - on-demand (per TB scanned) or capacity (slots/editions).</li></ul></section>
+<section id="s3"><h2>Security</h2><p>Dataset-level IAM, authorized views, row-level and column-level security, and VPC Service Controls.</p></section>
+<section id="exam-tips"><h2>&#127919; Exam Tips</h2><div class="callout tip"><div class="callout-title">&#128161; Remember</div><ul><li>Partition + cluster large tables to cut on-demand query cost.</li><li>On-demand is priced per TB scanned - SELECT only needed columns.</li><li>Use authorized views to share results without exposing source tables.</li><li>BigQuery is OLAP (analytics), not OLTP - don't use it for transactional apps.</li></ul></div></section></main></div></div><script src="../assets/js/main.js"></script></body></html>

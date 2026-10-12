@@ -1,0 +1,7 @@
+# Links to exclude from lychee link-checking (rate-limited, auth-walled, or dynamic)
+https://www.udemy.com/*
+https://www.coursera.org/*
+https://www.cloudskillsboost.google/*
+https://www.qwiklabs.com/*
+https://www.pluralsight.com/*
+https://github.com/motoraif/gcp-study-hub*

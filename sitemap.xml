@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://toraif.com/gcp-study-hub/</loc><priority>1.0</priority></url>
+  <url><loc>https://toraif.com/gcp-study-hub/docs/cloud-digital-leader.html</loc><priority>0.8</priority></url>
+  <url><loc>https://toraif.com/gcp-study-hub/docs/associate-cloud-engineer.html</loc><priority>0.8</priority></url>
+  <url><loc>https://toraif.com/gcp-study-hub/docs/professional-cloud-architect.html</loc><priority>0.8</priority></url>
+  <url><loc>https://toraif.com/gcp-study-hub/docs/associate-data-practitioner.html</loc><priority>0.8</priority></url>
+  <url><loc>https://toraif.com/gcp-study-hub/docs/associate-workspace-administrator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://toraif.com/gcp-study-hub/docs/professional-cloud-developer.html</loc><priority>0.8</priority></url>
+  <url><loc>https://toraif.com/gcp-study-hub/docs/professional-cloud-devops-engineer.html</loc><priority>0.8</priority></url>
+  <url><loc>https://toraif.com/gcp-study-hub/docs/professional-cloud-security-engineer.html</loc><priority>0.8</priority></url>
+  <url><loc>https://toraif.com/gcp-study-hub/docs/professional-cloud-network-engineer.html</loc><priority>0.8</priority></url>
+  <url><loc>https://toraif.com/gcp-study-hub/docs/professional-cloud-database-engineer.html</loc><priority>0.8</priority></url>
+  <url><loc>https://toraif.com/gcp-study-hub/docs/professional-data-engineer.html</loc><priority>0.8</priority></url>
+  <url><loc>https://toraif.com/gcp-study-hub/docs/professional-machine-learning-engineer.html</loc><priority>0.8</priority></url>
+  <url><loc>https://toraif.com/gcp-study-hub/docs/service-compute-engine.html</loc><priority>0.6</priority></url>
+  <url><loc>https://toraif.com/gcp-study-hub/docs/service-cloud-storage.html</loc><priority>0.6</priority></url>
+  <url><loc>https://toraif.com/gcp-study-hub/docs/service-bigquery.html</loc><priority>0.6</priority></url>
+  <url><loc>https://toraif.com/gcp-study-hub/docs/service-gke.html</loc><priority>0.6</priority></url>
+  <url><loc>https://toraif.com/gcp-study-hub/docs/service-iam.html</loc><priority>0.6</priority></url>
+  <url><loc>https://toraif.com/gcp-study-hub/docs/services.html</loc><priority>0.6</priority></url>
+  <url><loc>https://toraif.com/gcp-study-hub/docs/foundations-linux.html</loc><priority>0.8</priority></url>
+  <url><loc>https://toraif.com/gcp-study-hub/docs/foundations-networking.html</loc><priority>0.8</priority></url>
+  <url><loc>https://toraif.com/gcp-study-hub/docs/quiz.html</loc><priority>0.6</priority></url>
+  <url><loc>https://toraif.com/gcp-study-hub/docs/flashcards.html</loc><priority>0.6</priority></url>
+  <url><loc>https://toraif.com/gcp-study-hub/docs/dashboard.html</loc><priority>0.6</priority></url>
+  <url><loc>https://toraif.com/gcp-study-hub/docs/cheatsheets.html</loc><priority>0.6</priority></url>
+  <url><loc>https://toraif.com/gcp-study-hub/docs/labs.html</loc><priority>0.6</priority></url>
+  <url><loc>https://toraif.com/gcp-study-hub/docs/resources.html</loc><priority>0.6</priority></url>
+  <url><loc>https://toraif.com/gcp-study-hub/docs/news.html</loc><priority>0.6</priority></url>
+  <url><loc>https://toraif.com/gcp-study-hub/docs/affiliate-disclosure.html</loc><priority>0.6</priority></url>
+</urlset>

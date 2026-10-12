@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <rect width="1200" height="630" fill="#0D1117"/>
+  <rect width="1200" height="8" y="0" fill="#4285F4"/>
+  <rect width="300" height="8" y="0" x="300" fill="#EA4335"/>
+  <rect width="300" height="8" y="0" x="600" fill="#FBBC04"/>
+  <rect width="300" height="8" y="0" x="900" fill="#34A853"/>
+  <text x="80" y="300" font-family="Inter, sans-serif" font-size="78" font-weight="800" fill="#E6EDF3">GCP Study Hub</text>
+  <text x="80" y="370" font-family="Inter, sans-serif" font-size="34" font-weight="500" fill="#8B949E">Free, open-source study platform for every</text>
+  <text x="80" y="415" font-family="Inter, sans-serif" font-size="34" font-weight="500" fill="#8B949E">Google Cloud certification.</text>
+  <g transform="translate(80,470)">
+    <rect width="150" height="44" rx="22" fill="#4285F4"/><text x="75" y="29" font-family="Inter" font-size="20" font-weight="700" fill="#fff" text-anchor="middle">Associate</text>
+    <rect x="170" width="180" height="44" rx="22" fill="#34A853"/><text x="260" y="29" font-family="Inter" font-size="20" font-weight="700" fill="#fff" text-anchor="middle">Professional</text>
+    <rect x="370" width="150" height="44" rx="22" fill="#FBBC04"/><text x="445" y="29" font-family="Inter" font-size="20" font-weight="700" fill="#202124" text-anchor="middle">100% Free</text>
+  </g>
+</svg>

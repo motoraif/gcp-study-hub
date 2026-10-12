@@ -1,0 +1,12 @@
+{
+  "name": "GCP Study Hub",
+  "short_name": "GCP Study",
+  "description": "Free, open-source study platform for every Google Cloud certification.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#0D1117",
+  "theme_color": "#4285F4",
+  "icons": [
+    { "src": "assets/icon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}
