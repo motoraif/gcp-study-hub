@@ -65,7 +65,15 @@
 </section>
 <section id="apis"><h2>APIs &amp; Messaging</h2>
 <p>Design REST/gRPC APIs; use <strong>API Gateway</strong>/<strong>Apigee</strong>. Decouple with <strong>Pub/Sub</strong> (at-least-once, ordering keys, dead-letter topics) and <strong>Cloud Tasks</strong> (rate-limited task queues).</p>
-</section>
+<figure class="diagram"><pre class="mermaid">flowchart LR
+  C[Client] --> GW[API Gateway]
+  GW --> CR[Cloud Run service]
+  CR --> FS[(Firestore)]
+  CR --> MS[(Memorystore cache)]
+  CR -->|publish| PS[Pub/Sub]
+  PS --> WRK[Worker Cloud Run / Function]
+  WRK --> BQ[(BigQuery)]
+  SM[Secret Manager] -.secrets.-> CR</pre><figcaption class="diagram-caption">A cloud-native serverless app: API Gateway to Cloud Run, with Firestore, caching, and async processing via Pub/Sub.</figcaption></figure>
 <section id="cicd"><h2>Build &amp; Deploy</h2>
 <ul>
   <li><strong>Cloud Build</strong> for CI; store images in <strong>Artifact Registry</strong>.</li>
@@ -76,4 +84,9 @@
 <section id="observe"><h2>Observability</h2>
 <p>Instrument with <strong>Cloud Logging</strong>, <strong>Cloud Trace</strong>, <strong>Cloud Profiler</strong>, and <strong>Error Reporting</strong>. Use structured logs and correlation IDs.</p>
 </section>
-<section id="checklist" class="progress-section"><h2>&#128203; Study Checklist</h2><div class="progress-wrap"><div class="progress-label"><span>Progress</span><span class="progress-pct">0%</span></div><div class="progress-bar"><div class="progress-fill" style="width:0%"></div></div></div><ul class="checklist"><li><input type="checkbox"><span>Choose Cloud Run, GKE, App Engine, or Functions per use case</span></li><li><input type="checkbox"><span>Handle cold starts, concurrency, and timeouts</span></li><li><input type="checkbox"><span>Model data in Firestore; use transactions and indexes</span></li><li><input type="checkbox"><span>Add caching with Memorystore</span></li><li><input type="checkbox"><span>Design REST/gRPC APIs and use API Gateway/Apigee</span></li><li><input type="checkbox"><span>Decouple with Pub/Sub (ordering, dead-letter) and Cloud Tasks</span></li><li><input type="checkbox"><span>Build CI/CD with Cloud Build and Artifact Registry</span></li><li><input type="checkbox"><span>Implement canary/blue-green deployments with traffic splitting</span></li><li><input type="checkbox"><span>Manage secrets with Secret Manager</span></li><li><input type="checkbox"><span>Instrument apps with Logging, Trace, Profiler, Error Reporting</span></li></ul><div class="mt-2"><a href="professional-cloud-devops-engineer.html" class="btn btn-primary">Next: Professional Cloud DevOps Engineer &rarr;</a></div></section></main></div></div><script src="../assets/js/main.js"></script></body></html>
+<section id="checklist" class="progress-section"><h2>&#128203; Study Checklist</h2><div class="progress-wrap"><div class="progress-label"><span>Progress</span><span class="progress-pct">0%</span></div><div class="progress-bar"><div class="progress-fill" style="width:0%"></div></div></div><ul class="checklist"><li><input type="checkbox"><span>Choose Cloud Run, GKE, App Engine, or Functions per use case</span></li><li><input type="checkbox"><span>Handle cold starts, concurrency, and timeouts</span></li><li><input type="checkbox"><span>Model data in Firestore; use transactions and indexes</span></li><li><input type="checkbox"><span>Add caching with Memorystore</span></li><li><input type="checkbox"><span>Design REST/gRPC APIs and use API Gateway/Apigee</span></li><li><input type="checkbox"><span>Decouple with Pub/Sub (ordering, dead-letter) and Cloud Tasks</span></li><li><input type="checkbox"><span>Build CI/CD with Cloud Build and Artifact Registry</span></li><li><input type="checkbox"><span>Implement canary/blue-green deployments with traffic splitting</span></li><li><input type="checkbox"><span>Manage secrets with Secret Manager</span></li><li><input type="checkbox"><span>Instrument apps with Logging, Trace, Profiler, Error Reporting</span></li></ul><div class="mt-2"><a href="professional-cloud-devops-engineer.html" class="btn btn-primary">Next: Professional Cloud DevOps Engineer &rarr;</a></div></section></main></div></div>
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+  var light = document.documentElement.getAttribute('data-theme') === 'light';
+  mermaid.initialize({ startOnLoad: true, theme: light ? 'default' : 'dark', securityLevel: 'strict' });
+</script><script src="../assets/js/main.js"></script></body></html>

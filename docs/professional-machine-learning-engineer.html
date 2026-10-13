@@ -54,7 +54,15 @@
 </section>
 <section id="vertex"><h2>Vertex AI</h2>
 <p>The unified ML platform: AutoML (low-code), custom training, Model Registry, Endpoints, Pipelines, Feature Store, and the Model Garden / Gemini for generative AI. Know when to use AutoML vs custom vs pretrained APIs.</p>
-</section>
+<figure class="diagram"><pre class="mermaid">flowchart LR
+  DATA[(BigQuery / Cloud Storage)] --> FS[Feature Store]
+  FS --> TRAIN[Vertex AI Training]
+  TRAIN --> REG[Model Registry]
+  REG --> EP[Endpoint online prediction]
+  REG --> BP[Batch prediction]
+  PIPE[Vertex AI Pipelines] -.orchestrates.-> TRAIN
+  MON[Model Monitoring] -.drift / skew.-> EP
+  MON -.triggers retrain.-> PIPE</pre><figcaption class="diagram-caption">The Vertex AI MLOps lifecycle: features to training to registry to serving, orchestrated by Pipelines and watched by Model Monitoring.</figcaption></figure>
 <section id="data"><h2>Data &amp; Features</h2>
 <ul>
   <li>Feature engineering; <strong>Vertex AI Feature Store</strong> for reuse/consistency.</li>
@@ -75,4 +83,9 @@
 <section id="mlops"><h2>MLOps</h2>
 <p><strong>Vertex AI Pipelines</strong> (Kubeflow/TFX) for automation, <strong>Model Monitoring</strong> for drift/skew, CI/CD for models, and the Model Registry for governance and lineage.</p>
 </section>
-<section id="checklist" class="progress-section"><h2>&#128203; Study Checklist</h2><div class="progress-wrap"><div class="progress-label"><span>Progress</span><span class="progress-pct">0%</span></div><div class="progress-bar"><div class="progress-fill" style="width:0%"></div></div></div><ul class="checklist"><li><input type="checkbox"><span>Choose AutoML, custom training, or pretrained APIs per use case</span></li><li><input type="checkbox"><span>Use Vertex AI Model Registry, Endpoints, and Pipelines</span></li><li><input type="checkbox"><span>Engineer and serve features with Feature Store</span></li><li><input type="checkbox"><span>Prevent training/serving skew and data leakage</span></li><li><input type="checkbox"><span>Run distributed custom training on GPUs/TPUs</span></li><li><input type="checkbox"><span>Tune hyperparameters with Vertex AI Vizier</span></li><li><input type="checkbox"><span>Fine-tune foundation models (Gemini / Model Garden)</span></li><li><input type="checkbox"><span>Choose online vs batch prediction and optimize cost/latency</span></li><li><input type="checkbox"><span>Automate ML with Vertex AI Pipelines (Kubeflow/TFX)</span></li><li><input type="checkbox"><span>Monitor models for drift and skew in production</span></li></ul></section></main></div></div><script src="../assets/js/main.js"></script></body></html>
+<section id="checklist" class="progress-section"><h2>&#128203; Study Checklist</h2><div class="progress-wrap"><div class="progress-label"><span>Progress</span><span class="progress-pct">0%</span></div><div class="progress-bar"><div class="progress-fill" style="width:0%"></div></div></div><ul class="checklist"><li><input type="checkbox"><span>Choose AutoML, custom training, or pretrained APIs per use case</span></li><li><input type="checkbox"><span>Use Vertex AI Model Registry, Endpoints, and Pipelines</span></li><li><input type="checkbox"><span>Engineer and serve features with Feature Store</span></li><li><input type="checkbox"><span>Prevent training/serving skew and data leakage</span></li><li><input type="checkbox"><span>Run distributed custom training on GPUs/TPUs</span></li><li><input type="checkbox"><span>Tune hyperparameters with Vertex AI Vizier</span></li><li><input type="checkbox"><span>Fine-tune foundation models (Gemini / Model Garden)</span></li><li><input type="checkbox"><span>Choose online vs batch prediction and optimize cost/latency</span></li><li><input type="checkbox"><span>Automate ML with Vertex AI Pipelines (Kubeflow/TFX)</span></li><li><input type="checkbox"><span>Monitor models for drift and skew in production</span></li></ul></section></main></div></div>
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+  var light = document.documentElement.getAttribute('data-theme') === 'light';
+  mermaid.initialize({ startOnLoad: true, theme: light ? 'default' : 'dark', securityLevel: 'strict' });
+</script><script src="../assets/js/main.js"></script></body></html>

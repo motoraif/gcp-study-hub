@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Spanner - Service Deep Dive - GCP Study Hub</title>
+  <meta name="description" content="Spanner deep dive: horizontal scale, strong consistency, multi-region, and schema design.">
+  <meta name="robots" content="index,follow">
+  <meta name="author" content="GCP Study Hub">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="GCP Study Hub">
+  <meta property="og:title" content="Spanner - Service Deep Dive - GCP Study Hub">
+  <meta property="og:description" content="Spanner deep dive: horizontal scale, strong consistency, multi-region, and schema design.">
+  <meta property="og:image" content="https://toraif.com/gcp-study-hub/assets/og-image.svg">
+  <meta property="og:url" content="https://toraif.com/gcp-study-hub/docs/service-spanner.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Spanner - Service Deep Dive - GCP Study Hub">
+  <meta name="twitter:description" content="Spanner deep dive: horizontal scale, strong consistency, multi-region, and schema design.">
+  <meta name="twitter:image" content="https://toraif.com/gcp-study-hub/assets/og-image.svg">
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://toraif.com/gcp-study-hub/#website","name":"GCP Study Hub","url":"https://toraif.com/gcp-study-hub/","description":"Free, open-source study platform for every Google Cloud certification.","inLanguage":"en","publisher":{"@id":"https://toraif.com/gcp-study-hub/#org"}},{"@type":"EducationalOrganization","@id":"https://toraif.com/gcp-study-hub/#org","name":"GCP Study Hub","url":"https://toraif.com/gcp-study-hub/","description":"Free, community-driven study resources for Google Cloud certifications."}]}</script>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'><circle cx='14' cy='20' r='6' fill='%234285F4'/><circle cx='26' cy='14' r='6' fill='%23EA4335'/><circle cx='34' cy='24' r='6' fill='%23FBBC04'/><circle cx='22' cy='30' r='6' fill='%2334A853'/></svg>">
+  <link rel="canonical" href="https://toraif.com/gcp-study-hub/docs/service-spanner.html">
+  <link rel="manifest" href="../manifest.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <script src="../assets/js/components.js"></script>
+  <script src="../assets/js/search.js" defer></script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://toraif.com/gcp-study-hub/"}, {"@type": "ListItem", "position": 2, "name": "Spanner - Service Deep Dive", "item": "https://toraif.com/gcp-study-hub/docs/service-spanner.html"}]}</script>
+</head><body><div class="container" style="padding-top:2rem;"><div class="breadcrumb"><a href="../index.html">Home</a> / <span>Certifications</span> / <span>Spanner</span></div></div><div class="page-header"><div class="container"><span class="badge badge-blue">Service Deep Dive</span><h1 style="margin-top:0.75rem;">&#127758; Spanner</h1><p>Globally distributed, strongly consistent relational database.</p><div class="flex-wrap mt-1"></div></div></div><div class="container" style="padding-top:1rem"><a href="professional-cloud-architect.html" class="badge badge-blue" style="text-decoration:none;margin-right:0.4rem">PCA</a><a href="professional-cloud-database-engineer.html" class="badge badge-blue" style="text-decoration:none;margin-right:0.4rem">PCDE</a></div><div class="container" style="padding-bottom:4rem;"><div class="doc-layout"><aside class="sidebar"><h4>Contents</h4><a href="#s0">What it is</a>
+<a href="#s1">Scaling &amp; availability</a>
+<a href="#s2">Schema design</a>
+<a href="#exam-tips">Exam Tips</a>
+</aside><main><section id="s0"><h2>What it is</h2><p>A fully managed relational database that scales horizontally while providing strong consistency and up to <strong>99.999%</strong> availability in multi-region configs. Unique in combining SQL, scale, and consistency.</p></section>
+<section id="s1"><h2>Scaling &amp; availability</h2><ul><li>Capacity in <strong>nodes</strong> or <strong>processing units</strong>.</li><li>Regional vs multi-region instance configs.</li><li>TrueTime underpins global strong consistency.</li></ul></section>
+<section id="s2"><h2>Schema design</h2><p>Choose primary keys that avoid hotspots (don't use monotonically increasing keys); use interleaved tables for parent-child locality.</p></section>
+<section id="exam-tips"><h2>&#127919; Exam Tips</h2><div class="callout tip"><div class="callout-title">&#128161; Remember</div><ul><li>Spanner is the answer for global scale + strong consistency + high SLA.</li><li>Avoid monotonically increasing primary keys to prevent hotspots.</li><li>Multi-region configs raise availability to 99.999%.</li><li>Use it for relational OLTP at scale, not for ad-hoc analytics (that is BigQuery).</li></ul></div></section></main></div></div><script src="../assets/js/main.js"></script></body></html>

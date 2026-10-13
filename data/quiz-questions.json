@@ -4,6 +4,222 @@
   "note": "Community question bank for GCP Study Hub. Each question: id, cert, domain, question, options[], answer (index into options), explanation. Contributions welcome via PR.",
   "questions": [
     {
+      "id": "adp-005",
+      "cert": "ADP",
+      "domain": "Data preparation and ingestion",
+      "question": "You must load a one-time 5 TB CSV export from an on-prem system into BigQuery. Which approach is simplest and most cost-effective?",
+      "options": ["Stream rows via the Storage Write API", "Upload to Cloud Storage, then batch-load into BigQuery", "Insert rows with individual SQL statements", "Use Memorystore as a staging layer"],
+      "answer": 1,
+      "explanation": "For large one-time loads, stage files in Cloud Storage and run a batch load into BigQuery - batch loads are free and far cheaper than streaming for bulk data."
+    },
+    {
+      "id": "adp-006",
+      "cert": "ADP",
+      "domain": "Data analysis and presentation",
+      "question": "A BigQuery query on a 2 TB table only needs the last 7 days of data by an event_date column. What reduces cost the most?",
+      "options": ["Adding more slots", "Partitioning the table by event_date and filtering on it", "Using SELECT *", "Exporting to CSV first"],
+      "answer": 1,
+      "explanation": "Date partitioning lets BigQuery prune to only the relevant partitions, drastically reducing bytes scanned (and on-demand cost)."
+    },
+    {
+      "id": "adp-007",
+      "cert": "ADP",
+      "domain": "Data pipeline orchestration",
+      "question": "Which service captures row-level changes from a source database and replicates them continuously for analytics?",
+      "options": ["Datastream", "Cloud CDN", "Cloud Armor", "Memorystore"],
+      "answer": 0,
+      "explanation": "Datastream is a serverless change data capture (CDC) and replication service, often feeding BigQuery for near-real-time analytics."
+    },
+    {
+      "id": "adp-008",
+      "cert": "ADP",
+      "domain": "Data management",
+      "question": "You need to restrict which columns of a BigQuery table an analyst group can see. What should you use?",
+      "options": ["Table ACLs only", "Column-level security with policy tags", "A separate project per analyst", "Public dataset sharing"],
+      "answer": 1,
+      "explanation": "Column-level security uses policy tags (via Data Catalog/Dataplex) to control access to sensitive columns within a table."
+    },
+    {
+      "id": "gwa-005",
+      "cert": "GWA",
+      "domain": "Managing user accounts, domains, and directory",
+      "question": "Which tool synchronizes users and groups from an on-prem LDAP/Active Directory into Google Workspace?",
+      "options": ["Google Cloud Directory Sync (GCDS)", "Cloud SQL Auth Proxy", "Cloud DNS", "Context-Aware Access"],
+      "answer": 0,
+      "explanation": "Google Cloud Directory Sync (GCDS) provisions users and groups into Workspace/Cloud Identity from an existing LDAP or Active Directory."
+    },
+    {
+      "id": "gwa-006",
+      "cert": "GWA",
+      "domain": "Managing and configuring Workspace services",
+      "question": "You want a specific department to have Google Drive external sharing disabled while the rest of the company keeps it. How?",
+      "options": ["Create a separate domain", "Apply the setting to that department's Organizational Unit (OU)", "Disable Drive globally", "Use a shared drive only"],
+      "answer": 1,
+      "explanation": "Settings applied at the OU level affect only users in that OU, enabling per-department policies like disabling external Drive sharing."
+    },
+    {
+      "id": "gwa-007",
+      "cert": "GWA",
+      "domain": "Securing Workspace",
+      "question": "Which feature lets admins require that only managed, compliant devices can access Workspace apps?",
+      "options": ["Context-Aware Access", "Google Vault", "Cloud NAT", "SPF records"],
+      "answer": 0,
+      "explanation": "Context-Aware Access enforces access policies based on user, device posture, and context (location, IP), allowing managed-device-only access."
+    },
+    {
+      "id": "gwa-008",
+      "cert": "GWA",
+      "domain": "Monitoring, reporting, and troubleshooting",
+      "question": "Where would an admin investigate a potential account compromise, review login events, and take bulk remediation actions?",
+      "options": ["The security investigation tool", "Cloud Profiler", "Artifact Registry", "Cloud Build"],
+      "answer": 0,
+      "explanation": "The security investigation tool (with the Alert Center) lets admins investigate logins and threats and perform bulk actions like resetting sessions."
+    },
+    {
+      "id": "pcde-005",
+      "cert": "PCDE",
+      "domain": "Managing a solution for the enterprise",
+      "question": "Which Cloud SQL feature lets you recover the database to a specific moment in time after accidental data loss?",
+      "options": ["Read replicas", "Point-in-time recovery (PITR)", "A failover replica", "Query insights"],
+      "answer": 1,
+      "explanation": "Point-in-time recovery uses automated backups plus binary/transaction logs to restore to a specific timestamp."
+    },
+    {
+      "id": "pcde-006",
+      "cert": "PCDE",
+      "domain": "Designing scalable and highly available databases",
+      "question": "A PostgreSQL-compatible database needs very high transactional throughput plus fast analytical queries on the same data. Which service is designed for this?",
+      "options": ["Cloud SQL", "AlloyDB", "Bigtable", "Firestore"],
+      "answer": 1,
+      "explanation": "AlloyDB is PostgreSQL-compatible and adds a columnar engine for fast analytics alongside high transactional throughput (HTAP)."
+    },
+    {
+      "id": "pcde-007",
+      "cert": "PCDE",
+      "domain": "Deploying scalable and secure databases",
+      "question": "To keep a Cloud SQL instance off the public internet while allowing app access from a VPC, you should:",
+      "options": ["Assign a public IP with open firewall", "Use private IP / Private Service Connect", "Expose it via a load balancer", "Allow 0.0.0.0/0 in authorized networks"],
+      "answer": 1,
+      "explanation": "Configuring private IP (or Private Service Connect) keeps the instance on internal networking with no public exposure."
+    },
+    {
+      "id": "pcdoe-005",
+      "cert": "PCDOE",
+      "domain": "Implementing service monitoring strategies",
+      "question": "You want to be alerted quickly when a service is burning its error budget abnormally fast. What should you configure?",
+      "options": ["A static CPU threshold alert", "A burn-rate alert on the SLO", "A daily email digest", "A log export only"],
+      "answer": 1,
+      "explanation": "Error-budget burn-rate alerts fire when the budget is consumed faster than acceptable, catching both fast and slow failures tied to the SLO."
+    },
+    {
+      "id": "pcdoe-006",
+      "cert": "PCDOE",
+      "domain": "Building and implementing CI/CD pipelines",
+      "question": "Which practice manages infrastructure declaratively so environments are reproducible and version-controlled?",
+      "options": ["Manual console clicks", "Infrastructure as Code (e.g., Terraform)", "SSH scripts run ad hoc", "Snapshots only"],
+      "answer": 1,
+      "explanation": "Infrastructure as Code (Terraform, Config Controller) defines infrastructure declaratively for reproducible, reviewable, version-controlled environments."
+    },
+    {
+      "id": "pcdoe-007",
+      "cert": "PCDOE",
+      "domain": "Applying SRE principles to a service",
+      "question": "A team spends hours each week manually restarting a service. In SRE terms, this repetitive manual work is called:",
+      "options": ["An SLO", "Toil", "An error budget", "A canary"],
+      "answer": 1,
+      "explanation": "Toil is manual, repetitive, automatable operational work. Reducing toil through automation is a core SRE goal."
+    },
+    {
+      "id": "pcne-005",
+      "cert": "PCNE",
+      "domain": "Implementing Virtual Private Cloud (VPC) instances",
+      "question": "An organization wants multiple projects to share a single central VPC managed by a network team. What should they use?",
+      "options": ["VPC Peering", "Shared VPC", "Cloud VPN", "Separate VPCs with NAT"],
+      "answer": 1,
+      "explanation": "Shared VPC lets a host project share its network with service projects, centralizing network administration while keeping project isolation."
+    },
+    {
+      "id": "pcne-006",
+      "cert": "PCNE",
+      "domain": "Designing, planning, and prototyping a network",
+      "question": "GKE pods need their own IP ranges separate from node primary IPs. Which VPC feature provides this?",
+      "options": ["Static routes", "Alias IP ranges (secondary ranges)", "Cloud NAT", "VPC Peering"],
+      "answer": 1,
+      "explanation": "VPC-native GKE clusters use alias IP (secondary) ranges on subnets to allocate pod and service IPs."
+    },
+    {
+      "id": "pcne-007",
+      "cert": "PCNE",
+      "domain": "Managing, monitoring, and optimizing network operations",
+      "question": "Which tool helps you troubleshoot connectivity by testing reachability between two endpoints and showing the path?",
+      "options": ["VPC Flow Logs", "Connectivity Tests in Network Intelligence Center", "Cloud CDN", "Cloud Armor"],
+      "answer": 1,
+      "explanation": "Connectivity Tests (part of Network Intelligence Center) analyze configuration and simulate the path to diagnose reachability issues."
+    },
+    {
+      "id": "pcse-005",
+      "cert": "PCSE",
+      "domain": "Ensuring data protection",
+      "question": "A compliance rule requires you to control and manage the encryption keys used for data at rest. Which option satisfies this?",
+      "options": ["Google-managed default encryption", "Customer-Managed Encryption Keys (CMEK) via Cloud KMS", "Disabling encryption", "Public key sharing"],
+      "answer": 1,
+      "explanation": "CMEK with Cloud KMS lets customers create, rotate, and control the keys protecting data at rest, meeting many compliance requirements."
+    },
+    {
+      "id": "pcse-006",
+      "cert": "PCSE",
+      "domain": "Configuring access",
+      "question": "Which Google Cloud control enforces organization-wide guardrails such as blocking external IPs on VMs or disabling service account key creation?",
+      "options": ["IAM basic roles", "Organization Policy Service", "Cloud DNS", "Firewall tags"],
+      "answer": 1,
+      "explanation": "Organization policies set constraints that apply across the resource hierarchy, enforcing guardrails regardless of individual IAM grants."
+    },
+    {
+      "id": "pcse-007",
+      "cert": "PCSE",
+      "domain": "Securing communications and boundary protection",
+      "question": "To grant employees access to internal web apps without a VPN, enforcing identity and context at the proxy, you use:",
+      "options": ["Cloud NAT", "Identity-Aware Proxy (IAP)", "Cloud Interconnect", "VPC Peering"],
+      "answer": 1,
+      "explanation": "Identity-Aware Proxy enforces per-request identity and context checks to protect applications, enabling secure access without a traditional VPN."
+    },
+    {
+      "id": "pcd-006",
+      "cert": "PCD",
+      "domain": "Integrating Google Cloud services",
+      "question": "A Cloud Run service must process messages reliably even during spikes, retrying failures. Which integration is best?",
+      "options": ["Direct synchronous HTTP from clients", "Pub/Sub push subscription with a dead-letter topic", "Writing to Cloud Storage and polling", "Memorystore pub/sub channel"],
+      "answer": 1,
+      "explanation": "A Pub/Sub subscription decouples producers from the Cloud Run consumer, provides retries, and a dead-letter topic captures messages that repeatedly fail."
+    },
+    {
+      "id": "pcd-007",
+      "cert": "PCD",
+      "domain": "Managing deployed applications",
+      "question": "Which approach gives a Cloud Run service access to a database password without baking it into the image?",
+      "options": ["Hardcode it in the Dockerfile", "Mount it from Secret Manager", "Store it in a public bucket", "Pass it as a URL query param"],
+      "answer": 1,
+      "explanation": "Secret Manager stores secrets securely; Cloud Run can mount them as environment variables or files at runtime with IAM-controlled access."
+    },
+    {
+      "id": "pmle-006",
+      "cert": "PMLE",
+      "domain": "Serving and scaling models",
+      "question": "A nightly job must score 50 million records where latency does not matter. Which prediction mode is most cost-effective?",
+      "options": ["Online prediction endpoint", "Batch prediction", "A real-time streaming endpoint", "Per-record Cloud Functions"],
+      "answer": 1,
+      "explanation": "Batch prediction is designed for large, non-interactive scoring jobs and is far more cost-effective than keeping an online endpoint warm."
+    },
+    {
+      "id": "pmle-007",
+      "cert": "PMLE",
+      "domain": "Monitoring AI solutions",
+      "question": "Over time a deployed model's inputs drift from the training distribution, degrading accuracy. What detects this?",
+      "options": ["Cloud CDN", "Vertex AI Model Monitoring", "Cloud Armor", "Artifact Registry"],
+      "answer": 1,
+      "explanation": "Vertex AI Model Monitoring tracks feature distributions to detect training/serving skew and drift and can trigger alerts for retraining."
+    },
+    {
       "id": "cdl-006",
       "cert": "CDL",
       "domain": "Infrastructure and application modernization",

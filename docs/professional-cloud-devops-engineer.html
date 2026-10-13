@@ -60,11 +60,23 @@
 </section>
 <section id="cicd"><h2>CI/CD Pipelines</h2>
 <p><strong>Cloud Build</strong> (triggers, build config), <strong>Artifact Registry</strong>, <strong>Cloud Deploy</strong> (managed progressive delivery to GKE/Cloud Run), and GitOps patterns. Infrastructure as code with <strong>Terraform</strong> and Config Controller.</p>
-</section>
+<figure class="diagram"><pre class="mermaid">flowchart LR
+  DEV[Developer] -->|git push| REPO[Source repo]
+  REPO -->|trigger| CB[Cloud Build]
+  CB --> AR[Artifact Registry]
+  AR --> CD[Cloud Deploy]
+  CD --> STG[Staging]
+  STG -->|canary| PROD[Production GKE / Cloud Run]
+  MON[Cloud Monitoring SLOs] -.burn-rate alerts.-> PROD</pre><figcaption class="diagram-caption">A managed CI/CD pipeline: Cloud Build to Artifact Registry to Cloud Deploy, with progressive delivery and SLO-based monitoring.</figcaption></figure>
 <section id="monitoring"><h2>Monitoring</h2>
 <p>Google Cloud Observability: <strong>Cloud Monitoring</strong> (metrics, dashboards, SLO monitoring, alerting), <strong>Cloud Logging</strong> (log-based metrics, sinks), <strong>Cloud Trace/Profiler</strong>. Define alerting policies tied to SLOs, not raw symptoms.</p>
 </section>
 <section id="incidents"><h2>Incident Management</h2>
 <p>On-call, incident response roles, escalation, and postmortems. Use error budget burn-rate alerts to catch fast and slow failures.</p>
 </section>
-<section id="checklist" class="progress-section"><h2>&#128203; Study Checklist</h2><div class="progress-wrap"><div class="progress-label"><span>Progress</span><span class="progress-pct">0%</span></div><div class="progress-bar"><div class="progress-fill" style="width:0%"></div></div></div><ul class="checklist"><li><input type="checkbox"><span>Define SLIs, SLOs, SLAs, and manage error budgets</span></li><li><input type="checkbox"><span>Reduce toil through automation</span></li><li><input type="checkbox"><span>Build CI with Cloud Build triggers and Artifact Registry</span></li><li><input type="checkbox"><span>Use Cloud Deploy for progressive delivery</span></li><li><input type="checkbox"><span>Apply Terraform / IaC for repeatable infrastructure</span></li><li><input type="checkbox"><span>Create SLO-based alerting policies in Cloud Monitoring</span></li><li><input type="checkbox"><span>Use log-based metrics and logging sinks</span></li><li><input type="checkbox"><span>Implement burn-rate alerts for error budgets</span></li><li><input type="checkbox"><span>Run blameless postmortems and incident response</span></li><li><input type="checkbox"><span>Optimize service performance with Profiler and Trace</span></li></ul><div class="mt-2"><a href="professional-cloud-security-engineer.html" class="btn btn-primary">Next: Professional Cloud Security Engineer &rarr;</a></div></section></main></div></div><script src="../assets/js/main.js"></script></body></html>
+<section id="checklist" class="progress-section"><h2>&#128203; Study Checklist</h2><div class="progress-wrap"><div class="progress-label"><span>Progress</span><span class="progress-pct">0%</span></div><div class="progress-bar"><div class="progress-fill" style="width:0%"></div></div></div><ul class="checklist"><li><input type="checkbox"><span>Define SLIs, SLOs, SLAs, and manage error budgets</span></li><li><input type="checkbox"><span>Reduce toil through automation</span></li><li><input type="checkbox"><span>Build CI with Cloud Build triggers and Artifact Registry</span></li><li><input type="checkbox"><span>Use Cloud Deploy for progressive delivery</span></li><li><input type="checkbox"><span>Apply Terraform / IaC for repeatable infrastructure</span></li><li><input type="checkbox"><span>Create SLO-based alerting policies in Cloud Monitoring</span></li><li><input type="checkbox"><span>Use log-based metrics and logging sinks</span></li><li><input type="checkbox"><span>Implement burn-rate alerts for error budgets</span></li><li><input type="checkbox"><span>Run blameless postmortems and incident response</span></li><li><input type="checkbox"><span>Optimize service performance with Profiler and Trace</span></li></ul><div class="mt-2"><a href="professional-cloud-security-engineer.html" class="btn btn-primary">Next: Professional Cloud Security Engineer &rarr;</a></div></section></main></div></div>
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+  var light = document.documentElement.getAttribute('data-theme') === 'light';
+  mermaid.initialize({ startOnLoad: true, theme: light ? 'default' : 'dark', securityLevel: 'strict' });
+</script><script src="../assets/js/main.js"></script></body></html>

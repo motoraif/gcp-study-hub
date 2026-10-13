@@ -64,7 +64,16 @@
   <li><strong>VPC Service Controls</strong> perimeters to stop exfiltration.</li>
   <li><strong>Cloud Armor</strong> (WAF, DDoS), Identity-Aware Proxy (IAP), Private Google Access.</li>
 </ul>
-</section>
+<figure class="diagram"><pre class="mermaid">flowchart TB
+  U[User] --> AR[Cloud Armor WAF and DDoS]
+  AR --> IAP[Identity-Aware Proxy]
+  IAP --> LB[Load Balancer]
+  LB --> APP[Application on GKE or Cloud Run]
+  APP --> VSC[VPC Service Controls perimeter]
+  VSC --> DATA[(BigQuery and Cloud Storage)]
+  APP --> KMS[Cloud KMS CMEK]
+  SCC[Security Command Center] -.monitors.-> APP
+  SCC -.monitors.-> DATA</pre><figcaption class="diagram-caption">Defense in depth: layered controls from the edge (Cloud Armor, IAP) to data (VPC Service Controls, CMEK), with Security Command Center monitoring throughout.</figcaption></figure>
 <section id="data"><h2>Data Protection</h2>
 <ul>
   <li>Default encryption at rest/in transit; <strong>CMEK/CSEK</strong> with Cloud KMS; Cloud HSM / External Key Manager.</li>
@@ -75,4 +84,9 @@
 <section id="ops"><h2>Security Operations</h2>
 <p><strong>Security Command Center</strong> (posture, findings), audit logs, log sinks to BigQuery/SIEM, and Chronicle. Map controls to compliance frameworks (PCI DSS, HIPAA, ISO).</p>
 </section>
-<section id="checklist" class="progress-section"><h2>&#128203; Study Checklist</h2><div class="progress-wrap"><div class="progress-label"><span>Progress</span><span class="progress-pct">0%</span></div><div class="progress-bar"><div class="progress-fill" style="width:0%"></div></div></div><ul class="checklist"><li><input type="checkbox"><span>Configure Cloud Identity, SSO, and 2-Step Verification</span></li><li><input type="checkbox"><span>Apply least-privilege IAM with conditions</span></li><li><input type="checkbox"><span>Use Workload Identity Federation instead of SA keys</span></li><li><input type="checkbox"><span>Enforce organization policies across the hierarchy</span></li><li><input type="checkbox"><span>Design firewall policies and VPC Service Controls perimeters</span></li><li><input type="checkbox"><span>Protect apps with Cloud Armor and Identity-Aware Proxy</span></li><li><input type="checkbox"><span>Implement CMEK/CSEK and Cloud HSM with Cloud KMS</span></li><li><input type="checkbox"><span>Use Sensitive Data Protection (DLP) for de-identification</span></li><li><input type="checkbox"><span>Operate Security Command Center and audit logging</span></li><li><input type="checkbox"><span>Map controls to compliance frameworks</span></li></ul><div class="mt-2"><a href="professional-cloud-network-engineer.html" class="btn btn-primary">Next: Professional Cloud Network Engineer &rarr;</a></div></section></main></div></div><script src="../assets/js/main.js"></script></body></html>
+<section id="checklist" class="progress-section"><h2>&#128203; Study Checklist</h2><div class="progress-wrap"><div class="progress-label"><span>Progress</span><span class="progress-pct">0%</span></div><div class="progress-bar"><div class="progress-fill" style="width:0%"></div></div></div><ul class="checklist"><li><input type="checkbox"><span>Configure Cloud Identity, SSO, and 2-Step Verification</span></li><li><input type="checkbox"><span>Apply least-privilege IAM with conditions</span></li><li><input type="checkbox"><span>Use Workload Identity Federation instead of SA keys</span></li><li><input type="checkbox"><span>Enforce organization policies across the hierarchy</span></li><li><input type="checkbox"><span>Design firewall policies and VPC Service Controls perimeters</span></li><li><input type="checkbox"><span>Protect apps with Cloud Armor and Identity-Aware Proxy</span></li><li><input type="checkbox"><span>Implement CMEK/CSEK and Cloud HSM with Cloud KMS</span></li><li><input type="checkbox"><span>Use Sensitive Data Protection (DLP) for de-identification</span></li><li><input type="checkbox"><span>Operate Security Command Center and audit logging</span></li><li><input type="checkbox"><span>Map controls to compliance frameworks</span></li></ul><div class="mt-2"><a href="professional-cloud-network-engineer.html" class="btn btn-primary">Next: Professional Cloud Network Engineer &rarr;</a></div></section></main></div></div>
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+  var light = document.documentElement.getAttribute('data-theme') === 'light';
+  mermaid.initialize({ startOnLoad: true, theme: light ? 'default' : 'dark', securityLevel: 'strict' });
+</script><script src="../assets/js/main.js"></script></body></html>
