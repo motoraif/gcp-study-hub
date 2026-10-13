@@ -237,6 +237,7 @@ index_html = HEAD_ROOT("GCP Study Hub - Ultimate Google Cloud Certification Stud
   <div class="grid-4">
     <a href="docs/quiz.html" class="card" style="text-decoration:none;color:var(--text)"><div class="card-icon">&#129513;</div><h3>Practice Quiz</h3><p style="color:var(--text-muted);font-size:0.92rem">Timed, randomized questions per certification with instant scoring, a domain breakdown, and explanations for every answer.</p><div class="flex-wrap mt-1"><span class="badge badge-blue">{_stat_str(STATS["questions"])} questions</span><span class="badge badge-green">Instant scoring</span></div></a>
     <a href="docs/flashcards.html" class="card" style="text-decoration:none;color:var(--text)"><div class="card-icon">&#128218;</div><h3>Flashcards</h3><p style="color:var(--text-muted);font-size:0.92rem">Spaced-repetition flashcards that resurface each concept at the optimal time. Rate your recall and let the SM-2 scheduler do the rest.</p><div class="flex-wrap mt-1"><span class="badge badge-purple">Spaced repetition</span><span class="badge badge-green">Adaptive</span></div></a>
+    <a href="docs/planner.html" class="card" style="text-decoration:none;color:var(--text)"><div class="card-icon">&#128197;</div><h3>Exam Study Planner</h3><p style="color:var(--text-muted);font-size:0.92rem">Set your exam date and get a personalized week-by-week study plan with milestones to check off. Counts down the days.</p><div class="flex-wrap mt-1"><span class="badge badge-blue">Personalized</span><span class="badge badge-green">Countdown</span></div></a>
     <a href="docs/cheatsheets.html" class="card" style="text-decoration:none;color:var(--text)"><div class="card-icon">&#128221;</div><h3>Confusing Pairs Cheat Sheet</h3><p style="color:var(--text-muted);font-size:0.92rem">Side-by-side comparisons of the look-alike services that trip people up: Firewall vs Firewall Policy, Pub/Sub vs Tasks, Dataflow vs Dataproc, and more.</p><div class="flex-wrap mt-1"><span class="badge badge-teal">Quick reference</span><span class="badge badge-orange">Exam gold</span></div></a>
     <a href="docs/dashboard.html" class="card" style="text-decoration:none;color:var(--text)"><div class="card-icon">&#128202;</div><h3>My Progress</h3><p style="color:var(--text-muted);font-size:0.92rem">Your quiz readiness per certification and study-checklist completion in one dashboard. Private and local - no account needed.</p><div class="flex-wrap mt-1"><span class="badge badge-green">Track readiness</span><span class="badge badge-blue">Saved locally</span></div></a>
   </div>
@@ -842,7 +843,16 @@ cert_page(
 </section>
 <section id="apis"><h2>APIs &amp; Messaging</h2>
 <p>Design REST/gRPC APIs; use <strong>API Gateway</strong>/<strong>Apigee</strong>. Decouple with <strong>Pub/Sub</strong> (at-least-once, ordering keys, dead-letter topics) and <strong>Cloud Tasks</strong> (rate-limited task queues).</p>
-</section>
+""" + mermaid_block("""flowchart LR
+  C[Client] --> GW[API Gateway]
+  GW --> CR[Cloud Run service]
+  CR --> FS[(Firestore)]
+  CR --> MS[(Memorystore cache)]
+  CR -->|publish| PS[Pub/Sub]
+  PS --> WRK[Worker Cloud Run / Function]
+  WRK --> BQ[(BigQuery)]
+  SM[Secret Manager] -.secrets.-> CR""",
+  "A cloud-native serverless app: API Gateway to Cloud Run, with Firestore, caching, and async processing via Pub/Sub.") + """
 <section id="cicd"><h2>Build &amp; Deploy</h2>
 <ul>
   <li><strong>Cloud Build</strong> for CI; store images in <strong>Artifact Registry</strong>.</li>
@@ -896,7 +906,15 @@ cert_page(
 </section>
 <section id="cicd"><h2>CI/CD Pipelines</h2>
 <p><strong>Cloud Build</strong> (triggers, build config), <strong>Artifact Registry</strong>, <strong>Cloud Deploy</strong> (managed progressive delivery to GKE/Cloud Run), and GitOps patterns. Infrastructure as code with <strong>Terraform</strong> and Config Controller.</p>
-</section>
+""" + mermaid_block("""flowchart LR
+  DEV[Developer] -->|git push| REPO[Source repo]
+  REPO -->|trigger| CB[Cloud Build]
+  CB --> AR[Artifact Registry]
+  AR --> CD[Cloud Deploy]
+  CD --> STG[Staging]
+  STG -->|canary| PROD[Production GKE / Cloud Run]
+  MON[Cloud Monitoring SLOs] -.burn-rate alerts.-> PROD""",
+  "A managed CI/CD pipeline: Cloud Build to Artifact Registry to Cloud Deploy, with progressive delivery and SLO-based monitoring.") + """
 <section id="monitoring"><h2>Monitoring</h2>
 <p>Google Cloud Observability: <strong>Cloud Monitoring</strong> (metrics, dashboards, SLO monitoring, alerting), <strong>Cloud Logging</strong> (log-based metrics, sinks), <strong>Cloud Trace/Profiler</strong>. Define alerting policies tied to SLOs, not raw symptoms.</p>
 </section>
@@ -950,7 +968,17 @@ cert_page(
   <li><strong>VPC Service Controls</strong> perimeters to stop exfiltration.</li>
   <li><strong>Cloud Armor</strong> (WAF, DDoS), Identity-Aware Proxy (IAP), Private Google Access.</li>
 </ul>
-</section>
+""" + mermaid_block("""flowchart TB
+  U[User] --> AR[Cloud Armor WAF and DDoS]
+  AR --> IAP[Identity-Aware Proxy]
+  IAP --> LB[Load Balancer]
+  LB --> APP[Application on GKE or Cloud Run]
+  APP --> VSC[VPC Service Controls perimeter]
+  VSC --> DATA[(BigQuery and Cloud Storage)]
+  APP --> KMS[Cloud KMS CMEK]
+  SCC[Security Command Center] -.monitors.-> APP
+  SCC -.monitors.-> DATA""",
+  "Defense in depth: layered controls from the edge (Cloud Armor, IAP) to data (VPC Service Controls, CMEK), with Security Command Center monitoring throughout.") + """
 <section id="data"><h2>Data Protection</h2>
 <ul>
   <li>Default encryption at rest/in transit; <strong>CMEK/CSEK</strong> with Cloud KMS; Cloud HSM / External Key Manager.</li>
@@ -1018,7 +1046,16 @@ cert_page(
   <li><strong>Cloud Router</strong> for dynamic (BGP) route exchange.</li>
   <li><strong>Network Connectivity Center</strong> for hub-and-spoke topologies.</li>
 </ul>
-</section>
+""" + mermaid_block("""flowchart LR
+  OP[On-prem data center] -->|HA VPN or Interconnect| CR[Cloud Router BGP]
+  CR --> VPC[VPC Network global]
+  VPC --> SNA[Subnet region A]
+  VPC --> SNB[Subnet region B]
+  SNA --> VMA[VMs]
+  SNB --> VMB[VMs]
+  VPC --> NAT[Cloud NAT egress]
+  INT[Internet users] --> LB[Global External Application LB] --> VMA""",
+  "Hybrid connectivity: on-prem joins a global VPC via HA VPN or Interconnect, with Cloud Router exchanging BGP routes.") + """
 <section id="services"><h2>Network Services</h2>
 <p><strong>Cloud DNS</strong> (public/private zones, DNS peering), <strong>Cloud NAT</strong>, <strong>Cloud CDN</strong>, <strong>Cloud Armor</strong>, Private Service Connect, and VPC Flow Logs / Network Intelligence Center for troubleshooting.</p>
 </section>
@@ -1186,7 +1223,16 @@ cert_page(
     """
 <section id="vertex"><h2>Vertex AI</h2>
 <p>The unified ML platform: AutoML (low-code), custom training, Model Registry, Endpoints, Pipelines, Feature Store, and the Model Garden / Gemini for generative AI. Know when to use AutoML vs custom vs pretrained APIs.</p>
-</section>
+""" + mermaid_block("""flowchart LR
+  DATA[(BigQuery / Cloud Storage)] --> FS[Feature Store]
+  FS --> TRAIN[Vertex AI Training]
+  TRAIN --> REG[Model Registry]
+  REG --> EP[Endpoint online prediction]
+  REG --> BP[Batch prediction]
+  PIPE[Vertex AI Pipelines] -.orchestrates.-> TRAIN
+  MON[Model Monitoring] -.drift / skew.-> EP
+  MON -.triggers retrain.-> PIPE""",
+  "The Vertex AI MLOps lifecycle: features to training to registry to serving, orchestrated by Pipelines and watched by Model Monitoring.") + """
 <section id="data"><h2>Data &amp; Features</h2>
 <ul>
   <li>Feature engineering; <strong>Vertex AI Feature Store</strong> for reuse/consistency.</li>
@@ -1308,6 +1354,58 @@ service_page(
      "Prefer Workload Identity Federation over long-lived SA keys."],
     [("professional-cloud-security-engineer.html", "PCSE"), ("associate-cloud-engineer.html", "ACE")])
 
+service_page(
+    "pubsub", "Pub/Sub", "&#128227;",
+    "Global, scalable messaging for event-driven and streaming systems.",
+    "Pub/Sub deep dive: topics, subscriptions, delivery semantics, ordering, and dead-letter topics.",
+    [("What it is", "<p>A fully managed, global messaging service. Publishers send messages to <strong>topics</strong>; subscribers receive them via <strong>subscriptions</strong>. Decouples producers from consumers.</p>"),
+     ("Delivery &amp; subscriptions", "<ul><li><strong>Pull</strong> vs <strong>Push</strong> subscriptions.</li><li>At-least-once delivery by default; <strong>exactly-once</strong> available.</li><li><strong>Ordering keys</strong> preserve order per key.</li><li><strong>Dead-letter topics</strong> capture messages that repeatedly fail.</li></ul>"),
+     ("Patterns", "<p>Fan-out (one topic, many subscriptions), stream ingestion into Dataflow/BigQuery, and decoupling microservices. Acknowledge within the ack deadline or messages redeliver.</p>")],
+    ["Default delivery is at-least-once; design idempotent consumers.",
+     "Use ordering keys when per-key order matters (same region).",
+     "Dead-letter topics prevent poison messages from blocking a subscription.",
+     "Pub/Sub is the standard entry point for streaming pipelines into Dataflow/BigQuery."],
+    [("professional-data-engineer.html", "PDE"), ("professional-cloud-developer.html", "PCD")])
+
+service_page(
+    "spanner", "Spanner", "&#127758;",
+    "Globally distributed, strongly consistent relational database.",
+    "Spanner deep dive: horizontal scale, strong consistency, multi-region, and schema design.",
+    [("What it is", "<p>A fully managed relational database that scales horizontally while providing strong consistency and up to <strong>99.999%</strong> availability in multi-region configs. Unique in combining SQL, scale, and consistency.</p>"),
+     ("Scaling &amp; availability", "<ul><li>Capacity in <strong>nodes</strong> or <strong>processing units</strong>.</li><li>Regional vs multi-region instance configs.</li><li>TrueTime underpins global strong consistency.</li></ul>"),
+     ("Schema design", "<p>Choose primary keys that avoid hotspots (don't use monotonically increasing keys); use interleaved tables for parent-child locality.</p>")],
+    ["Spanner is the answer for global scale + strong consistency + high SLA.",
+     "Avoid monotonically increasing primary keys to prevent hotspots.",
+     "Multi-region configs raise availability to 99.999%.",
+     "Use it for relational OLTP at scale, not for ad-hoc analytics (that is BigQuery)."],
+    [("professional-cloud-architect.html", "PCA"), ("professional-cloud-database-engineer.html", "PCDE")])
+
+service_page(
+    "cloud-sql", "Cloud SQL", "&#128451;",
+    "Managed MySQL, PostgreSQL, and SQL Server for regional OLTP.",
+    "Cloud SQL deep dive: HA, read replicas, backups, PITR, and secure connectivity.",
+    [("What it is", "<p>Fully managed relational database for MySQL, PostgreSQL, and SQL Server. Google handles patching, backups, and replication. Regional service.</p>"),
+     ("HA &amp; scaling", "<ul><li><strong>Regional HA</strong> with an automatic failover replica.</li><li><strong>Read replicas</strong> (incl. cross-region) for read scaling.</li><li>Automated backups + <strong>point-in-time recovery</strong>.</li></ul>"),
+     ("Security &amp; connectivity", "<p>Use <strong>private IP</strong> and the <strong>Cloud SQL Auth Proxy</strong> for secure connections; CMEK for encryption; IAM database authentication.</p>")],
+    ["Regional HA uses a synchronous standby for automatic failover.",
+     "Read replicas scale reads; they are not for HA failover.",
+     "PITR relies on automated backups plus transaction logs.",
+     "Prefer private IP + Auth Proxy over public IP with broad allowlists."],
+    [("associate-cloud-engineer.html", "ACE"), ("professional-cloud-database-engineer.html", "PCDE")])
+
+service_page(
+    "vertex-ai", "Vertex AI", "&#129302;",
+    "Unified platform to build, deploy, and manage ML and generative AI.",
+    "Vertex AI deep dive: AutoML, custom training, endpoints, pipelines, feature store, and monitoring.",
+    [("What it is", "<p>Google Cloud's unified ML platform. Covers data prep, training (AutoML or custom), the <strong>Model Registry</strong>, serving via <strong>Endpoints</strong>, <strong>Pipelines</strong> for MLOps, and <strong>Model Garden</strong>/Gemini for generative AI.</p>"),
+     ("Training &amp; serving", "<ul><li><strong>AutoML</strong> for low-code; <strong>custom training</strong> with containers, GPUs/TPUs.</li><li><strong>Online</strong> (low-latency endpoint) vs <strong>batch</strong> prediction.</li><li><strong>Feature Store</strong> for consistent feature serving.</li></ul>"),
+     ("MLOps", "<p><strong>Vertex AI Pipelines</strong> automate the lifecycle; <strong>Model Monitoring</strong> detects drift and training/serving skew to trigger retraining.</p>")],
+    ["Pick AutoML (low-code), custom training (control), or pretrained APIs (fastest).",
+     "Online prediction for real-time; batch prediction for large offline scoring.",
+     "Feature Store reduces training/serving skew.",
+     "Model Monitoring watches for drift and skew in production."],
+    [("professional-machine-learning-engineer.html", "PMLE"), ("professional-data-engineer.html", "PDE")])
+
 # ── Services index ──────────────────────────────────────────
 services_index = (HEAD("Service Deep Dives", "In-depth guides to the core Google Cloud services that appear across every certification exam.")
     + crumb("Service Deep Dives")
@@ -1318,6 +1416,10 @@ services_index = (HEAD("Service Deep Dives", "In-depth guides to the core Google
     <a href="service-cloud-storage.html" class="card" style="text-decoration:none;color:var(--text)"><div class="card-icon">&#128230;</div><h3>Cloud Storage</h3><p style="color:var(--text-muted);font-size:0.9rem">Classes, lifecycle, signed URLs.</p></a>
     <a href="service-bigquery.html" class="card" style="text-decoration:none;color:var(--text)"><div class="card-icon">&#128202;</div><h3>BigQuery</h3><p style="color:var(--text-muted);font-size:0.9rem">Partitioning, clustering, pricing.</p></a>
     <a href="service-iam.html" class="card" style="text-decoration:none;color:var(--text)"><div class="card-icon">&#128273;</div><h3>Cloud IAM</h3><p style="color:var(--text-muted);font-size:0.9rem">Members, roles, service accounts.</p></a>
+    <a href="service-pubsub.html" class="card" style="text-decoration:none;color:var(--text)"><div class="card-icon">&#128227;</div><h3>Pub/Sub</h3><p style="color:var(--text-muted);font-size:0.9rem">Topics, subscriptions, ordering, DLQ.</p></a>
+    <a href="service-spanner.html" class="card" style="text-decoration:none;color:var(--text)"><div class="card-icon">&#127758;</div><h3>Spanner</h3><p style="color:var(--text-muted);font-size:0.9rem">Global, strongly consistent SQL.</p></a>
+    <a href="service-cloud-sql.html" class="card" style="text-decoration:none;color:var(--text)"><div class="card-icon">&#128451;</div><h3>Cloud SQL</h3><p style="color:var(--text-muted);font-size:0.9rem">Managed MySQL/PostgreSQL, HA, PITR.</p></a>
+    <a href="service-vertex-ai.html" class="card" style="text-decoration:none;color:var(--text)"><div class="card-icon">&#129302;</div><h3>Vertex AI</h3><p style="color:var(--text-muted);font-size:0.9rem">AutoML, training, endpoints, MLOps.</p></a>
     </div></div>""" + FOOT)
 write(f"{DOCS}/services.html", services_index)
 
@@ -1498,6 +1600,15 @@ dash = (HEAD("My Progress", "Track your Google Cloud certification study progres
     + '<div class="container section"><div id="dashboard-app"></div></div>'
     + '<script src="../assets/js/dashboard.js" defer></script>' + FOOT)
 write(f"{DOCS}/dashboard.html", dash)
+
+# ── Exam Study Planner page ─────────────────────────────────
+planner = (HEAD("Exam Study Planner", "Build a personalized, week-by-week Google Cloud exam study plan. Pick a certification and exam date and track your progress - free and private.")
+    + crumb("Study Planner")
+    + phdr("badge-green", "Study Tool", "&#128197;", "Exam Study Planner",
+           "Set your target certification and exam date, and get a week-by-week study plan with milestones you can check off. Your plan and progress are saved privately in your browser - no account needed.")
+    + '<div class="container section"><div id="planner-app"></div></div>'
+    + '<script src="../assets/js/planner.js" defer></script>' + FOOT)
+write(f"{DOCS}/planner.html", planner)
 
 
 # ── Cheat Sheets: confusing pairs ───────────────────────────

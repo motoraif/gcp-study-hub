@@ -74,8 +74,21 @@
   <li><strong>Cloud Router</strong> for dynamic (BGP) route exchange.</li>
   <li><strong>Network Connectivity Center</strong> for hub-and-spoke topologies.</li>
 </ul>
-</section>
+<figure class="diagram"><pre class="mermaid">flowchart LR
+  OP[On-prem data center] -->|HA VPN or Interconnect| CR[Cloud Router BGP]
+  CR --> VPC[VPC Network global]
+  VPC --> SNA[Subnet region A]
+  VPC --> SNB[Subnet region B]
+  SNA --> VMA[VMs]
+  SNB --> VMB[VMs]
+  VPC --> NAT[Cloud NAT egress]
+  INT[Internet users] --> LB[Global External Application LB] --> VMA</pre><figcaption class="diagram-caption">Hybrid connectivity: on-prem joins a global VPC via HA VPN or Interconnect, with Cloud Router exchanging BGP routes.</figcaption></figure>
 <section id="services"><h2>Network Services</h2>
 <p><strong>Cloud DNS</strong> (public/private zones, DNS peering), <strong>Cloud NAT</strong>, <strong>Cloud CDN</strong>, <strong>Cloud Armor</strong>, Private Service Connect, and VPC Flow Logs / Network Intelligence Center for troubleshooting.</p>
 </section>
-<section id="checklist" class="progress-section"><h2>&#128203; Study Checklist</h2><div class="progress-wrap"><div class="progress-label"><span>Progress</span><span class="progress-pct">0%</span></div><div class="progress-bar"><div class="progress-fill" style="width:0%"></div></div></div><ul class="checklist"><li><input type="checkbox"><span>Design VPCs (global) with regional subnets; auto vs custom mode</span></li><li><input type="checkbox"><span>Choose Shared VPC vs VPC Peering</span></li><li><input type="checkbox"><span>Plan IP addressing including alias IP ranges for GKE</span></li><li><input type="checkbox"><span>Select the correct load balancer for a scenario</span></li><li><input type="checkbox"><span>Configure HA VPN and Cloud Router with BGP</span></li><li><input type="checkbox"><span>Design Dedicated vs Partner Interconnect</span></li><li><input type="checkbox"><span>Use Network Connectivity Center for hub-and-spoke</span></li><li><input type="checkbox"><span>Configure Cloud DNS public/private zones and peering</span></li><li><input type="checkbox"><span>Set up Cloud NAT, Cloud CDN, and Private Service Connect</span></li><li><input type="checkbox"><span>Troubleshoot with VPC Flow Logs and Network Intelligence Center</span></li></ul><div class="mt-2"><a href="professional-cloud-database-engineer.html" class="btn btn-primary">Next: Professional Cloud Database Engineer &rarr;</a></div></section></main></div></div><script src="../assets/js/main.js"></script></body></html>
+<section id="checklist" class="progress-section"><h2>&#128203; Study Checklist</h2><div class="progress-wrap"><div class="progress-label"><span>Progress</span><span class="progress-pct">0%</span></div><div class="progress-bar"><div class="progress-fill" style="width:0%"></div></div></div><ul class="checklist"><li><input type="checkbox"><span>Design VPCs (global) with regional subnets; auto vs custom mode</span></li><li><input type="checkbox"><span>Choose Shared VPC vs VPC Peering</span></li><li><input type="checkbox"><span>Plan IP addressing including alias IP ranges for GKE</span></li><li><input type="checkbox"><span>Select the correct load balancer for a scenario</span></li><li><input type="checkbox"><span>Configure HA VPN and Cloud Router with BGP</span></li><li><input type="checkbox"><span>Design Dedicated vs Partner Interconnect</span></li><li><input type="checkbox"><span>Use Network Connectivity Center for hub-and-spoke</span></li><li><input type="checkbox"><span>Configure Cloud DNS public/private zones and peering</span></li><li><input type="checkbox"><span>Set up Cloud NAT, Cloud CDN, and Private Service Connect</span></li><li><input type="checkbox"><span>Troubleshoot with VPC Flow Logs and Network Intelligence Center</span></li></ul><div class="mt-2"><a href="professional-cloud-database-engineer.html" class="btn btn-primary">Next: Professional Cloud Database Engineer &rarr;</a></div></section></main></div></div>
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+  var light = document.documentElement.getAttribute('data-theme') === 'light';
+  mermaid.initialize({ startOnLoad: true, theme: light ? 'default' : 'dark', securityLevel: 'strict' });
+</script><script src="../assets/js/main.js"></script></body></html>

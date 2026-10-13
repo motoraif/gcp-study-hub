@@ -18,12 +18,17 @@
   <url><loc>https://toraif.com/gcp-study-hub/docs/service-bigquery.html</loc><priority>0.6</priority></url>
   <url><loc>https://toraif.com/gcp-study-hub/docs/service-gke.html</loc><priority>0.6</priority></url>
   <url><loc>https://toraif.com/gcp-study-hub/docs/service-iam.html</loc><priority>0.6</priority></url>
+  <url><loc>https://toraif.com/gcp-study-hub/docs/service-pubsub.html</loc><priority>0.6</priority></url>
+  <url><loc>https://toraif.com/gcp-study-hub/docs/service-spanner.html</loc><priority>0.6</priority></url>
+  <url><loc>https://toraif.com/gcp-study-hub/docs/service-cloud-sql.html</loc><priority>0.6</priority></url>
+  <url><loc>https://toraif.com/gcp-study-hub/docs/service-vertex-ai.html</loc><priority>0.6</priority></url>
   <url><loc>https://toraif.com/gcp-study-hub/docs/services.html</loc><priority>0.6</priority></url>
   <url><loc>https://toraif.com/gcp-study-hub/docs/foundations-linux.html</loc><priority>0.8</priority></url>
   <url><loc>https://toraif.com/gcp-study-hub/docs/foundations-networking.html</loc><priority>0.8</priority></url>
   <url><loc>https://toraif.com/gcp-study-hub/docs/quiz.html</loc><priority>0.6</priority></url>
   <url><loc>https://toraif.com/gcp-study-hub/docs/flashcards.html</loc><priority>0.6</priority></url>
   <url><loc>https://toraif.com/gcp-study-hub/docs/dashboard.html</loc><priority>0.6</priority></url>
+  <url><loc>https://toraif.com/gcp-study-hub/docs/planner.html</loc><priority>0.6</priority></url>
   <url><loc>https://toraif.com/gcp-study-hub/docs/cheatsheets.html</loc><priority>0.6</priority></url>
   <url><loc>https://toraif.com/gcp-study-hub/docs/labs.html</loc><priority>0.6</priority></url>
   <url><loc>https://toraif.com/gcp-study-hub/docs/resources.html</loc><priority>0.6</priority></url>

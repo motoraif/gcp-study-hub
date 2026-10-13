@@ -1,6 +1,6 @@
 {
  "generated": true,
- "count": 29,
+ "count": 34,
  "docs": [
   {
    "url": "index.html",
@@ -238,6 +238,50 @@
    ]
   },
   {
+   "url": "docs/service-pubsub.html",
+   "title": "Pub/Sub - Service Deep Dive",
+   "desc": "Pub/Sub deep dive: topics, subscriptions, delivery semantics, ordering, and dead-letter topics.",
+   "headings": [
+    "What it is",
+    "Delivery & subscriptions",
+    "Patterns",
+    "\ud83c\udfaf Exam Tips"
+   ]
+  },
+  {
+   "url": "docs/service-spanner.html",
+   "title": "Spanner - Service Deep Dive",
+   "desc": "Spanner deep dive: horizontal scale, strong consistency, multi-region, and schema design.",
+   "headings": [
+    "What it is",
+    "Scaling & availability",
+    "Schema design",
+    "\ud83c\udfaf Exam Tips"
+   ]
+  },
+  {
+   "url": "docs/service-cloud-sql.html",
+   "title": "Cloud SQL - Service Deep Dive",
+   "desc": "Cloud SQL deep dive: HA, read replicas, backups, PITR, and secure connectivity.",
+   "headings": [
+    "What it is",
+    "HA & scaling",
+    "Security & connectivity",
+    "\ud83c\udfaf Exam Tips"
+   ]
+  },
+  {
+   "url": "docs/service-vertex-ai.html",
+   "title": "Vertex AI - Service Deep Dive",
+   "desc": "Vertex AI deep dive: AutoML, custom training, endpoints, pipelines, feature store, and monitoring.",
+   "headings": [
+    "What it is",
+    "Training & serving",
+    "MLOps",
+    "\ud83c\udfaf Exam Tips"
+   ]
+  },
+  {
    "url": "docs/services.html",
    "title": "Service Deep Dives",
    "desc": "In-depth guides to the core Google Cloud services that appear across every certification exam.",
@@ -285,6 +329,12 @@
    "url": "docs/dashboard.html",
    "title": "My Progress",
    "desc": "Track your Google Cloud certification study progress: quiz readiness and checklist completion, saved privately in your browser.",
+   "headings": []
+  },
+  {
+   "url": "docs/planner.html",
+   "title": "Exam Study Planner",
+   "desc": "Build a personalized, week-by-week Google Cloud exam study plan. Pick a certification and exam date and track your progress - free and private.",
    "headings": []
   },
   {

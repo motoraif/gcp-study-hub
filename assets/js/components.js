@@ -51,6 +51,7 @@
       <div class="nav-dropdown-menu">
         <a href="${root}docs/quiz.html">&#129513; Practice Quiz</a>
         <a href="${root}docs/flashcards.html">&#128218; Flashcards</a>
+        <a href="${root}docs/planner.html">&#128197; Study Planner</a>
         <a href="${root}docs/cheatsheets.html">&#128221; Cheat Sheets</a>
         <a href="${root}docs/services.html">&#129513; Service Deep Dives</a>
         <a href="${root}docs/labs.html">&#128300; Labs &amp; Practice</a>
@@ -106,6 +107,7 @@
         <li><a href="${root}docs/labs.html">Labs &amp; Practice</a></li>
         <li><a href="${root}docs/quiz.html">Practice Quiz</a></li>
         <li><a href="${root}docs/flashcards.html">Flashcards</a></li>
+        <li><a href="${root}docs/planner.html">Study Planner</a></li>
         <li><a href="${root}docs/services.html">Service Deep Dives</a></li>
         <li><a href="${root}docs/cheatsheets.html">Cheat Sheets</a></li>
         <li><a href="${root}docs/dashboard.html">My Progress</a></li>
