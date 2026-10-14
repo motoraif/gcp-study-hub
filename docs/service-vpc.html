@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Virtual Private Cloud (VPC) - Service Deep Dive - GCP Study Hub</title>
+  <meta name="description" content="VPC deep dive: global networks, regional subnets, firewall rules, routing, and connectivity.">
+  <meta name="robots" content="index,follow">
+  <meta name="author" content="GCP Study Hub">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="GCP Study Hub">
+  <meta property="og:title" content="Virtual Private Cloud (VPC) - Service Deep Dive - GCP Study Hub">
+  <meta property="og:description" content="VPC deep dive: global networks, regional subnets, firewall rules, routing, and connectivity.">
+  <meta property="og:image" content="https://toraif.com/gcp-study-hub/assets/og-image.svg">
+  <meta property="og:image:type" content="image/svg+xml">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="GCP Study Hub - free study platform for Google Cloud certifications">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:url" content="https://toraif.com/gcp-study-hub/docs/service-vpc.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Virtual Private Cloud (VPC) - Service Deep Dive - GCP Study Hub">
+  <meta name="twitter:description" content="VPC deep dive: global networks, regional subnets, firewall rules, routing, and connectivity.">
+  <meta name="twitter:image" content="https://toraif.com/gcp-study-hub/assets/og-image.svg">
+  <meta name="twitter:image:alt" content="GCP Study Hub - free study platform for Google Cloud certifications">
+  <meta name="theme-color" content="#4285F4">
+  <meta name="keywords" content="Google Cloud certification, GCP exam, Cloud Digital Leader, Associate Cloud Engineer, Professional Cloud Architect, GCP practice questions, free GCP study">
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://toraif.com/gcp-study-hub/#website","name":"GCP Study Hub","url":"https://toraif.com/gcp-study-hub/","description":"Free, open-source study platform for every Google Cloud certification.","inLanguage":"en","publisher":{"@id":"https://toraif.com/gcp-study-hub/#org"}},{"@type":"EducationalOrganization","@id":"https://toraif.com/gcp-study-hub/#org","name":"GCP Study Hub","url":"https://toraif.com/gcp-study-hub/","description":"Free, community-driven study resources for Google Cloud certifications."}]}</script>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'><circle cx='14' cy='20' r='6' fill='%234285F4'/><circle cx='26' cy='14' r='6' fill='%23EA4335'/><circle cx='34' cy='24' r='6' fill='%23FBBC04'/><circle cx='22' cy='30' r='6' fill='%2334A853'/></svg>">
+  <link rel="canonical" href="https://toraif.com/gcp-study-hub/docs/service-vpc.html">
+  <link rel="manifest" href="../manifest.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <script src="../assets/js/components.js"></script>
+  <script src="../assets/js/search.js" defer></script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://toraif.com/gcp-study-hub/"}, {"@type": "ListItem", "position": 2, "name": "Virtual Private Cloud (VPC) - Service Deep Dive", "item": "https://toraif.com/gcp-study-hub/docs/service-vpc.html"}]}</script>
+</head><body><div class="container" style="padding-top:2rem;"><div class="breadcrumb"><a href="../index.html">Home</a> / <span>Certifications</span> / <span>Virtual Private Cloud (VPC)</span></div></div><div class="page-header"><div class="container"><span class="badge badge-blue">Service Deep Dive</span><h1 style="margin-top:0.75rem;">&#127760; Virtual Private Cloud (VPC)</h1><p>Global, software-defined networking for your Google Cloud resources.</p><div class="flex-wrap mt-1"></div></div></div><div class="container" style="padding-top:1rem"><a href="professional-cloud-network-engineer.html" class="badge badge-blue" style="text-decoration:none;margin-right:0.4rem">PCNE</a><a href="associate-cloud-engineer.html" class="badge badge-blue" style="text-decoration:none;margin-right:0.4rem">ACE</a></div><div class="container" style="padding-bottom:4rem;"><div class="doc-layout"><aside class="sidebar"><h4>Contents</h4><a href="#s0">What it is</a>
+<a href="#s1">Core components</a>
+<a href="#s2">Connectivity</a>
+<a href="#exam-tips">Exam Tips</a>
+</aside><main><section id="s0"><h2>What it is</h2><p>A <strong>global</strong>, software-defined virtual network. Subnets are <strong>regional</strong> and span all zones in their region. One VPC can hold resources across every region without needing per-region networks.</p></section>
+<section id="s1"><h2>Core components</h2><ul><li><strong>Subnets</strong> (regional IP ranges; auto or custom mode).</li><li><strong>Firewall rules</strong> - stateful; implied deny ingress, allow egress; target by tags or service accounts.</li><li><strong>Routes</strong> and <strong>Cloud Router</strong> (BGP) for dynamic routing.</li><li><strong>Cloud NAT</strong> for egress from private instances.</li></ul></section>
+<section id="s2"><h2>Connectivity</h2><p><strong>Shared VPC</strong> shares one network across projects (host + service projects). <strong>VPC Peering</strong> connects two VPCs privately (non-transitive). <strong>Private Service Connect</strong> and <strong>VPC Service Controls</strong> add private access and data-exfiltration perimeters.</p></section>
+<section id="exam-tips"><h2>&#127919; Exam Tips</h2><div class="callout tip"><div class="callout-title">&#128161; Remember</div><ul><li>VPC is global; subnets are regional - a common exam distinction.</li><li>Firewall rules are stateful; return traffic is automatically allowed.</li><li>Shared VPC centralizes networking; VPC Peering is non-transitive.</li><li>Use Cloud NAT so private VMs reach the internet without public IPs.</li></ul></div></section></main></div></div><script src="../assets/js/main.js"></script></body></html>

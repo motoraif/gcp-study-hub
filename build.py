@@ -55,11 +55,19 @@ def seo_tags(title, desc, root):
   <meta property="og:title" content="{full_title}">
   <meta property="og:description" content="{desc}">
   <meta property="og:image" content="{OG_IMAGE}">
+  <meta property="og:image:type" content="image/svg+xml">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="GCP Study Hub - free study platform for Google Cloud certifications">
+  <meta property="og:locale" content="en_US">
   <meta property="og:url" content="{SITE_URL}/">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="{full_title}">
   <meta name="twitter:description" content="{desc}">
   <meta name="twitter:image" content="{OG_IMAGE}">
+  <meta name="twitter:image:alt" content="GCP Study Hub - free study platform for Google Cloud certifications">
+  <meta name="theme-color" content="#4285F4">
+  <meta name="keywords" content="Google Cloud certification, GCP exam, Cloud Digital Leader, Associate Cloud Engineer, Professional Cloud Architect, GCP practice questions, free GCP study">
   <script type="application/ld+json">{{"@context":"https://schema.org","@graph":[{{"@type":"WebSite","@id":"{SITE_URL}/#website","name":"GCP Study Hub","url":"{SITE_URL}/","description":"Free, open-source study platform for every Google Cloud certification.","inLanguage":"en","publisher":{{"@id":"{SITE_URL}/#org"}}}},{{"@type":"EducationalOrganization","@id":"{SITE_URL}/#org","name":"GCP Study Hub","url":"{SITE_URL}/","description":"Free, community-driven study resources for Google Cloud certifications."}}]}}</script>"""
 
 HEAD = lambda t,d: f"""<!DOCTYPE html>
@@ -205,6 +213,14 @@ print("Building GCP Study Hub pages...")
 # ── index.html ──────────────────────────────────────────────
 index_html = HEAD_ROOT("GCP Study Hub - Ultimate Google Cloud Certification Study Platform","Free, community-driven study hub for all Google Cloud (GCP) certifications - guides, labs, practice questions, and foundations.") + f"""
 <section class="hero"><div class="container">
+  <div class="hero-logo" aria-hidden="true">
+    <svg width="92" height="92" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <path d="M30 72a18 18 0 0 1 2-35.8 26 26 0 0 1 50 5A16 16 0 0 1 78 72z" fill="none" stroke="#4285F4" stroke-width="5" stroke-linejoin="round"/>
+      <circle cx="40" cy="54" r="5" fill="#EA4335"/>
+      <circle cx="54" cy="54" r="5" fill="#FBBC04"/>
+      <circle cx="68" cy="54" r="5" fill="#34A853"/>
+    </svg>
+  </div>
   <div class="hero-eyebrow">&#128640; Open Source &middot; Community Driven &middot; Always Free</div>
   <h1>The Ultimate <span class="accent-blue">G</span><span class="accent-red">o</span><span class="accent-yellow">o</span><span class="accent-blue">g</span><span class="accent-green">l</span><span class="accent-red">e</span> Cloud<br>Certification Study Hub</h1>
   <p class="subtitle">Everything you need to pass every Google Cloud certification - official Skills Boost paths, hands-on labs, practice questions, and Linux &amp; networking foundations. All free, all in one place.</p>
@@ -604,7 +620,7 @@ cert_page(
      ("cost","Cost Optimization"),("checklist","Checklist")],
     """
 <section id="case-studies"><h2>Case Studies</h2>
-<div class="callout warn"><div class="callout-title">&#9888; Study the Official Case Studies</div><p>A significant share of PCA questions reference four official case studies. Read them before the exam and map each company's requirements to GCP services.</p></div>
+<div class="callout warn"><div class="callout-title">&#9888; Study the Official Case Studies</div><p>The exam guide publishes <strong>four</strong> official case studies, and your exam presents <strong>two</strong> of them (case-study questions are 20-30% of the exam, shown on a split screen). Study all four and map each company's requirements to GCP services so you are ready for whichever two appear.</p></div>
 <div class="grid-2">
   <div class="card"><h4>EHR Healthcare</h4><p>Healthcare SaaS. Themes: hybrid connectivity, compliance (HIPAA), containerization (GKE), observability, 99.9% availability.</p></div>
   <div class="card"><h4>Helicopter Racing League</h4><p>Live streaming + ML predictions. Themes: global reach, CDN, AI/ML (Vertex AI), real-time analytics, edge.</p></div>
@@ -1104,7 +1120,14 @@ cert_page(
 </section>
 <section id="ha"><h2>HA &amp; Scaling</h2>
 <p>Cloud SQL regional HA (failover replica), read replicas (incl. cross-region), and maintenance windows. Spanner nodes/processing units and multi-region configs. Bigtable replication and cluster routing.</p>
-</section>
+""" + mermaid_block("""flowchart TB
+  APP[Application] --> PRI[(Cloud SQL primary - zone A)]
+  PRI -->|synchronous| STBY[(Standby - zone B)]
+  PRI -->|asynchronous| RR1[(Read replica)]
+  PRI -->|async cross-region| RR2[(Cross-region read replica)]
+  PRI -.automatic failover.-> STBY
+  APP -->|reads| RR1""",
+  "Cloud SQL high availability: a synchronous standby for automatic failover, plus asynchronous read replicas (including cross-region) for read scaling.") + """
 <section id="migrate"><h2>Migration</h2>
 <p><strong>Database Migration Service (DMS)</strong> for homogeneous/heterogeneous migrations with minimal downtime. Understand continuous replication, cutover, and Datastream for CDC.</p>
 </section>
@@ -1135,7 +1158,7 @@ cert_page(
      "cn": "Data Engineer Learning Path",
      "cu": "https://www.cloudskillsboost.google/paths/16",
      "egu": "https://cloud.google.com/learn/certification/data-engineer",
-     "dur": "120 minutes", "q": "~50-60", "cost": "$200 USD", "validity": "2 years",
+     "dur": "120 minutes", "q": "~50-60", "cost": "$100 USD", "validity": "2 years",
      "domains": [("Designing data processing systems", "~=22%"),
                  ("Ingesting and processing the data", "~=25%"),
                  ("Storing the data", "~=20%"),
@@ -1406,6 +1429,45 @@ service_page(
      "Model Monitoring watches for drift and skew in production."],
     [("professional-machine-learning-engineer.html", "PMLE"), ("professional-data-engineer.html", "PDE")])
 
+service_page(
+    "vpc", "Virtual Private Cloud (VPC)", "&#127760;",
+    "Global, software-defined networking for your Google Cloud resources.",
+    "VPC deep dive: global networks, regional subnets, firewall rules, routing, and connectivity.",
+    [("What it is", "<p>A <strong>global</strong>, software-defined virtual network. Subnets are <strong>regional</strong> and span all zones in their region. One VPC can hold resources across every region without needing per-region networks.</p>"),
+     ("Core components", "<ul><li><strong>Subnets</strong> (regional IP ranges; auto or custom mode).</li><li><strong>Firewall rules</strong> - stateful; implied deny ingress, allow egress; target by tags or service accounts.</li><li><strong>Routes</strong> and <strong>Cloud Router</strong> (BGP) for dynamic routing.</li><li><strong>Cloud NAT</strong> for egress from private instances.</li></ul>"),
+     ("Connectivity", "<p><strong>Shared VPC</strong> shares one network across projects (host + service projects). <strong>VPC Peering</strong> connects two VPCs privately (non-transitive). <strong>Private Service Connect</strong> and <strong>VPC Service Controls</strong> add private access and data-exfiltration perimeters.</p>")],
+    ["VPC is global; subnets are regional - a common exam distinction.",
+     "Firewall rules are stateful; return traffic is automatically allowed.",
+     "Shared VPC centralizes networking; VPC Peering is non-transitive.",
+     "Use Cloud NAT so private VMs reach the internet without public IPs."],
+    [("professional-cloud-network-engineer.html", "PCNE"), ("associate-cloud-engineer.html", "ACE")])
+
+service_page(
+    "dataflow", "Dataflow", "&#127754;",
+    "Serverless, unified batch and stream data processing (Apache Beam).",
+    "Dataflow deep dive: Apache Beam, batch vs streaming, windowing, watermarks, and autoscaling.",
+    [("What it is", "<p>A fully managed, serverless runner for <strong>Apache Beam</strong> pipelines. One programming model handles both <strong>batch</strong> and <strong>streaming</strong>, with automatic scaling and no clusters to manage.</p>"),
+     ("Streaming concepts", "<ul><li><strong>Windowing</strong> (fixed, sliding, session) groups unbounded data.</li><li><strong>Watermarks</strong> track event-time progress.</li><li><strong>Triggers</strong> and late-data handling control when results emit.</li></ul>"),
+     ("Patterns", "<p>Common pipeline: <strong>Pub/Sub &rarr; Dataflow &rarr; BigQuery/Bigtable</strong>. Use Dataflow templates for repeatable jobs; it autoscales workers to match load.</p>")],
+    ["Dataflow is serverless Beam; Dataproc is managed Spark/Hadoop.",
+     "Windowing + watermarks are core to streaming correctness.",
+     "It unifies batch and streaming in one model.",
+     "Great fit between Pub/Sub ingestion and BigQuery analytics."],
+    [("professional-data-engineer.html", "PDE"), ("associate-data-practitioner.html", "ADP")])
+
+service_page(
+    "cloud-run", "Cloud Run", "&#128640;",
+    "Serverless containers that scale to zero and pay per request.",
+    "Cloud Run deep dive: stateless containers, concurrency, scaling, traffic splitting, and integrations.",
+    [("What it is", "<p>A fully managed platform to run <strong>stateless containers</strong>. It scales automatically (including <strong>to zero</strong>), and you pay only while requests are being served.</p>"),
+     ("Scaling &amp; config", "<ul><li><strong>Concurrency</strong> - requests served per container instance.</li><li><strong>Min instances</strong> reduce cold starts; <strong>max instances</strong> cap scale.</li><li>Request timeout and CPU allocation are configurable.</li></ul>"),
+     ("Deploy &amp; integrate", "<p><strong>Traffic splitting</strong> across revisions enables canary and blue/green releases. Integrates with <strong>Pub/Sub</strong> (push), <strong>Secret Manager</strong>, <strong>Cloud SQL</strong>, and sits behind the global load balancer with Cloud CDN.</p>")],
+    ["Scales to zero - cost-efficient for spiky or low-traffic services.",
+     "Tune concurrency and min instances to balance cost vs cold starts.",
+     "Traffic splitting across revisions gives canary deployments.",
+     "Use it for stateless HTTP/event-driven workloads, not stateful apps."],
+    [("professional-cloud-developer.html", "PCD"), ("associate-cloud-engineer.html", "ACE")])
+
 # ── Services index ──────────────────────────────────────────
 services_index = (HEAD("Service Deep Dives", "In-depth guides to the core Google Cloud services that appear across every certification exam.")
     + crumb("Service Deep Dives")
@@ -1420,6 +1482,9 @@ services_index = (HEAD("Service Deep Dives", "In-depth guides to the core Google
     <a href="service-spanner.html" class="card" style="text-decoration:none;color:var(--text)"><div class="card-icon">&#127758;</div><h3>Spanner</h3><p style="color:var(--text-muted);font-size:0.9rem">Global, strongly consistent SQL.</p></a>
     <a href="service-cloud-sql.html" class="card" style="text-decoration:none;color:var(--text)"><div class="card-icon">&#128451;</div><h3>Cloud SQL</h3><p style="color:var(--text-muted);font-size:0.9rem">Managed MySQL/PostgreSQL, HA, PITR.</p></a>
     <a href="service-vertex-ai.html" class="card" style="text-decoration:none;color:var(--text)"><div class="card-icon">&#129302;</div><h3>Vertex AI</h3><p style="color:var(--text-muted);font-size:0.9rem">AutoML, training, endpoints, MLOps.</p></a>
+    <a href="service-vpc.html" class="card" style="text-decoration:none;color:var(--text)"><div class="card-icon">&#127760;</div><h3>Virtual Private Cloud</h3><p style="color:var(--text-muted);font-size:0.9rem">Global VPC, subnets, firewall, peering.</p></a>
+    <a href="service-dataflow.html" class="card" style="text-decoration:none;color:var(--text)"><div class="card-icon">&#127754;</div><h3>Dataflow</h3><p style="color:var(--text-muted);font-size:0.9rem">Serverless Beam, batch + streaming.</p></a>
+    <a href="service-cloud-run.html" class="card" style="text-decoration:none;color:var(--text)"><div class="card-icon">&#128640;</div><h3>Cloud Run</h3><p style="color:var(--text-muted);font-size:0.9rem">Serverless containers, scale to zero.</p></a>
     </div></div>""" + FOOT)
 write(f"{DOCS}/services.html", services_index)
 

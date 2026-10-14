@@ -4,6 +4,141 @@
   "note": "Community question bank for GCP Study Hub. Each question: id, cert, domain, question, options[], answer (index into options), explanation. Contributions welcome via PR.",
   "questions": [
     {
+      "id": "pde-007",
+      "cert": "PDE",
+      "domain": "Ingesting and processing the data",
+      "question": "A streaming pipeline must group unbounded events into 5-minute buckets for aggregation. Which Dataflow concept do you use?",
+      "options": ["Partitioning", "Windowing", "Clustering", "Sharding"],
+      "answer": 1,
+      "explanation": "Windowing (e.g., fixed 5-minute windows) groups unbounded streaming data into finite chunks so aggregations can be computed."
+    },
+    {
+      "id": "pde-008",
+      "cert": "PDE",
+      "domain": "Storing the data",
+      "question": "Which BigQuery feature lets you query data stored in Cloud Storage without loading it into BigQuery-managed storage?",
+      "options": ["Materialized views", "External/BigLake tables", "Scheduled queries", "Authorized views"],
+      "answer": 1,
+      "explanation": "External tables (and BigLake tables) let BigQuery query data in Cloud Storage in place, without ingesting it into native storage."
+    },
+    {
+      "id": "pde-009",
+      "cert": "PDE",
+      "domain": "Maintaining and automating data workloads",
+      "question": "You need event-time correctness in a stream where some events arrive late. What tracks progress of event time in Dataflow?",
+      "options": ["Watermarks", "Checkpoints", "Partitions", "Slots"],
+      "answer": 0,
+      "explanation": "Watermarks estimate how far event-time has progressed, letting the pipeline decide when a window is complete and how to handle late data."
+    },
+    {
+      "id": "ace-012",
+      "cert": "ACE",
+      "domain": "Deploying and implementing a cloud solution",
+      "question": "You want a Cloud Run service to handle more concurrent requests per instance to reduce cost. Which setting do you change?",
+      "options": ["CPU platform", "Concurrency", "Region", "Service account"],
+      "answer": 1,
+      "explanation": "Cloud Run concurrency controls how many simultaneous requests each container instance handles; higher concurrency can reduce the number of instances and cost."
+    },
+    {
+      "id": "ace-013",
+      "cert": "ACE",
+      "domain": "Ensuring successful operation of a cloud solution",
+      "question": "Which gcloud command interacts with a GKE cluster using kubectl?",
+      "options": ["gcloud container clusters get-credentials", "gcloud compute ssh", "gcloud run deploy", "gcloud auth login"],
+      "answer": 0,
+      "explanation": "gcloud container clusters get-credentials fetches cluster credentials and configures kubectl to talk to the GKE cluster."
+    },
+    {
+      "id": "pca-008",
+      "cert": "PCA",
+      "domain": "Designing and planning a cloud solution architecture",
+      "question": "On the Professional Cloud Architect exam, how many case studies are presented to you?",
+      "options": ["All four", "Two (chosen from four published)", "One", "None"],
+      "answer": 1,
+      "explanation": "The exam guide publishes four case studies; the exam presents two of them (case-study questions are 20-30% of the exam). Study all four to be ready for whichever two appear."
+    },
+    {
+      "id": "cdl-010",
+      "cert": "CDL",
+      "domain": "Google Cloud security and operations",
+      "question": "Which Google Cloud tool helps you set spending thresholds and receive alerts when costs approach them?",
+      "options": ["Billing budgets and alerts", "Cloud Armor", "Security Command Center", "Cloud NAT"],
+      "answer": 0,
+      "explanation": "Budgets and alerts in Cloud Billing let you define spending thresholds and get notified as actual or forecasted costs approach them."
+    },
+    {
+      "id": "pcse-008",
+      "cert": "PCSE",
+      "domain": "Ensuring data protection",
+      "question": "A regulator requires that encryption keys be stored in a FIPS 140-2 Level 3 validated hardware security module on Google Cloud. Which option meets this?",
+      "options": ["Google-managed keys", "Cloud KMS with Cloud HSM", "Base64 encoding", "Client-side gzip"],
+      "answer": 1,
+      "explanation": "Cloud HSM provides FIPS 140-2 Level 3 validated hardware security modules for storing and using Cloud KMS keys."
+    },
+    {
+      "id": "pcne-008",
+      "cert": "PCNE",
+      "domain": "Configuring network services",
+      "question": "You need private, internal access to a published service (e.g., a SaaS or Google API) without traversing the public internet. Which feature provides this?",
+      "options": ["Cloud NAT", "Private Service Connect", "Cloud CDN", "Internet gateway"],
+      "answer": 1,
+      "explanation": "Private Service Connect lets consumers access services (Google APIs, published services) privately using internal IPs, avoiding the public internet."
+    },
+    {
+      "id": "pcd-008",
+      "cert": "PCD",
+      "domain": "Deploying applications",
+      "question": "You deployed a new Cloud Run revision and want to send only 5% of traffic to it initially. What enables this?",
+      "options": ["A new service", "Traffic splitting across revisions", "A second region", "Increasing concurrency"],
+      "answer": 1,
+      "explanation": "Cloud Run lets you split traffic across revisions by percentage, so you can canary a new revision with a small slice of traffic."
+    },
+    {
+      "id": "pcdoe-008",
+      "cert": "PCDOE",
+      "domain": "Building and implementing CI/CD pipelines",
+      "question": "Which Google Cloud service stores built container images and other artifacts for deployment pipelines?",
+      "options": ["Cloud Storage only", "Artifact Registry", "Cloud DNS", "Firestore"],
+      "answer": 1,
+      "explanation": "Artifact Registry is the managed repository for container images, language packages, and OS packages used by CI/CD pipelines."
+    },
+    {
+      "id": "pmle-008",
+      "cert": "PMLE",
+      "domain": "Scaling prototypes into ML models",
+      "question": "For large-scale deep learning training that benefits from Google's custom accelerators, which hardware would you choose on Vertex AI?",
+      "options": ["Local SSD", "TPUs", "Standard CPUs only", "Cloud NAT"],
+      "answer": 1,
+      "explanation": "TPUs (Tensor Processing Units) are Google's custom accelerators optimized for large-scale deep learning training and inference."
+    },
+    {
+      "id": "adp-009",
+      "cert": "ADP",
+      "domain": "Data analysis and presentation",
+      "question": "Which capability lets analysts train a simple ML model directly in BigQuery using SQL?",
+      "options": ["BigQuery ML", "Dataproc", "Cloud Composer", "Memorystore"],
+      "answer": 0,
+      "explanation": "BigQuery ML lets users create and run ML models using standard SQL inside BigQuery, without moving data or writing training code."
+    },
+    {
+      "id": "gwa-009",
+      "cert": "GWA",
+      "domain": "Managing and configuring Workspace services",
+      "question": "An admin wants to apply a Gmail retention/compliance policy to only one department. What is the correct scoping mechanism?",
+      "options": ["A separate Google Account", "An Organizational Unit (OU) or configuration group", "A shared drive", "A Cloud IAM role"],
+      "answer": 1,
+      "explanation": "Workspace service settings and policies are scoped by Organizational Units (and configuration groups), enabling per-department configuration."
+    },
+    {
+      "id": "pcde-008",
+      "cert": "PCDE",
+      "domain": "Designing scalable and highly available databases",
+      "question": "Which design choice helps avoid write hotspots in Spanner and Bigtable?",
+      "options": ["Monotonically increasing keys", "Random or well-distributed primary/row keys", "A single node", "Disabling replication"],
+      "answer": 1,
+      "explanation": "Sequential/monotonic keys concentrate writes on one node/tablet (a hotspot). Well-distributed keys spread writes evenly across the system."
+    },
+    {
       "id": "adp-005",
       "cert": "ADP",
       "domain": "Data preparation and ingestion",

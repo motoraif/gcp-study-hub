@@ -582,3 +582,12 @@ a:focus-visible, button:focus-visible, select:focus-visible, input:focus-visible
 :root[data-theme="dark"] .nav-links > a:hover, :root[data-theme="dark"] .nav-dropdown-btn:hover,
 :root[data-theme="dark"] .nav-dropdown-menu a:hover { background: rgba(138,180,248,0.12); color: var(--accent); }
 :root[data-theme="dark"] .quiz-cta { background: linear-gradient(135deg, rgba(138,180,248,0.1), rgba(129,201,149,0.1)); }
+
+/* Hero logo mark */
+.hero-logo { display: flex; justify-content: center; margin-bottom: 1.25rem; }
+.hero-logo svg { filter: drop-shadow(0 6px 14px rgba(66,133,244,0.25)); animation: logoFloat 5s ease-in-out infinite; }
+@keyframes logoFloat {
+  0%,100% { transform: translateY(0); }
+  50%     { transform: translateY(-7px); }
+}
+@media (prefers-reduced-motion: reduce) { .hero-logo svg { animation: none; } }

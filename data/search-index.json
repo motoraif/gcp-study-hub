@@ -1,6 +1,6 @@
 {
  "generated": true,
- "count": 34,
+ "count": 37,
  "docs": [
   {
    "url": "index.html",
@@ -278,6 +278,39 @@
     "What it is",
     "Training & serving",
     "MLOps",
+    "\ud83c\udfaf Exam Tips"
+   ]
+  },
+  {
+   "url": "docs/service-vpc.html",
+   "title": "Virtual Private Cloud (VPC) - Service Deep Dive",
+   "desc": "VPC deep dive: global networks, regional subnets, firewall rules, routing, and connectivity.",
+   "headings": [
+    "What it is",
+    "Core components",
+    "Connectivity",
+    "\ud83c\udfaf Exam Tips"
+   ]
+  },
+  {
+   "url": "docs/service-dataflow.html",
+   "title": "Dataflow - Service Deep Dive",
+   "desc": "Dataflow deep dive: Apache Beam, batch vs streaming, windowing, watermarks, and autoscaling.",
+   "headings": [
+    "What it is",
+    "Streaming concepts",
+    "Patterns",
+    "\ud83c\udfaf Exam Tips"
+   ]
+  },
+  {
+   "url": "docs/service-cloud-run.html",
+   "title": "Cloud Run - Service Deep Dive",
+   "desc": "Cloud Run deep dive: stateless containers, concurrency, scaling, traffic splitting, and integrations.",
+   "headings": [
+    "What it is",
+    "Scaling & config",
+    "Deploy & integrate",
     "\ud83c\udfaf Exam Tips"
    ]
   },
