@@ -22,6 +22,9 @@
   <url><loc>https://toraif.com/gcp-study-hub/docs/service-spanner.html</loc><priority>0.6</priority></url>
   <url><loc>https://toraif.com/gcp-study-hub/docs/service-cloud-sql.html</loc><priority>0.6</priority></url>
   <url><loc>https://toraif.com/gcp-study-hub/docs/service-vertex-ai.html</loc><priority>0.6</priority></url>
+  <url><loc>https://toraif.com/gcp-study-hub/docs/service-vpc.html</loc><priority>0.6</priority></url>
+  <url><loc>https://toraif.com/gcp-study-hub/docs/service-dataflow.html</loc><priority>0.6</priority></url>
+  <url><loc>https://toraif.com/gcp-study-hub/docs/service-cloud-run.html</loc><priority>0.6</priority></url>
   <url><loc>https://toraif.com/gcp-study-hub/docs/services.html</loc><priority>0.6</priority></url>
   <url><loc>https://toraif.com/gcp-study-hub/docs/foundations-linux.html</loc><priority>0.8</priority></url>
   <url><loc>https://toraif.com/gcp-study-hub/docs/foundations-networking.html</loc><priority>0.8</priority></url>

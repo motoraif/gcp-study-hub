@@ -11,11 +11,19 @@
   <meta property="og:title" content="Professional Cloud Database Engineer - GCP Study Hub">
   <meta property="og:description" content="Design, manage, and migrate scalable database solutions on Google Cloud. Covers Cloud SQL, AlloyDB, Spanner, Bigtable, Firestore, and migrations.">
   <meta property="og:image" content="https://toraif.com/gcp-study-hub/assets/og-image.svg">
+  <meta property="og:image:type" content="image/svg+xml">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="GCP Study Hub - free study platform for Google Cloud certifications">
+  <meta property="og:locale" content="en_US">
   <meta property="og:url" content="https://toraif.com/gcp-study-hub/docs/professional-cloud-database-engineer.html">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Professional Cloud Database Engineer - GCP Study Hub">
   <meta name="twitter:description" content="Design, manage, and migrate scalable database solutions on Google Cloud. Covers Cloud SQL, AlloyDB, Spanner, Bigtable, Firestore, and migrations.">
   <meta name="twitter:image" content="https://toraif.com/gcp-study-hub/assets/og-image.svg">
+  <meta name="twitter:image:alt" content="GCP Study Hub - free study platform for Google Cloud certifications">
+  <meta name="theme-color" content="#4285F4">
+  <meta name="keywords" content="Google Cloud certification, GCP exam, Cloud Digital Leader, Associate Cloud Engineer, Professional Cloud Architect, GCP practice questions, free GCP study">
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://toraif.com/gcp-study-hub/#website","name":"GCP Study Hub","url":"https://toraif.com/gcp-study-hub/","description":"Free, open-source study platform for every Google Cloud certification.","inLanguage":"en","publisher":{"@id":"https://toraif.com/gcp-study-hub/#org"}},{"@type":"EducationalOrganization","@id":"https://toraif.com/gcp-study-hub/#org","name":"GCP Study Hub","url":"https://toraif.com/gcp-study-hub/","description":"Free, community-driven study resources for Google Cloud certifications."}]}</script>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'><circle cx='14' cy='20' r='6' fill='%234285F4'/><circle cx='26' cy='14' r='6' fill='%23EA4335'/><circle cx='34' cy='24' r='6' fill='%23FBBC04'/><circle cx='22' cy='30' r='6' fill='%2334A853'/></svg>">
   <link rel="canonical" href="https://toraif.com/gcp-study-hub/docs/professional-cloud-database-engineer.html">
@@ -64,11 +72,22 @@
 </section>
 <section id="ha"><h2>HA &amp; Scaling</h2>
 <p>Cloud SQL regional HA (failover replica), read replicas (incl. cross-region), and maintenance windows. Spanner nodes/processing units and multi-region configs. Bigtable replication and cluster routing.</p>
-</section>
+<figure class="diagram"><pre class="mermaid">flowchart TB
+  APP[Application] --> PRI[(Cloud SQL primary - zone A)]
+  PRI -->|synchronous| STBY[(Standby - zone B)]
+  PRI -->|asynchronous| RR1[(Read replica)]
+  PRI -->|async cross-region| RR2[(Cross-region read replica)]
+  PRI -.automatic failover.-> STBY
+  APP -->|reads| RR1</pre><figcaption class="diagram-caption">Cloud SQL high availability: a synchronous standby for automatic failover, plus asynchronous read replicas (including cross-region) for read scaling.</figcaption></figure>
 <section id="migrate"><h2>Migration</h2>
 <p><strong>Database Migration Service (DMS)</strong> for homogeneous/heterogeneous migrations with minimal downtime. Understand continuous replication, cutover, and Datastream for CDC.</p>
 </section>
 <section id="secure"><h2>Security</h2>
 <p>IAM database roles, CMEK, private IP + Private Service Connect, Cloud SQL Auth Proxy, and audit logging.</p>
 </section>
-<section id="checklist" class="progress-section"><h2>&#128203; Study Checklist</h2><div class="progress-wrap"><div class="progress-label"><span>Progress</span><span class="progress-pct">0%</span></div><div class="progress-bar"><div class="progress-fill" style="width:0%"></div></div></div><ul class="checklist"><li><input type="checkbox"><span>Choose the right database for OLTP, NoSQL, global, or analytics needs</span></li><li><input type="checkbox"><span>Design Cloud SQL regional HA and read replicas</span></li><li><input type="checkbox"><span>Scale Spanner with nodes/processing units and multi-region</span></li><li><input type="checkbox"><span>Model Bigtable schemas and configure replication</span></li><li><input type="checkbox"><span>Use Database Migration Service and Datastream (CDC)</span></li><li><input type="checkbox"><span>Plan minimal-downtime cutovers</span></li><li><input type="checkbox"><span>Secure databases with IAM, CMEK, and private IP</span></li><li><input type="checkbox"><span>Use the Cloud SQL Auth Proxy</span></li><li><input type="checkbox"><span>Set backups, PITR, and maintenance windows</span></li><li><input type="checkbox"><span>Monitor database performance and query insights</span></li></ul><div class="mt-2"><a href="professional-data-engineer.html" class="btn btn-primary">Next: Professional Data Engineer &rarr;</a></div></section></main></div></div><script src="../assets/js/main.js"></script></body></html>
+<section id="checklist" class="progress-section"><h2>&#128203; Study Checklist</h2><div class="progress-wrap"><div class="progress-label"><span>Progress</span><span class="progress-pct">0%</span></div><div class="progress-bar"><div class="progress-fill" style="width:0%"></div></div></div><ul class="checklist"><li><input type="checkbox"><span>Choose the right database for OLTP, NoSQL, global, or analytics needs</span></li><li><input type="checkbox"><span>Design Cloud SQL regional HA and read replicas</span></li><li><input type="checkbox"><span>Scale Spanner with nodes/processing units and multi-region</span></li><li><input type="checkbox"><span>Model Bigtable schemas and configure replication</span></li><li><input type="checkbox"><span>Use Database Migration Service and Datastream (CDC)</span></li><li><input type="checkbox"><span>Plan minimal-downtime cutovers</span></li><li><input type="checkbox"><span>Secure databases with IAM, CMEK, and private IP</span></li><li><input type="checkbox"><span>Use the Cloud SQL Auth Proxy</span></li><li><input type="checkbox"><span>Set backups, PITR, and maintenance windows</span></li><li><input type="checkbox"><span>Monitor database performance and query insights</span></li></ul><div class="mt-2"><a href="professional-data-engineer.html" class="btn btn-primary">Next: Professional Data Engineer &rarr;</a></div></section></main></div></div>
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+  var light = document.documentElement.getAttribute('data-theme') === 'light';
+  mermaid.initialize({ startOnLoad: true, theme: light ? 'default' : 'dark', securityLevel: 'strict' });
+</script><script src="../assets/js/main.js"></script></body></html>
