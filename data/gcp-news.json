@@ -1,8 +1,62 @@
 {
-  "updated": "2026-10-12 12:06 UTC",
+  "updated": "2026-10-19 15:03 UTC",
   "note": "Cumulative Google Cloud news archive. Auto-appended weekly by GitHub Actions. Do not edit manually.",
-  "count": 30,
+  "count": 39,
   "items": [
+    {
+      "title": "Compute Engine",
+      "link": "https://docs.cloud.google.com/release-notes#October_19_2026",
+      "date": "2026-10-19",
+      "summary": "Compute Engine\nFeature\nGenerally available: To prevent data loss or corruption when you stop or\ndelete a Compute Engine instance, you can enable graceful shutdown. This\nsetting gives the guest OS up to six hours to finish running tasks. For more\ninformation, see\nAbout graceful shutdown.\nGoogle Cloud"
+    },
+    {
+      "title": "Google SecOps",
+      "link": "https://docs.cloud.google.com/release-notes#October_18_2026",
+      "date": "2026-10-18",
+      "summary": "Google SecOps\nFeature\nSpecify whether to reopen closed cases when the grouping is by Source Grouping Identifier\nYou can now specify whether Google SecOps reopens closed cases when grouping SOAR alerts by Source Grouping Identifier. When the option is enabled and a new alert is received with a source"
+    },
+    {
+      "title": "Google SecOps SOAR",
+      "link": "https://docs.cloud.google.com/release-notes#October_17_2026",
+      "date": "2026-10-17",
+      "summary": "Google SecOps SOAR\nAnnouncement\nRelease 6.3.102 is now\navailable for all regions."
+    },
+    {
+      "title": "BigQuery",
+      "link": "https://docs.cloud.google.com/release-notes#October_16_2026",
+      "date": "2026-10-16",
+      "summary": "BigQuery\nFeature\nConversational analytics in BigQuery\nis now available in the following locations:\n\nnorthamerica-northeast1 (Montr\u00e9al)\nnorthamerica-northeast2 (Toronto)\n\nFor more information, see\nLocations.\nDialogflow\nFeature\ngemini-3.5-flash-lite has become generally available (GA). See\nGenerative "
+    },
+    {
+      "title": "Apigee Edge for Private Cloud",
+      "link": "https://docs.cloud.google.com/release-notes#October_15_2026",
+      "date": "2026-10-15",
+      "summary": "Apigee Edge for Private Cloud\nAnnouncement\nReleased Apigee Edge for Private Cloud 4.54.00.\nDesignated Apigee Edge for Private Cloud 4.54.00.00 a long-term support (LTS)\nrelease: 18 months of full support ending April 2028, then 18 months of\nmaintenance ending October 2029. After October 2029, 4.54.0"
+    },
+    {
+      "title": "Anti Money Laundering AI",
+      "link": "https://docs.cloud.google.com/release-notes#October_14_2026",
+      "date": "2026-10-14",
+      "summary": "Anti Money Laundering AI\nAnnouncement\nNew minor engine version released for the commercial line of business within the v004.011 version line (aml-commercial.default.v004.011.202610-000). This version extends support for the major engine version and includes no significant changes compared to the pre"
+    },
+    {
+      "title": "BigQuery",
+      "link": "https://docs.cloud.google.com/release-notes#October_13_2026",
+      "date": "2026-10-13",
+      "summary": "BigQuery\nFeature\nThe\nAI.AGG function\nis\ngenerally available\n(GA). You can use this function to semantically aggregate unstructured input\ndata based on natural language instructions.\nFeature\nBigQuery generative AI functions\nnow support the gemini-4-argon model. This model is\ngenerally available.\nClou"
+    },
+    {
+      "title": "Agent Platform Workbench",
+      "link": "https://docs.cloud.google.com/release-notes#October_12_2026",
+      "date": "2026-10-12",
+      "summary": "Agent Platform Workbench\nChange\n20261011.00_p0 Release\nChange\nInstalled latest packages from upstream dependencies.\nFixed\nFixed an issue where gcloud and gsutil failed to load with an AttributeError in OpenSSL.crypto due to a version mismatch between pyOpenSSL and cryptography.\nChange\n20261011.00_p0"
+    },
+    {
+      "title": "Agent Platform Workbench",
+      "link": "https://docs.cloud.google.com/release-notes#October_11_2026",
+      "date": "2026-10-11",
+      "summary": "Agent Platform Workbench\nChange\n20261011-2230-rc0 Release\nChange\n20261011-2230-rc0 Release\nChange\nInstalled latest packages from upstream dependencies.\nChange\nInstalled latest packages from upstream dependencies.\nFixed\nFixed an issue where gcloud and gsutil failed to load with an AttributeError in O"
+    },
     {
       "title": "Cloud SQL for MySQL",
       "link": "https://docs.cloud.google.com/release-notes#October_10_2026",
