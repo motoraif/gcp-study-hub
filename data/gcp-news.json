@@ -1,8 +1,50 @@
 {
-  "updated": "2026-10-19 15:03 UTC",
+  "updated": "2026-10-26 14:36 UTC",
   "note": "Cumulative Google Cloud news archive. Auto-appended weekly by GitHub Actions. Do not edit manually.",
-  "count": 39,
+  "count": 46,
   "items": [
+    {
+      "title": "Cloud Database Migration Service",
+      "link": "https://docs.cloud.google.com/release-notes#October_26_2026",
+      "date": "2026-10-26",
+      "summary": "Cloud Database Migration Service\nFeature\nYou can now create heterogeneous conversion workspaces by importing database\nschema metadata files from a Cloud Storage bucket without requiring direct\nnetwork connectivity between Database Migration Service and your source database during\nthe schema conversi"
+    },
+    {
+      "title": "Google SecOps",
+      "link": "https://docs.cloud.google.com/release-notes#October_25_2026",
+      "date": "2026-10-25",
+      "summary": "Google SecOps\nFeature\nResize inline images in Case Wall comments\nYou can now resize inline images directly in rich-text comments on the Case Wall. To resize an image, switch the comment box to rich-text mode and insert an image either by using the toolbar's image menu or by pasting it into the comme"
+    },
+    {
+      "title": "App Engine flexible environment .NET",
+      "link": "https://docs.cloud.google.com/release-notes#October_24_2026",
+      "date": "2026-10-24",
+      "summary": "App Engine flexible environment .NET\nSecurity\nThe following runtime language contains important security updates:\n\n.NET 6 and later: 6.0.428, 8.0.415, 10.0.100\n\nThe following stacks and their underlying operating system packages have also been updated:\n\ngoogle-22, google-22-full\ngoogle-24, google-24"
+    },
+    {
+      "title": "Cloud Monitoring",
+      "link": "https://docs.cloud.google.com/release-notes#October_23_2026",
+      "date": "2026-10-23",
+      "summary": "Cloud Monitoring\nFixed\nOps Agent version 2.73.0 includes patches for a Go vulnerability involving\nsystem root certificates,\nCVE-2026-111943. For more\ninformation, see Ops Agent 2.73.0 notes.\nCloud SQL for MySQL\nSecurity\nIn response to GCP-2026-071, Google is\nupdating Cloud SQL's managed components. "
+    },
+    {
+      "title": "Apigee X",
+      "link": "https://docs.cloud.google.com/release-notes#October_22_2026",
+      "date": "2026-10-22",
+      "summary": "Apigee X\nAnnouncement\nOn October 22, 2026, we released an updated version of Apigee (1-18-0-apigee-7).\nNote: Rollouts of this release began today and can take four or more business\ndays to complete across all Google Cloud zones. Your instances might not have\nthe features and fixes available until th"
+    },
+    {
+      "title": "Apigee X",
+      "link": "https://docs.cloud.google.com/release-notes#October_21_2026",
+      "date": "2026-10-21",
+      "summary": "Apigee X\nAnnouncement\nApigee Emulator\nApigee Emulator v2.0.2\nOn October 21, 2026, we released Apigee Emulator version 2.0.2.\nThis release upgrades the Apigee Emulator runtime to Java 21 (Eclipse Temurin\nJRE 21) to align local proxy development and policy execution with the\nproduction Apigee runtime,"
+    },
+    {
+      "title": "Apigee X",
+      "link": "https://docs.cloud.google.com/release-notes#October_20_2026",
+      "date": "2026-10-20",
+      "summary": "Apigee X\nAnnouncement\nOn October 20th, 2026, we began maintenance updates of Apigee instances configured for maintenance windows.\nIf you set a preferred window for maintenance for your instance, and your instance version is\nbelow 1-18-0-apigee-6, your instance will be updated to 1-18-0-apigee-6 with"
+    },
     {
       "title": "Compute Engine",
       "link": "https://docs.cloud.google.com/release-notes#October_19_2026",
