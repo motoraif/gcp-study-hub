@@ -1,8 +1,50 @@
 {
-  "updated": "2026-10-26 14:36 UTC",
+  "updated": "2026-11-02 17:29 UTC",
   "note": "Cumulative Google Cloud news archive. Auto-appended weekly by GitHub Actions. Do not edit manually.",
-  "count": 46,
+  "count": 53,
   "items": [
+    {
+      "title": "Cloud Load Balancing",
+      "link": "https://docs.cloud.google.com/release-notes#November_02_2026",
+      "date": "2026-11-02",
+      "summary": "Cloud Load Balancing\nFeature\nDistributed tracing with Cloud Trace is available in\nPreview for\nGlobal external Application Load Balancers, Regional external Application Load Balancers,\nRegional internal Application Load Balancers, and Cross-region internal Application Load Balancers. Attach a\ntelemet"
+    },
+    {
+      "title": "Google SecOps SOAR",
+      "link": "https://docs.cloud.google.com/release-notes#November_01_2026",
+      "date": "2026-11-01",
+      "summary": "Google SecOps SOAR\nAnnouncement\nRelease 6.3.105 is being rolled out to the first phase of regions as listed\nhere.\nThis release contains internal and customer bug fixes."
+    },
+    {
+      "title": "Google SecOps",
+      "link": "https://docs.cloud.google.com/release-notes#October_31_2026",
+      "date": "2026-10-31",
+      "summary": "Google SecOps\nFeature\nBasic Mode search\nThis feature is in public preview. The SIEM Search page now provides two search-execution modes: Basic Mode and Advanced Mode. Basic Mode (the default option) uses a streamlined, fast-path execution pipeline that bypasses secondary enrichment steps during sear"
+    },
+    {
+      "title": "Agent Registry",
+      "link": "https://docs.cloud.google.com/release-notes#October_30_2026",
+      "date": "2026-10-30",
+      "summary": "Agent Registry\nFeature\nAgent Registry supports cross-project management boundaries (Preview), letting you centrally discover, search, and govern AI agents, Model Context Protocol (MCP) servers, and tools across multiple Google Cloud projects from a central management project. For more information, s"
+    },
+    {
+      "title": "AlloyDB for PostgreSQL",
+      "link": "https://docs.cloud.google.com/release-notes#October_29_2026",
+      "date": "2026-10-29",
+      "summary": "AlloyDB for PostgreSQL\nFeature\nAlloyDB AI adds pre-registered support for the following Gemini models in version\n1.6.5 and later of the google_ml_integration extension:\n\ngemini-3.1-flash-lite\ngemini-3.5-flash\ngemini-3.5-flash-lite\ngemini-3.6-flash\ngemini-3.7-flash\ngemini-3.8-flash\ngemini-4-argon\n\nVe"
+    },
+    {
+      "title": "AlloyDB for PostgreSQL",
+      "link": "https://docs.cloud.google.com/release-notes#October_28_2026",
+      "date": "2026-10-28",
+      "summary": "AlloyDB for PostgreSQL\nAnnouncement\nThe following AlloyDB AI and vector search features and improvements are\ngenerally available\n(GA):\n\nThe alloydb_scann extension supports four-level tree (4LT) ScaNN vector\nindexes on PostgreSQL 17 and later, providing support for tables with up to\n10 billion vecto"
+    },
+    {
+      "title": "AlloyDB for PostgreSQL",
+      "link": "https://docs.cloud.google.com/release-notes#October_27_2026",
+      "date": "2026-10-27",
+      "summary": "AlloyDB for PostgreSQL\nAnnouncement\nThe following AlloyDB AI functions and improvements are available in\nPreview:\n\nThe ai.extract function lets you extract structured data from\nunstructured text directly within your database queries without needing\nexternal extraction pipelines. For more information"
+    },
     {
       "title": "Cloud Database Migration Service",
       "link": "https://docs.cloud.google.com/release-notes#October_26_2026",
