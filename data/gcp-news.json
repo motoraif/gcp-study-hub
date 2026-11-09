@@ -1,8 +1,50 @@
 {
-  "updated": "2026-11-02 17:29 UTC",
+  "updated": "2026-11-09 17:52 UTC",
   "note": "Cumulative Google Cloud news archive. Auto-appended weekly by GitHub Actions. Do not edit manually.",
-  "count": 53,
+  "count": 60,
   "items": [
+    {
+      "title": "AI Hypercomputer",
+      "link": "https://docs.cloud.google.com/release-notes#November_09_2026",
+      "date": "2026-11-09",
+      "summary": "AI Hypercomputer\nFeature\nGenerally available:\nPathways on Cloud\nis now generally available on Google Kubernetes Engine (GKE). Major features include\nthe following:\n\nSingle-controller execution model: Coordinate multi-slice and multi-host\nCloud TPU workloads from a single Python client process. Pathw"
+    },
+    {
+      "title": "Cloud Asset Inventory",
+      "link": "https://docs.cloud.google.com/release-notes#November_08_2026",
+      "date": "2026-11-08",
+      "summary": "Cloud Asset Inventory\nFeature\nThe following resource type is publicly available through the\nSearchAllResources\nand\nSearchAllIamPolicies\nAPIs.\n\nGemini for Google Cloud\n\ncloudaicompanion.googleapis.com/Topic\nCloud Run\nFeature\nDetect vulnerabilities and exposed secrets in the container images\nof your C"
+    },
+    {
+      "title": "Google SecOps SOAR",
+      "link": "https://docs.cloud.google.com/release-notes#November_07_2026",
+      "date": "2026-11-07",
+      "summary": "Google SecOps SOAR\nAnnouncement\nRelease 6.3.105 is now\navailable for all regions."
+    },
+    {
+      "title": "Agent Registry",
+      "link": "https://docs.cloud.google.com/release-notes#November_06_2026",
+      "date": "2026-11-06",
+      "summary": "Agent Registry\nFeature\nSkill security scanning and governance in Agent Registry are available. You can\nautomatically scan standalone skill revisions for security issues, review\nFinding resources, enforce scanning policies across your organization using\ncustom Organization Policy constraints, and gra"
+    },
+    {
+      "title": "Apigee Edge for Public Cloud",
+      "link": "https://docs.cloud.google.com/release-notes#November_05_2026",
+      "date": "2026-11-05",
+      "summary": "Apigee Edge for Public Cloud\nAnnouncement\nScheduled maintenance of Management/Control Plane for the Apigee Edge for Public Cloud on November 6, 2026.\nScheduled maintenance of Management/Control Plane for the Apigee Edge for Public Cloud production will take place on Friday, November 6, 2026, from 9:"
+    },
+    {
+      "title": "API Gateway",
+      "link": "https://docs.cloud.google.com/release-notes#November_04_2026",
+      "date": "2026-11-04",
+      "summary": "API Gateway\nAnnouncement\nNegative backend deadlines are no longer deprecated\nThe deprecation of negative backend deadline values announced on\nOctober 23, 2026 is withdrawn. In an OpenAPI 2.0 x-google-backend\nextension or a gRPC BackendRule, a negative deadline continues to\nuse the default deadline, "
+    },
+    {
+      "title": "API Gateway",
+      "link": "https://docs.cloud.google.com/release-notes#November_03_2026",
+      "date": "2026-11-03",
+      "summary": "API Gateway\nFeature\nCall Google Cloud APIs from streaming gateways\nStreaming gateways can now call Google Cloud APIs such as aiplatform.googleapis.com. A gateway with an effectiveStreamingMode of EFFECTIVE_STREAMING_MODE_ENABLED authenticates to backends whose host ends in .googleapis.com or .vertex"
+    },
     {
       "title": "Cloud Load Balancing",
       "link": "https://docs.cloud.google.com/release-notes#November_02_2026",
