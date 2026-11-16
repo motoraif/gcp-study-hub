@@ -1,8 +1,50 @@
 {
-  "updated": "2026-11-09 17:52 UTC",
+  "updated": "2026-11-16 17:33 UTC",
   "note": "Cumulative Google Cloud news archive. Auto-appended weekly by GitHub Actions. Do not edit manually.",
-  "count": 60,
+  "count": 67,
   "items": [
+    {
+      "title": "Google Cloud Armor",
+      "link": "https://docs.cloud.google.com/release-notes#November_16_2026",
+      "date": "2026-11-16",
+      "summary": "Google Cloud Armor\nFeature\nCloud Armor supports Autonomous System Numbers (ASNs), Network Threat\nIntelligence (NTI), and HTTP filtering in globally scoped edge security\npolicies for Cloud CDN edge\ncache services in Preview."
+    },
+    {
+      "title": "Google SecOps",
+      "link": "https://docs.cloud.google.com/release-notes#November_15_2026",
+      "date": "2026-11-15",
+      "summary": "Google SecOps\nFeature\nPublisher Agent Version 2.7.2\nPublisher Agent Version 2.7.2 is now available.\nThis release includes the following updates and fixes for the Publisher and remote agent:\n\nAlert lazy loading for remote actions: Remote action tasks now support loading case data on demand from the s"
+    },
+    {
+      "title": "Access Approval",
+      "link": "https://docs.cloud.google.com/release-notes#November_14_2026",
+      "date": "2026-11-14",
+      "summary": "Access Approval\nFeature\nService Usage is generally available\n(GA).\nAccess Transparency\nFeature\nService Usage is generally available\n(GA).\nGoogle SecOps SOAR\nAnnouncement\nRelease 6.3.106 is now\navailable for all regions."
+    },
+    {
+      "title": "Access Approval",
+      "link": "https://docs.cloud.google.com/release-notes#November_13_2026",
+      "date": "2026-11-13",
+      "summary": "Access Approval\nFeature\nCloud Quotas is generally available\n(GA).\nAccess Transparency\nFeature\nCloud Quotas is generally available\n(GA).\nApigee X\nAnnouncement\nOn November 13, 2026, we released an updated version of Apigee (1-18-0-apigee-9).\nNote: Rollouts of this release began today and can take four"
+    },
+    {
+      "title": "API Keys API",
+      "link": "https://docs.cloud.google.com/release-notes#November_12_2026",
+      "date": "2026-11-12",
+      "summary": "API Keys API\nFeature\nThe API Keys remote Model Context Protocol (MCP) server is generally available\n(GA).\nYou can use the API Keys remote MCP server in your AI applications to\ncreate, inspect, restrict, and manage the lifecycle of API keys in your\nGoogle Cloud projects.\nFor more information, see\nUse"
+    },
+    {
+      "title": "Apigee Edge for Public Cloud",
+      "link": "https://docs.cloud.google.com/release-notes#November_11_2026",
+      "date": "2026-11-11",
+      "summary": "Apigee Edge for Public Cloud\nAnnouncement\nOn November 11, 2026, we began releasing Edge UI updates for Apigee Edge for\nPublic Cloud.\nFixed\n\n\n\nBug ID\nComponent\nDescription\n\n\n\n\n392653797, 399185014\nEdge UI\nFixed an issue where navigating to the App Details or New App pages in organizations with a larg"
+    },
+    {
+      "title": "API Gateway",
+      "link": "https://docs.cloud.google.com/release-notes#November_10_2026",
+      "date": "2026-11-10",
+      "summary": "API Gateway\nFeature\nTLS 1.3 for connections to backends\nAPI Gateway is rolling out support for TLS 1.3 on connections to backend\nservices. Once the rollout reaches a gateway, it uses TLS 1.3 with backends\nthat support it. No configuration is required.\nAgent Platform Workbench\nFeature\nAntigravity CLI"
+    },
     {
       "title": "AI Hypercomputer",
       "link": "https://docs.cloud.google.com/release-notes#November_09_2026",
